@@ -38,8 +38,6 @@ uint16_t htons(uint16_t hostshort);
 uint32_t ntohl(uint32_t netlong);
 uint16_t ntohs(uint16_t netshort);
 
-int inet_pton(int af, const char *src, void *dst);
-
 /** 255.255.255.255 */
 #define IPADDR_NONE         ((uint32_t)0xffffffffUL)
 /** 127.0.0.1 */

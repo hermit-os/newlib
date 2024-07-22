@@ -87,7 +87,7 @@ am_lib_a_OBJECTS = lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
 	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
 	lib_a-wait.$(OBJEXT) lib_a-write.$(OBJEXT) \
 	lib_a-makecontext.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	inet_ntoa.$(OBJEXT)
+	lib_a-inet_ntoa.$(OBJEXT) lib_a-inet_pton.$(OBJEXT) 
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -211,7 +211,7 @@ AUTOMAKE_OPTIONS = cygnus
 INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
-lib_a_SOURCES = chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sbrk.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
+lib_a_SOURCES = chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sbrk.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c inet_pton.c
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
 ACLOCAL_AMFLAGS = -I ../../..
@@ -496,6 +496,12 @@ lib_a-inet_ntoa.o: inet_ntoa.c
 lib_a-inet_ntoa.obj: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.obj `if test -f 'inet_ntoa.c'; then $(CYGPATH_W) 'inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/inet_ntoa.c'; fi`
 
+lib_a-inet_pton.o: inet_pton.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_pton.o `test -f 'inet_pton.c' || echo '$(srcdir)/'`inet_pton.c
+
+lib_a-inet_pton.obj: inet_pton.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_pton.obj `if test -f 'inet_pton.c'; then $(CYGPATH_W) 'inet_pton.c'; else $(CYGPATH_W) '$(srcdir)/inet_pton.c'; fi`
+
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
 	unique=`for i in $$list; do \
@@ -673,6 +679,14 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/netinet; \
         for i in $(srcdir)/include/netinet/*.h; do \
           $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/netinet/`basename $$i`; \
+        done; \
+	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/arpa; \
+        for i in $(srcdir)/include/arpa/*.h; do \
+          $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/arpa/`basename $$i`; \
+        done; \
+	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/net; \
+        for i in $(srcdir)/include/net/*.h; do \
+          $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/net/`basename $$i`; \
         done; \
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
