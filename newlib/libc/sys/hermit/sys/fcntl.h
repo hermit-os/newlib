@@ -80,6 +80,9 @@
 
 /* --- redundant stuff below --- */
 
+#define fcntl           sys_fcntl
+#define _fcntl          fcntl
+
 #include <_ansi.h>
 
 extern int creat (const char*, mode_t);
@@ -94,7 +97,5 @@ extern int fcntl (int, int, ...);
 #endif
 
 extern int _fcntl (int, int, ...);
-
-#define fcntl           sys_fcntl
 
 #endif
