@@ -17,7 +17,7 @@
 #include <netdb.h>
 
 #ifdef __cplusplus
-{
+extern "C" {
 #endif
 
 // Functions for converting between string and network addresses
