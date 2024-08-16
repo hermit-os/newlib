@@ -86,12 +86,14 @@ am_lib_a_OBJECTS = lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
 	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
 	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
 	lib_a-wait.$(OBJEXT) lib_a-write.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	inet_ntoa.$(OBJEXT)
+	lib_a-context.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
 am__depfiles_maybe =
+CPPASCOMPILE = $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS)
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
@@ -198,6 +200,7 @@ pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -219,7 +222,7 @@ CONFIG_STATUS_DEPENDENCIES = $(newlib_basedir)/configure.host
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .o .obj
+.SUFFIXES: .S .c .o .obj
 am--refresh: Makefile
 	@:
 $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__configure_deps)
@@ -267,6 +270,18 @@ mostlyclean-compile:
 
 distclean-compile:
 	-rm -f *.tab.c
+
+.S.o:
+	$(CPPASCOMPILE) -c -o $@ $<
+
+.S.obj:
+	$(CPPASCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+lib_a-context.o: context.S
+	$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CCASFLAGS) $(CCASFLAGS) -c -o lib_a-context.o `test -f 'context.S' || echo '$(srcdir)/'`context.S
+
+lib_a-context.obj: context.S
+	$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CCASFLAGS) $(CCASFLAGS) -c -o lib_a-context.obj `if test -f 'context.S'; then $(CYGPATH_W) 'context.S'; else $(CYGPATH_W) '$(srcdir)/context.S'; fi`
 
 .c.o:
 	$(COMPILE) -c $<
@@ -484,12 +499,6 @@ lib_a-makecontext.o: makecontext.c
 lib_a-makecontext.obj: makecontext.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.obj `if test -f 'makecontext.c'; then $(CYGPATH_W) 'makecontext.c'; else $(CYGPATH_W) '$(srcdir)/makecontext.c'; fi`
 
-lib_a-context.o: context.S
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-context.o `test -f 'context.S' || echo '$(srcdir)/'`context.S
-
-lib_a-context.obj: context.S
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-context.obj `if test -f 'context.S'; then $(CYGPATH_W) 'context.S'; else $(CYGPATH_W) '$(srcdir)/context.S'; fi`
-
 lib_a-inet_ntoa.o: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.o `test -f 'inet_ntoa.c' || echo '$(srcdir)/'`inet_ntoa.c
 
@@ -673,7 +682,7 @@ install-data-local:
 	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/netinet; \
         for i in $(srcdir)/include/netinet/*.h; do \
           $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/netinet/`basename $$i`; \
-        done; \
+        done;
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
