@@ -101,7 +101,6 @@ int sys_setprio(tid_t* id, int prio);
 void NORETURN sys_exit(int arg);
 ssize_t sys_read(int fd, char* buf, size_t len);
 ssize_t sys_write(int fd, const char* buf, size_t len);
-ssize_t sys_sbrk(ssize_t incr);
 int sys_open(const char* name, int flags, int mode);
 int sys_close(int fd);
 void sys_acquire_putchar_lock(void);
@@ -145,6 +144,11 @@ void sys_yield(void);
 int sys_kill(tid_t dest, int signum);
 int sys_signal(signal_handler_t handler);
 unsigned int sys_rand();
+
+void *sys_alloc(size_t size, size_t align);
+void *sys_alloc_zeroed(size_t size, size_t align);
+void *sys_realloc(void *ptr, size_t size, size_t align, size_t new_size);
+void sys_dealloc(void *ptr, size_t size, size_t align);
 
 struct ucontext;
 typedef struct ucontext ucontext_t;

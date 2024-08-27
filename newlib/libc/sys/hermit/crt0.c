@@ -25,6 +25,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "alloc.c"
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <getopt.h>
