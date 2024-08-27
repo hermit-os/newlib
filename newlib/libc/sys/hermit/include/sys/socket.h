@@ -30,6 +30,7 @@ typedef struct sockaddr {
 #define connect               sys_connect
 #define getsockname           sys_getsockname
 #define setsockopt            sys_setsockopt
+#define getsockopt            sys_getsockopt
 #define getpeername           sys_getpeername
 #define freeaddrinfo          sys_freeaddrinfo
 #define getaddrinfo           sys_getaddrinfo
@@ -54,7 +55,7 @@ int32_t sys_setsockopt(int32_t s,
                        int32_t optname,
                        const void *optval,
                        socklen_t optlen);
-int32_t getsockopt(int32_t s, int32_t level, int32_t optname, void *optval, socklen_t *optlen);
+int32_t sys_getsockopt(int32_t s, int32_t level, int32_t optname, void *optval, socklen_t *optlen);
 int32_t sys_getpeername(int32_t s, struct sockaddr *name, socklen_t *namelen);
 void sys_freeaddrinfo(addrinfo *ai);
 int32_t sys_getaddrinfo(const uint8_t *nodename,
