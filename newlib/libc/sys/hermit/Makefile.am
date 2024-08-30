@@ -14,6 +14,10 @@ ACLOCAL_AMFLAGS = -I ../../..
 CONFIG_STATUS_DEPENDENCIES = $(newlib_basedir)/configure.host
 
 install-data-local:
+	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/arpa; \
+        for i in $(srcdir)/include/arpa/*.h; do \
+          $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/arpa/`basename $$i`; \
+        done;
 	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/netinet; \
         for i in $(srcdir)/include/netinet/*.h; do \
           $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/netinet/`basename $$i`; \
