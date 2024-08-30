@@ -8,14 +8,14 @@ extern "C" {
 #define socklen_t __socklen_t
 
 typedef struct addrinfo_t {
-  int32_t ai_flags;
-  int32_t ai_family;
-  int32_t ai_socktype;
-  int32_t ai_protocol;
-  socklen_t ai_addrlen;
-  struct sockaddr *ai_addr;
-  uint8_t *ai_canonname;
-  struct addrinfo_t *ai_next;
+    int32_t ai_flags;
+    int32_t ai_family;
+    int32_t ai_socktype;
+    int32_t ai_protocol;
+    socklen_t ai_addrlen;
+    struct sockaddr *ai_addr;
+    uint8_t *ai_canonname;
+    struct addrinfo_t *ai_next;
 } addrinfo;
 
 struct in_addr {
