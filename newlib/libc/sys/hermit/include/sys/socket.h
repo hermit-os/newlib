@@ -1,14 +1,13 @@
 #ifndef SOCKET_H
 #define SOCKET_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stddef.h>
 #include <stdint.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
 
 /* Protocol families, same as address families. */
 #define PF_INET AF_INET
@@ -140,8 +139,6 @@ typedef struct fd_set {
 	unsigned char fd_bits [(FD_SETSIZE+7)/8];
 } fd_set;
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif /* SOCKET_H */

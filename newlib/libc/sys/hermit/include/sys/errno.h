@@ -7,11 +7,10 @@
 
 /* --- from newlib's sys/errno.h --- */
 
+#include <sys/cdefs.h>
 #include <sys/reent.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 #ifndef _REENT_ONLY
 #define errno (*__errno())
@@ -172,8 +171,6 @@ extern __IMPORT int _sys_nerr;
 #define EFTYPE		79              /* Inappropriate file type or format */
 #define EILSEQ		84
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif

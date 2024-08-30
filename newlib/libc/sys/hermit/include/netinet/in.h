@@ -13,12 +13,11 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <sys/cdefs.h>
 #include <sys/types.h>
 #include <netdb.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 // Functions for converting between string and network addresses
 int inet_pton(int af, const char *src, void *dst);
@@ -58,8 +57,6 @@ int inet_pton(int af, const char *src, void *dst);
 /** 255.255.255.255 */
 #define INADDR_BROADCAST    IPADDR_BROADCAST
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif /* __NETINET_IN_H__ */

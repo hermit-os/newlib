@@ -28,11 +28,11 @@
 #ifndef __SYS_SHM_H__
 #define __SYS_SHM_H__
 
+#include <stddef.h>
+#include <sys/cdefs.h>
 #include <sys/ipc.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 struct shmid_ds {
 	struct ipc_perm		shm_perm;	/* operation perms */
@@ -55,8 +55,6 @@ void *shmat(int shmid, const void *shmaddr, int shmflg);
 int shmdt(const void *shmaddr);
 int shmctl(int shmid, int cmd, struct shmid_ds *buf);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif
