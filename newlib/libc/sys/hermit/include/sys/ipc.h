@@ -29,10 +29,9 @@
 #define __SYS_IPC_H__
 
 #include <stdlib.h>
+#include <sys/cdefs.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 #ifdef __KERNEL__
 typedef long key_t;
@@ -68,8 +67,6 @@ struct ipc_perm
 #define IPC_STAT 2	/* get ipc_perm options */
 #define IPC_INFO 3	/* see ipcs */
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif

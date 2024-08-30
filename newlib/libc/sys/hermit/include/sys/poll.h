@@ -29,10 +29,9 @@
 #define __SYS_POLL_H__
 
 #include <stdlib.h>
+#include <sys/cdefs.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 /* These are specified by iBCS2 */
 #define POLLIN          0x0001
@@ -75,8 +74,6 @@ typedef unsigned long int nfds_t;
 
 int poll(struct pollfd *fds, nfds_t nfds, int timeout);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif
