@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
+
 #define socklen_t __socklen_t
 
 typedef struct addrinfo_t {
@@ -19,7 +21,7 @@ typedef struct addrinfo_t {
 } addrinfo;
 
 struct in_addr {
-    unsigned long s_addr;  // load with inet_aton()
+    uint32_t s_addr;
 };
 
 struct sockaddr_in {
