@@ -1,11 +1,10 @@
 #ifndef NETDB_H
 #define NETDB_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #include <stdint.h>
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
 
 #define socklen_t __socklen_t
 
@@ -32,8 +31,6 @@ struct sockaddr_in {
     char sin_zero[8];
 };
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif /* NETDB_H */
