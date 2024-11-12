@@ -12,11 +12,10 @@
 
 #include <stdint.h>
 #include <signal.h>
+#include <sys/cdefs.h>
 #include <sys/types.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 typedef struct mregs {
 	uint64_t r15;
@@ -64,8 +63,6 @@ int setcontext(const ucontext_t *ucp);
 void makecontext(ucontext_t *ucp, void (*func)(), int argc, ...);
 int swapcontext(ucontext_t *oucp, const ucontext_t *ucp);
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif

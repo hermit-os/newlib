@@ -52,6 +52,9 @@
 #if !defined( SEMAPHORE_H )
 #define SEMAPHORE_H
 
+#include <sys/cdefs.h>
+#include <sys/types.h>
+
 #if defined(_POSIX_SOURCE)
 #define PTE_LEVEL 0
 /* Early POSIX */
@@ -69,10 +72,7 @@
 
 #define _POSIX_SEMAPHORES
 
-#ifdef __cplusplus
-extern "C"
-  {
-#endif				/* __cplusplus */
+__BEGIN_DECLS
 
 
     typedef struct sem_t_ * sem_t;
@@ -107,8 +107,6 @@ extern "C"
     int sem_getvalue (sem_t * sem,
                       int * sval);
 
-#ifdef __cplusplus
-  }				/* End of extern "C" */
-#endif				/* __cplusplus */
+__END_DECLS
 
 #endif				/* !SEMAPHORE_H */

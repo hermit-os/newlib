@@ -41,6 +41,7 @@
 #else
 #include <stdlib.h>
 #include <stdint.h>
+#include <sys/cdefs.h>
 #include <sys/types.h>
 
 #ifndef NORETURN
@@ -50,9 +51,7 @@
 typedef unsigned int tid_t;
 #endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 /* Opaque structures (may point to Rust structures or be used to not clash with types defined by the C library) */
 struct _HermitItimerval;
@@ -189,8 +188,6 @@ int setcontext(ucontext_t *ucp);
 #define __NR_sem_cancelablewait	28
 #define __NR_get_ticks		29
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif
