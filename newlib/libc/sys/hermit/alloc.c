@@ -10,7 +10,7 @@
 // `align` must be a power of two
 size_t _hermit_align_up(size_t addr, size_t align) {
     size_t align_mask = align - 1;
-    if (addr & align_mask == 0) {
+    if ((addr & align_mask) == 0) {
         // already aligned
         return addr;
     } else {
