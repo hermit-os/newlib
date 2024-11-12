@@ -69,24 +69,25 @@ LIBRARIES = $(noinst_LIBRARIES)
 ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
-am_lib_a_OBJECTS = lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
-	lib_a-clock_gettime.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
-	lib_a-clock_settime.$(OBJEXT) lib_a-close.$(OBJEXT) \
-	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
-	lib_a-execve.$(OBJEXT) lib_a-_exit.$(OBJEXT) \
-	lib_a-fork.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
-	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
-	lib_a-gettod.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
-	lib_a-kill.$(OBJEXT) lib_a-link.$(OBJEXT) \
-	lib_a-lseek.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-read.$(OBJEXT) \
-	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
-	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
-	lib_a-write.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT)
+am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-chown.$(OBJEXT) \
+	lib_a-clock_getres.$(OBJEXT) lib_a-clock_gettime.$(OBJEXT) \
+	lib_a-clock_nanosleep.$(OBJEXT) lib_a-clock_settime.$(OBJEXT) \
+	lib_a-close.$(OBJEXT) lib_a-environ.$(OBJEXT) \
+	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
+	lib_a-_exit.$(OBJEXT) lib_a-fork.$(OBJEXT) \
+	lib_a-fstat.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
+	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
+	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
+	lib_a-read.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
+	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
+	lib_a-signal.$(OBJEXT) lib_a-stat.$(OBJEXT) \
+	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
+	lib_a-wait.$(OBJEXT) lib_a-write.$(OBJEXT) \
+	lib_a-context.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -213,7 +214,7 @@ AUTOMAKE_OPTIONS = cygnus
 INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
-lib_a_SOURCES = chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
+lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
 ACLOCAL_AMFLAGS = -I ../../..
@@ -287,6 +288,12 @@ lib_a-context.obj: context.S
 
 .c.obj:
 	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+
+lib_a-alloc.o: alloc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-alloc.o `test -f 'alloc.c' || echo '$(srcdir)/'`alloc.c
+
+lib_a-alloc.obj: alloc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-alloc.obj `if test -f 'alloc.c'; then $(CYGPATH_W) 'alloc.c'; else $(CYGPATH_W) '$(srcdir)/alloc.c'; fi`
 
 lib_a-chown.o: chown.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-chown.o `test -f 'chown.c' || echo '$(srcdir)/'`chown.c
