@@ -8,7 +8,7 @@ __BEGIN_DECLS
 
 #define socklen_t __socklen_t
 
-typedef struct addrinfo_t {
+struct addrinfo {
     int32_t ai_flags;
     int32_t ai_family;
     int32_t ai_socktype;
@@ -17,7 +17,7 @@ typedef struct addrinfo_t {
     struct sockaddr *ai_addr;
     uint8_t *ai_canonname;
     struct addrinfo_t *ai_next;
-} addrinfo;
+};
 
 struct in_addr {
     uint32_t s_addr;
