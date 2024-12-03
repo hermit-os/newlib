@@ -39,7 +39,7 @@ typedef struct sockaddr {
 #define sendto                sys_sendto
 #define recvfrom              sys_recvfrom
 
-#define SockType uint32_t
+#define SockType int32_t
 
 
 // Define socket API functions
