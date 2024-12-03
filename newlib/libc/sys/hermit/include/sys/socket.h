@@ -39,11 +39,8 @@ typedef struct sockaddr {
 #define sendto                sys_sendto
 #define recvfrom              sys_recvfrom
 
-#define SockType int32_t
-
-
 // Define socket API functions
-int32_t sys_socket(int32_t domain, SockType type_, int32_t protocol);
+int32_t sys_socket(int32_t domain, int32_t type_, int32_t protocol);
 int32_t sys_accept(int32_t s, struct sockaddr *addr, socklen_t *addrlen);
 int32_t sys_listen(int32_t s, int32_t backlog);
 int32_t sys_bind(int32_t s, const struct sockaddr *name, socklen_t namelen);
