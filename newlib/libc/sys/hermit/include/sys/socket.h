@@ -21,61 +21,23 @@ typedef struct sockaddr {
   uint8_t sa_data[14];
 };
 
-// Define POSIX function names
-#define socket                sys_socket
-#define accept                sys_accept
-#define listen                sys_listen
-#define bind                  sys_bind
-#define connect               sys_connect
-#define getsockname           sys_getsockname
-#define setsockopt            sys_setsockopt
-#define getsockopt            sys_getsockopt
-#define getpeername           sys_getpeername
-#define freeaddrinfo          sys_freeaddrinfo
-#define getaddrinfo           sys_getaddrinfo
-#define send                  sys_send
-#define shutdown              sys_shutdown
-#define recv                  sys_recv
-#define sendto                sys_sendto
-#define recvfrom              sys_recvfrom
-
-#define SockType uint32_t
-
-
 // Define socket API functions
-int32_t sys_socket(int32_t domain, SockType type_, int32_t protocol);
-int32_t sys_accept(int32_t s, struct sockaddr *addr, socklen_t *addrlen);
-int32_t sys_listen(int32_t s, int32_t backlog);
-int32_t sys_bind(int32_t s, const struct sockaddr *name, socklen_t namelen);
-int32_t sys_connect(int32_t s, const struct sockaddr *name, socklen_t namelen);
-int32_t sys_getsockname(int32_t s, struct sockaddr *name, socklen_t *namelen);
-int32_t sys_setsockopt(int32_t s,
-                       int32_t level,
-                       int32_t optname,
-                       const void *optval,
-                       socklen_t optlen);
-int32_t sys_getsockopt(int32_t s, int32_t level, int32_t optname, void *optval, socklen_t *optlen);
-int32_t sys_getpeername(int32_t s, struct sockaddr *name, socklen_t *namelen);
-void sys_freeaddrinfo(addrinfo *ai);
-int32_t sys_getaddrinfo(const uint8_t *nodename,
-                        const uint8_t *servname,
-                        const addrinfo *hints,
-                        addrinfo **res);
-intptr_t sys_send(int32_t s, const void *mem, uintptr_t len, int32_t _flags);
-int32_t sys_shutdown(int32_t s, int32_t how);
-intptr_t sys_recv(int32_t fd, uint8_t *buf, uintptr_t len, int32_t flags);
-intptr_t sys_sendto(int32_t socket,
-                    const uint8_t *buf,
-                    uintptr_t len,
-                    int32_t flags,
-                    const struct sockaddr *addr,
-                    socklen_t addrlen);
-intptr_t sys_recvfrom(int32_t socket,
-                      uint8_t *buf,
-                      uintptr_t len,
-                      int32_t flags,
-                      struct sockaddr *addr,
-                      socklen_t *addrlen);
+int socket(int domain, int type, int protocol);
+int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int listen(int socket, int backlog);
+int bind(int socket, const struct sockaddr *address, socklen_t address_len);
+int connect(int socket, const struct sockaddr *address, socklen_t address_len);
+int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
+int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
+int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+void freeaddrinfo(struct addrinfo *ai);
+int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
+ssize_t send(int socket, const void *buffer, size_t length, int flags);
+int shutdown(int socket, int how);
+ssize_t recv(int socket, void *buffer, size_t length, int flags);
+ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
 
 // Defines from librs
 #define AF_INET 0
