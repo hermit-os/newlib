@@ -68,12 +68,15 @@ ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, st
 
 #define SOL_SOCKET 4095
 
-#define SO_BROADCAST 32
-#define SO_ERROR 4103
-#define SO_RCVTIMEO 4102
-#define SO_REUSEADDR 4
-#define SO_SNDTIMEO 4101
-#define SO_LINGER 128
+#define SO_REUSEADDR 0x0004
+#define SO_KEEPALIVE 0x0008
+#define SO_BROADCAST 0x0020
+#define SO_LINGER 0x0080
+#define SO_SNDBUF 0x1001
+#define SO_RCVBUF 0x1002
+#define SO_SNDTIMEO 0x1005
+#define SO_RCVTIMEO 0x1006
+#define SO_ERROR 0x1007
 
 #define TCP_NODELAY 1
 #define MSG_PEEK 1
