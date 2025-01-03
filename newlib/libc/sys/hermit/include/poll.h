@@ -25,8 +25,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __SYS_POLL_H__
-#define __SYS_POLL_H__
+#ifndef __POLL_H__
+#define __POLL_H__
 
 #include <stdlib.h>
 #include <sys/cdefs.h>
