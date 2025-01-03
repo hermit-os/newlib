@@ -1,6 +1,7 @@
 #ifndef SOCKET_H
 #define SOCKET_H
 
+#include <fcntl.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <netinet/in.h>
@@ -65,6 +66,7 @@ ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, st
 
 #define SOCK_DGRAM 2
 #define SOCK_STREAM 1
+#define SOCK_NONBLOCK O_NONBLOCK
 
 #define SOL_SOCKET 4095
 
