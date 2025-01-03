@@ -87,7 +87,8 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-chown.$(OBJEXT) \
 	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
 	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
 	lib_a-write.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT)
+	lib_a-makecontext.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
+	lib_a-inet_ntop.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -214,7 +215,7 @@ AUTOMAKE_OPTIONS = cygnus
 INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
-lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sched.c setitimer.c signal.c socket.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
+lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sched.c setitimer.c signal.c socket.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c net/inet_ntop.c
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
 ACLOCAL_AMFLAGS = -I ../../..
@@ -510,6 +511,12 @@ lib_a-inet_ntoa.o: inet_ntoa.c
 
 lib_a-inet_ntoa.obj: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.obj `if test -f 'inet_ntoa.c'; then $(CYGPATH_W) 'inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/inet_ntoa.c'; fi`
+
+lib_a-inet_ntop.o: net/inet_ntop.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntop.o `test -f 'net/inet_ntop.c' || echo '$(srcdir)/'`net/inet_ntop.c
+
+lib_a-inet_ntop.obj: net/inet_ntop.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntop.obj `if test -f 'net/inet_ntop.c'; then $(CYGPATH_W) 'net/inet_ntop.c'; else $(CYGPATH_W) '$(srcdir)/net/inet_ntop.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
