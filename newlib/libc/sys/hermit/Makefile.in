@@ -80,14 +80,15 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-chown.$(OBJEXT) \
 	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
 	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
 	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
-	lib_a-read.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
-	lib_a-signal.$(OBJEXT) lib_a-socket.$(OBJEXT) \
-	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
-	lib_a-write.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT)
+	lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
+	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
+	lib_a-socket.$(OBJEXT) lib_a-stat.$(OBJEXT) \
+	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
+	lib_a-wait.$(OBJEXT) lib_a-write.$(OBJEXT) \
+	lib_a-context.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -214,7 +215,7 @@ AUTOMAKE_OPTIONS = cygnus
 INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
-lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c read.c readlink.c sched.c setitimer.c signal.c socket.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
+lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c poll.c read.c readlink.c sched.c setitimer.c signal.c socket.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
 ACLOCAL_AMFLAGS = -I ../../..
@@ -420,6 +421,12 @@ lib_a-open.o: open.c
 
 lib_a-open.obj: open.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-open.obj `if test -f 'open.c'; then $(CYGPATH_W) 'open.c'; else $(CYGPATH_W) '$(srcdir)/open.c'; fi`
+
+lib_a-poll.o: poll.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.o `test -f 'poll.c' || echo '$(srcdir)/'`poll.c
+
+lib_a-poll.obj: poll.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.obj `if test -f 'poll.c'; then $(CYGPATH_W) 'poll.c'; else $(CYGPATH_W) '$(srcdir)/poll.c'; fi`
 
 lib_a-read.o: read.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-read.o `test -f 'read.c' || echo '$(srcdir)/'`read.c
