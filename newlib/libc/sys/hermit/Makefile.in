@@ -76,11 +76,12 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-chown.$(OBJEXT) \
 	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
 	lib_a-_exit.$(OBJEXT) lib_a-fork.$(OBJEXT) \
 	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
-	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
-	lib_a-gettod.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
-	lib_a-kill.$(OBJEXT) lib_a-link.$(OBJEXT) \
-	lib_a-lseek.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
+	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
+	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
+	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
+	lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
 	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
@@ -214,7 +215,7 @@ AUTOMAKE_OPTIONS = cygnus
 INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
-lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c forward.c fstat.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c poll.c read.c readlink.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
+lib_a_SOURCES = alloc.c chown.c clock_getres.c clock_gettime.c clock_nanosleep.c clock_settime.c close.c environ.c errno.c execve.c _exit.c fork.c forward.c fstat.c getaddrinfo.c getpagesize.c getpid.c gettod.c isatty.c kill.c link.c lseek.c nanosleep.c open.c poll.c read.c readlink.c sched.c setitimer.c signal.c stat.c symlink.c sysconf.c times.c unlink.c wait.c write.c context.S makecontext.c inet_ntoa.c
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
 ACLOCAL_AMFLAGS = -I ../../..
@@ -372,6 +373,12 @@ lib_a-fstat.o: fstat.c
 
 lib_a-fstat.obj: fstat.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-fstat.obj `if test -f 'fstat.c'; then $(CYGPATH_W) 'fstat.c'; else $(CYGPATH_W) '$(srcdir)/fstat.c'; fi`
+
+lib_a-getaddrinfo.o: getaddrinfo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getaddrinfo.o `test -f 'getaddrinfo.c' || echo '$(srcdir)/'`getaddrinfo.c
+
+lib_a-getaddrinfo.obj: getaddrinfo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getaddrinfo.obj `if test -f 'getaddrinfo.c'; then $(CYGPATH_W) 'getaddrinfo.c'; else $(CYGPATH_W) '$(srcdir)/getaddrinfo.c'; fi`
 
 lib_a-getpagesize.o: getpagesize.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getpagesize.o `test -f 'getpagesize.c' || echo '$(srcdir)/'`getpagesize.c

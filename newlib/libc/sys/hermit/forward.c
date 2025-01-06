@@ -57,18 +57,6 @@ int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restri
     return sys_getpeername(socket, address, address_len);
 }
 
-void sys_freeaddrinfo(struct addrinfo *ai);
-
-void freeaddrinfo(struct addrinfo *ai) {
-    return sys_freeaddrinfo(ai);
-}
-
-int sys_getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
-
-int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res) {
-    return sys_getaddrinfo(nodename, servname, hints, res);
-}
-
 ssize_t sys_send(int socket, const void *buffer, size_t length, int flags);
 
 ssize_t send(int socket, const void *buffer, size_t length, int flags) {

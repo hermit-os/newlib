@@ -180,13 +180,13 @@ impl fmt::Display for Forward<'_> {
         };
 
         let sig = self.f.sig();
-        let call = sys_f.call();
+        let sys_call = sys_f.call();
         writeln!(
             f,
             "{sys_f}
 
 {sig} {{
-    return {call};
+    return {sys_call};
 }}"
         )?;
 

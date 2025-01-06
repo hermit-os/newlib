@@ -9,8 +9,6 @@ int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restri
 int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
 int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
 int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-void freeaddrinfo(struct addrinfo *ai);
-int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
 ssize_t send(int socket, const void *buffer, size_t length, int flags);
 int shutdown(int socket, int how);
 ssize_t recv(int socket, void *buffer, size_t length, int flags);
