@@ -23,22 +23,23 @@ typedef struct sockaddr {
 };
 
 // Define socket API functions
-int socket(int domain, int type, int protocol);
 int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-int listen(int socket, int backlog);
 int bind(int socket, const struct sockaddr *address, socklen_t address_len);
 int connect(int socket, const struct sockaddr *address, socklen_t address_len);
-int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
-int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
 int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
+int listen(int socket, int backlog);
+int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
+int shutdown(int socket, int how);
+int socket(int domain, int type, int protocol);
+ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
+ssize_t recv(int socket, void *buffer, size_t length, int flags);
+ssize_t send(int socket, const void *buffer, size_t length, int flags);
+ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+
 void freeaddrinfo(struct addrinfo *ai);
 int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
-ssize_t send(int socket, const void *buffer, size_t length, int flags);
-int shutdown(int socket, int how);
-ssize_t recv(int socket, void *buffer, size_t length, int flags);
-ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
-ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
 
 // Defines from librs
 #define AF_INET 0
