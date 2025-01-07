@@ -41,9 +41,6 @@ kill (int pid, int sig)
 	return _kill_r(_REENT, pid, sig);
 }
 
-int kputs(char*);
-int kprintf(char*, ...);
-
 int
 _kill_r (struct _reent *ptr, int pid, int sig)
 {
