@@ -26,12 +26,16 @@ fn main() -> io::Result<()> {
 ",
     )?;
 
+    let mut last_empty = true;
     for line in stdin.lines() {
         let mut line = line?;
 
         if let Ok(f) = line.parse::<ItemFn>() {
+            if !last_empty {
+                writeln!(&mut stdout)?;
+            }
             let forwarding = f.forward();
-            write!(&mut stdout, "\n{forwarding}")?;
+            write!(&mut stdout, "{forwarding}")?;
         } else {
             line.push('\n');
             stdout.write_all(line.as_bytes())?;
@@ -40,6 +44,8 @@ fn main() -> io::Result<()> {
                 stderr.write_all(line.as_bytes())?;
             }
         }
+
+        last_empty = line.trim_ascii().is_empty();
     }
 
     Ok(())
