@@ -37,12 +37,6 @@
 int
 fstat (int fildes, struct stat* st)
 {
-	return _fstat_r(_REENT, fildes, st);
-}
-
-int
-_fstat_r (struct _reent* ptr, int fildes, struct stat* st)
-{
 	st->st_mode = S_IFCHR;
 	return 0;
 }

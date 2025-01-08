@@ -36,17 +36,11 @@
 int
 close (int fildes)
 {
-	return _close_r(_REENT, fildes);
-}
-
-int
-_close_r (struct _reent* ptr, int fildes)
-{
 	int ret;
 
         ret = sys_close(fildes);
 	if (ret < 0) {
-		ptr->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 

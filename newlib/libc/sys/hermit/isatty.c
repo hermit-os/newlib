@@ -35,11 +35,5 @@
 int
 isatty (int file)
 {
-	return _isatty_r(_REENT, file);
-}
-
-int
-_isatty_r (struct _reent *ptr, int file)
-{
 	return (file < 3);
 }

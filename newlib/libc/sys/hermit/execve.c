@@ -36,17 +36,11 @@
 int
 execve (const char* name, char* const* argv, char* const* env)
 {
-	return _execve_r(_REENT, name, argv, env);
-}
-
-int
-_execve_r (struct _reent* ptr, const char* name, char* const* argv, char* const* env)
-{
 	int ret;
 
 	ret = sys_execve(name, argv, env);
 	if (ret < 0) {
-		ptr->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 

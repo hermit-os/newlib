@@ -20,8 +20,6 @@ extern int *__errno (void);
 extern __IMPORT const char* const _sys_errlist[];
 extern __IMPORT int _sys_nerr;
 
-#define __errno_r(ptr) ((ptr)->_errno)
-
 /* --- end of slight redundancy (the use of struct _reent->_errno is
  *        hard-coded in perror.c so why pretend anything else could work too ? */
 

@@ -112,15 +112,3 @@ void *aligned_alloc(size_t alignment, size_t size) {
 
     return ptr;
 }
-
-void *_malloc_r(struct _reent *reent, size_t size) { return malloc(size); }
-
-void *_calloc_r(struct _reent *reent, size_t num, size_t size) {
-    return calloc(num, size);
-}
-
-void *_realloc_r(struct _reent *reent, void *ptr, size_t new_size) {
-    return realloc(ptr, new_size);
-}
-
-void _free_r(struct _reent *reent, void *ptr) { free(ptr); }

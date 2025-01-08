@@ -36,17 +36,11 @@
 _ssize_t
 write (int file, const void* ptr, size_t len)
 {
-	return _write_r(_REENT, file, ptr, len);
-}
-
-_ssize_t
-_write_r (struct _reent* r, int file, const void* ptr, size_t len)
-{
 	int ret;
 
         ret = sys_write(file, ptr, len);
 	if (ret < 0) {
-		r->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 

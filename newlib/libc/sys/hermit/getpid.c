@@ -36,17 +36,11 @@
 int
 getpid (void)
 {
-	return _getpid_r(_REENT);
-}
-
-int
-_getpid_r (struct _reent* ptr)
-{
 	int ret;
 
         ret = sys_getpid();
 	if (ret < 0) {
-		ptr->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 
