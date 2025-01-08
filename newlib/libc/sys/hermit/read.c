@@ -36,17 +36,11 @@
 _ssize_t
 read (int file, void* ptr, size_t len)
 {
-	return _read_r(_REENT, file, ptr, len);
-}
-
-_ssize_t
-_read_r (struct _reent *p, int file, void* ptr, size_t len)
-{
 	int ret;
 
 	ret = sys_read(file, ptr, len);
 	if (ret < 0) {
-		p->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 

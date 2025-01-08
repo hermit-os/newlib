@@ -37,16 +37,10 @@
 int
 gettimeofday (struct timeval* ptimeval, void* ptimezone)
 {
-	return _gettimeofday_r(_REENT, ptimeval, ptimezone);
-}
-
-int
-_gettimeofday_r (struct _reent* ptr, struct timeval* ptimeval, void* ptimezone)
-{
 	int ret = sys_gettimeofday((HermitTimeval*)ptimeval, ptimezone);
 	if (ret < 0)
 	{
-		ptr->_errno = -ret;
+		_REENT->_errno = -ret;
 		return -1;
 	}
 

@@ -41,7 +41,7 @@ _fork_r (struct _reent *ptr)
 	/* create a child process */
 	ret = sys_fork();
 	if (ret < 0) {
-		ptr->_errno = -ret;
+		// ptr->_errno = -ret;
 		ret = -1;
 	}
 

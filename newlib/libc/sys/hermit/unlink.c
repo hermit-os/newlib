@@ -35,12 +35,6 @@
 int
 unlink (const char *name)
 {
-	return _unlink_r(_REENT, name);
-}
-
-int
-_unlink_r (struct _reent *ptr, const char *name)
-{
-	ptr->_errno = ENOENT;
+	_REENT->_errno = ENOENT;
 	return -1;
 }

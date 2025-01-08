@@ -36,18 +36,12 @@
 int
 wait (int* status)
 {
-	return _wait_r(_REENT, status);
-}
-
-int
-_wait_r (struct _reent* ptr, int* status)
-{
 	int ret;
 
 	/* create a child process */
 	ret = sys_wait(status);
 	if (ret < 0) {
-		ptr->_errno = -ret;
+		_REENT->_errno = -ret;
 		ret = -1;
 	}
 

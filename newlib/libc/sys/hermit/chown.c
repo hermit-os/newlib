@@ -39,13 +39,7 @@
 int
 chown (const char* path, uid_t owner, gid_t group)
 {
-	return _chown_r(_REENT, path, owner, group);
-}
-#endif
-
-int
-_chown_r (struct _reent* ptr, const char* path, uid_t owner, gid_t group)
-{
-  ptr->_errno = ENOSYS;
+  _REENT->_errno = ENOSYS;
   return -1;
 }
+#endif

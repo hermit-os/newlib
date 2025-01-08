@@ -38,21 +38,15 @@
 int
 kill (int pid, int sig)
 {
-	return _kill_r(_REENT, pid, sig);
-}
-
-int
-_kill_r (struct _reent *ptr, int pid, int sig)
-{
 	if (sig < 0 || sig >= NSIG)
 	{
-		ptr->_errno = EINVAL;
+		_REENT->_errno = EINVAL;
 		return -1;
 	}
 
 	int ret = sys_kill(pid, sig);
 	if(ret) {
-		ptr->_errno = ret;
+		_REENT->_errno = ret;
 	}
 	return ret;
 }

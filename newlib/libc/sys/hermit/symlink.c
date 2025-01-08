@@ -36,13 +36,7 @@
 int
 symlink (const char* path1, const char* path2)
 {
-	return _symlink_r(_REENT, path1, path2);
-}
-#endif
-
-int
-_symlink_r (struct _reent* ptr, const char* path1, const char* path2)
-{
-	ptr->_errno = ENOSYS;
+	_REENT->_errno = ENOSYS;
 	return -1;
 }
+#endif
