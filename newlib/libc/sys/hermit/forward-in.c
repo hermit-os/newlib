@@ -1,4 +1,7 @@
 #include <sys/socket.h>
+#include <unistd.h>
+
+// sys/socket.h
 
 int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 int bind(int socket, const struct sockaddr *address, socklen_t address_len);
@@ -14,3 +17,7 @@ ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, st
 ssize_t recv(int socket, void *buffer, size_t length, int flags);
 ssize_t send(int socket, const void *buffer, size_t length, int flags);
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+
+// unistd.h
+
+ssize_t write(int fildes, const void *buf, size_t nbyte);

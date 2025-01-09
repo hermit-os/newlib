@@ -2,6 +2,9 @@
 
 #include <errno.h>
 #include <sys/socket.h>
+#include <unistd.h>
+
+// sys/socket.h
 
 int sys_accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 
@@ -176,6 +179,21 @@ ssize_t sys_sendto(int socket, const void *message, size_t length, int flags, co
 
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len) {
     int ret = sys_sendto(socket, message, length, flags, dest_addr, dest_len);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// unistd.h
+
+ssize_t sys_write(int fildes, const void *buf, size_t nbyte);
+
+ssize_t write(int fildes, const void *buf, size_t nbyte) {
+    int ret = sys_write(fildes, buf, nbyte);
 
     if (ret < 0) {
         errno = -ret;

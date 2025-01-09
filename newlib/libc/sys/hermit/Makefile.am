@@ -43,8 +43,7 @@ lib_a_SOURCES:= \
 	sysconf.c \
 	times.c \
 	unlink.c \
-	wait.c \
-	write.c
+	wait.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)

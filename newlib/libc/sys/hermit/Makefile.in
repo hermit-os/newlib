@@ -87,8 +87,7 @@ am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
 	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
-	lib_a-write.$(OBJEXT)
+	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -254,8 +253,7 @@ lib_a_SOURCES := \
 	sysconf.c \
 	times.c \
 	unlink.c \
-	wait.c \
-	write.c
+	wait.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
@@ -558,12 +556,6 @@ lib_a-wait.o: wait.c
 
 lib_a-wait.obj: wait.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-wait.obj `if test -f 'wait.c'; then $(CYGPATH_W) 'wait.c'; else $(CYGPATH_W) '$(srcdir)/wait.c'; fi`
-
-lib_a-write.o: write.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-write.o `test -f 'write.c' || echo '$(srcdir)/'`write.c
-
-lib_a-write.obj: write.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-write.obj `if test -f 'write.c'; then $(CYGPATH_W) 'write.c'; else $(CYGPATH_W) '$(srcdir)/write.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
