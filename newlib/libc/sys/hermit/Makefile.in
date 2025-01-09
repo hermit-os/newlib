@@ -69,26 +69,26 @@ LIBRARIES = $(noinst_LIBRARIES)
 ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
-am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-chown.$(OBJEXT) \
-	lib_a-clock_getres.$(OBJEXT) lib_a-clock_gettime.$(OBJEXT) \
-	lib_a-clock_nanosleep.$(OBJEXT) lib_a-clock_settime.$(OBJEXT) \
-	lib_a-close.$(OBJEXT) lib_a-environ.$(OBJEXT) \
+am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
+	lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
+	lib_a-clock_gettime.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
+	lib_a-clock_settime.$(OBJEXT) lib_a-close.$(OBJEXT) \
+	lib_a-context.$(OBJEXT) lib_a-environ.$(OBJEXT) \
 	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
-	lib_a-_exit.$(OBJEXT) lib_a-fork.$(OBJEXT) \
-	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
-	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
-	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-fork.$(OBJEXT) lib_a-forward.$(OBJEXT) \
+	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
+	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
+	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
 	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
 	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
-	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
-	lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
+	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
+	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
 	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
 	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
 	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
-	lib_a-write.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT)
+	lib_a-write.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -216,6 +216,7 @@ INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
 AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
 lib_a_SOURCES := \
+	_exit.c \
 	alloc.c \
 	chown.c \
 	clock_getres.c \
@@ -223,10 +224,10 @@ lib_a_SOURCES := \
 	clock_nanosleep.c \
 	clock_settime.c \
 	close.c \
+	context.S \
 	environ.c \
 	errno.c \
 	execve.c \
-	_exit.c \
 	fork.c \
 	forward.c \
 	fstat.c \
@@ -234,10 +235,12 @@ lib_a_SOURCES := \
 	getpagesize.c \
 	getpid.c \
 	gettod.c \
+	inet_ntoa.c \
 	isatty.c \
 	kill.c \
 	link.c \
 	lseek.c \
+	makecontext.c \
 	nanosleep.c \
 	open.c \
 	poll.c \
@@ -252,10 +255,7 @@ lib_a_SOURCES := \
 	times.c \
 	unlink.c \
 	wait.c \
-	write.c \
-	context.S \
-	makecontext.c \
-	inet_ntoa.c
+	write.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
@@ -331,6 +331,12 @@ lib_a-context.obj: context.S
 .c.obj:
 	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
+lib_a-_exit.o: _exit.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-_exit.o `test -f '_exit.c' || echo '$(srcdir)/'`_exit.c
+
+lib_a-_exit.obj: _exit.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-_exit.obj `if test -f '_exit.c'; then $(CYGPATH_W) '_exit.c'; else $(CYGPATH_W) '$(srcdir)/_exit.c'; fi`
+
 lib_a-alloc.o: alloc.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-alloc.o `test -f 'alloc.c' || echo '$(srcdir)/'`alloc.c
 
@@ -391,12 +397,6 @@ lib_a-execve.o: execve.c
 lib_a-execve.obj: execve.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-execve.obj `if test -f 'execve.c'; then $(CYGPATH_W) 'execve.c'; else $(CYGPATH_W) '$(srcdir)/execve.c'; fi`
 
-lib_a-_exit.o: _exit.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-_exit.o `test -f '_exit.c' || echo '$(srcdir)/'`_exit.c
-
-lib_a-_exit.obj: _exit.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-_exit.obj `if test -f '_exit.c'; then $(CYGPATH_W) '_exit.c'; else $(CYGPATH_W) '$(srcdir)/_exit.c'; fi`
-
 lib_a-fork.o: fork.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-fork.o `test -f 'fork.c' || echo '$(srcdir)/'`fork.c
 
@@ -439,6 +439,12 @@ lib_a-gettod.o: gettod.c
 lib_a-gettod.obj: gettod.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-gettod.obj `if test -f 'gettod.c'; then $(CYGPATH_W) 'gettod.c'; else $(CYGPATH_W) '$(srcdir)/gettod.c'; fi`
 
+lib_a-inet_ntoa.o: inet_ntoa.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.o `test -f 'inet_ntoa.c' || echo '$(srcdir)/'`inet_ntoa.c
+
+lib_a-inet_ntoa.obj: inet_ntoa.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.obj `if test -f 'inet_ntoa.c'; then $(CYGPATH_W) 'inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/inet_ntoa.c'; fi`
+
 lib_a-isatty.o: isatty.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-isatty.o `test -f 'isatty.c' || echo '$(srcdir)/'`isatty.c
 
@@ -462,6 +468,12 @@ lib_a-lseek.o: lseek.c
 
 lib_a-lseek.obj: lseek.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-lseek.obj `if test -f 'lseek.c'; then $(CYGPATH_W) 'lseek.c'; else $(CYGPATH_W) '$(srcdir)/lseek.c'; fi`
+
+lib_a-makecontext.o: makecontext.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.o `test -f 'makecontext.c' || echo '$(srcdir)/'`makecontext.c
+
+lib_a-makecontext.obj: makecontext.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.obj `if test -f 'makecontext.c'; then $(CYGPATH_W) 'makecontext.c'; else $(CYGPATH_W) '$(srcdir)/makecontext.c'; fi`
 
 lib_a-nanosleep.o: nanosleep.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-nanosleep.o `test -f 'nanosleep.c' || echo '$(srcdir)/'`nanosleep.c
@@ -552,18 +564,6 @@ lib_a-write.o: write.c
 
 lib_a-write.obj: write.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-write.obj `if test -f 'write.c'; then $(CYGPATH_W) 'write.c'; else $(CYGPATH_W) '$(srcdir)/write.c'; fi`
-
-lib_a-makecontext.o: makecontext.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.o `test -f 'makecontext.c' || echo '$(srcdir)/'`makecontext.c
-
-lib_a-makecontext.obj: makecontext.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.obj `if test -f 'makecontext.c'; then $(CYGPATH_W) 'makecontext.c'; else $(CYGPATH_W) '$(srcdir)/makecontext.c'; fi`
-
-lib_a-inet_ntoa.o: inet_ntoa.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.o `test -f 'inet_ntoa.c' || echo '$(srcdir)/'`inet_ntoa.c
-
-lib_a-inet_ntoa.obj: inet_ntoa.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.obj `if test -f 'inet_ntoa.c'; then $(CYGPATH_W) 'inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/inet_ntoa.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

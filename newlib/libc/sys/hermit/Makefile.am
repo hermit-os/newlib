@@ -5,6 +5,7 @@ AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
 
 lib_a_SOURCES:= \
+	_exit.c \
 	alloc.c \
 	chown.c \
 	clock_getres.c \
@@ -12,10 +13,10 @@ lib_a_SOURCES:= \
 	clock_nanosleep.c \
 	clock_settime.c \
 	close.c \
+	context.S \
 	environ.c \
 	errno.c \
 	execve.c \
-	_exit.c \
 	fork.c \
 	forward.c \
 	fstat.c \
@@ -23,10 +24,12 @@ lib_a_SOURCES:= \
 	getpagesize.c \
 	getpid.c \
 	gettod.c \
+	inet_ntoa.c \
 	isatty.c \
 	kill.c \
 	link.c \
 	lseek.c \
+	makecontext.c \
 	nanosleep.c \
 	open.c \
 	poll.c \
@@ -41,10 +44,7 @@ lib_a_SOURCES:= \
 	times.c \
 	unlink.c \
 	wait.c \
-	write.c \
-	context.S \
-	makecontext.c \
-	inet_ntoa.c
+	write.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
