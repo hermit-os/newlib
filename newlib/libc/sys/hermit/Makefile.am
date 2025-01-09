@@ -27,7 +27,6 @@ lib_a_SOURCES:= \
 	isatty.c \
 	kill.c \
 	link.c \
-	lseek.c \
 	makecontext.c \
 	nanosleep.c \
 	open.c \

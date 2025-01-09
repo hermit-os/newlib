@@ -219,6 +219,19 @@ int close(int fildes) {
     return ret;
 }
 
+off_t sys_lseek(int fildes, off_t offset, int whence);
+
+off_t lseek(int fildes, off_t offset, int whence) {
+    int ret = sys_lseek(fildes, offset, whence);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 ssize_t sys_read(int fildes, void *buf, size_t nbyte);
 
 ssize_t read(int fildes, void *buf, size_t nbyte) {
