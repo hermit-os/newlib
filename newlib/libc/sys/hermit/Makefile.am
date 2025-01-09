@@ -33,7 +33,6 @@ lib_a_SOURCES:= \
 	nanosleep.c \
 	open.c \
 	poll.c \
-	read.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \

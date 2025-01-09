@@ -190,6 +190,19 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // unistd.h
 
+ssize_t sys_read(int fildes, void *buf, size_t nbyte);
+
+ssize_t read(int fildes, void *buf, size_t nbyte) {
+    int ret = sys_read(fildes, buf, nbyte);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 ssize_t sys_write(int fildes, const void *buf, size_t nbyte);
 
 ssize_t write(int fildes, const void *buf, size_t nbyte) {

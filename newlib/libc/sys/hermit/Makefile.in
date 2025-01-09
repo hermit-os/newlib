@@ -82,7 +82,7 @@ am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
 	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
 	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
+	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) \
 	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
@@ -243,7 +243,6 @@ lib_a_SOURCES := \
 	nanosleep.c \
 	open.c \
 	poll.c \
-	read.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \
@@ -490,12 +489,6 @@ lib_a-poll.o: poll.c
 
 lib_a-poll.obj: poll.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.obj `if test -f 'poll.c'; then $(CYGPATH_W) 'poll.c'; else $(CYGPATH_W) '$(srcdir)/poll.c'; fi`
-
-lib_a-read.o: read.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-read.o `test -f 'read.c' || echo '$(srcdir)/'`read.c
-
-lib_a-read.obj: read.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-read.obj `if test -f 'read.c'; then $(CYGPATH_W) 'read.c'; else $(CYGPATH_W) '$(srcdir)/read.c'; fi`
 
 lib_a-readlink.o: readlink.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-readlink.o `test -f 'readlink.c' || echo '$(srcdir)/'`readlink.c
