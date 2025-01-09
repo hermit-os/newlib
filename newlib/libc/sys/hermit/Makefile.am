@@ -12,7 +12,6 @@ lib_a_SOURCES:= \
 	clock_gettime.c \
 	clock_nanosleep.c \
 	clock_settime.c \
-	close.c \
 	context.S \
 	environ.c \
 	errno.c \

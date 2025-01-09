@@ -206,6 +206,19 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // unistd.h
 
+int sys_close(int fildes);
+
+int close(int fildes) {
+    int ret = sys_close(fildes);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 ssize_t sys_read(int fildes, void *buf, size_t nbyte);
 
 ssize_t read(int fildes, void *buf, size_t nbyte) {

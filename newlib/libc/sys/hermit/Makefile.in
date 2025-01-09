@@ -72,22 +72,21 @@ lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
 	lib_a-clock_gettime.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
-	lib_a-clock_settime.$(OBJEXT) lib_a-close.$(OBJEXT) \
-	lib_a-context.$(OBJEXT) lib_a-environ.$(OBJEXT) \
-	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
-	lib_a-fork.$(OBJEXT) lib_a-forward.$(OBJEXT) \
-	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
-	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
-	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
-	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
-	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
-	lib_a-signal.$(OBJEXT) lib_a-stat.$(OBJEXT) \
-	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
-	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
-	lib_a-wait.$(OBJEXT)
+	lib_a-clock_settime.$(OBJEXT) lib_a-context.$(OBJEXT) \
+	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
+	lib_a-execve.$(OBJEXT) lib_a-fork.$(OBJEXT) \
+	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
+	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
+	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
+	lib_a-kill.$(OBJEXT) lib_a-link.$(OBJEXT) \
+	lib_a-lseek.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
+	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
+	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
+	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
+	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -222,7 +221,6 @@ lib_a_SOURCES := \
 	clock_gettime.c \
 	clock_nanosleep.c \
 	clock_settime.c \
-	close.c \
 	context.S \
 	environ.c \
 	errno.c \
@@ -368,12 +366,6 @@ lib_a-clock_settime.o: clock_settime.c
 
 lib_a-clock_settime.obj: clock_settime.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_settime.obj `if test -f 'clock_settime.c'; then $(CYGPATH_W) 'clock_settime.c'; else $(CYGPATH_W) '$(srcdir)/clock_settime.c'; fi`
-
-lib_a-close.o: close.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-close.o `test -f 'close.c' || echo '$(srcdir)/'`close.c
-
-lib_a-close.obj: close.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-close.obj `if test -f 'close.c'; then $(CYGPATH_W) 'close.c'; else $(CYGPATH_W) '$(srcdir)/close.c'; fi`
 
 lib_a-environ.o: environ.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-environ.o `test -f 'environ.c' || echo '$(srcdir)/'`environ.c
