@@ -1,5 +1,10 @@
+#include <poll.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
+// poll.h
+
+int poll(struct pollfd *fds, nfds_t nfds, int timeout);
 
 // sys/socket.h
 

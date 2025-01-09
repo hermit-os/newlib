@@ -32,7 +32,6 @@ lib_a_SOURCES:= \
 	makecontext.c \
 	nanosleep.c \
 	open.c \
-	poll.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \

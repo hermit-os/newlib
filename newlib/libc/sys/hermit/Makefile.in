@@ -82,12 +82,12 @@ am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
 	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
 	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) \
-	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
-	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
+	lib_a-open.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
+	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
+	lib_a-signal.$(OBJEXT) lib_a-stat.$(OBJEXT) \
+	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
+	lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -242,7 +242,6 @@ lib_a_SOURCES := \
 	makecontext.c \
 	nanosleep.c \
 	open.c \
-	poll.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \
@@ -483,12 +482,6 @@ lib_a-open.o: open.c
 
 lib_a-open.obj: open.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-open.obj `if test -f 'open.c'; then $(CYGPATH_W) 'open.c'; else $(CYGPATH_W) '$(srcdir)/open.c'; fi`
-
-lib_a-poll.o: poll.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.o `test -f 'poll.c' || echo '$(srcdir)/'`poll.c
-
-lib_a-poll.obj: poll.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.obj `if test -f 'poll.c'; then $(CYGPATH_W) 'poll.c'; else $(CYGPATH_W) '$(srcdir)/poll.c'; fi`
 
 lib_a-readlink.o: readlink.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-readlink.o `test -f 'readlink.c' || echo '$(srcdir)/'`readlink.c
