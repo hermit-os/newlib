@@ -70,9 +70,7 @@ ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
-	lib_a-chown.$(OBJEXT) lib_a-clock_getres.$(OBJEXT) \
-	lib_a-clock_gettime.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
-	lib_a-clock_settime.$(OBJEXT) lib_a-close.$(OBJEXT) \
+	lib_a-chown.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
 	lib_a-context.$(OBJEXT) lib_a-environ.$(OBJEXT) \
 	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
 	lib_a-fork.$(OBJEXT) lib_a-forward.$(OBJEXT) \
@@ -80,15 +78,13 @@ am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
 	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
 	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
-	lib_a-link.$(OBJEXT) lib_a-lseek.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-poll.$(OBJEXT) lib_a-read.$(OBJEXT) \
+	lib_a-link.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
 	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
 	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT) \
-	lib_a-write.$(OBJEXT)
+	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -219,11 +215,7 @@ lib_a_SOURCES := \
 	_exit.c \
 	alloc.c \
 	chown.c \
-	clock_getres.c \
-	clock_gettime.c \
 	clock_nanosleep.c \
-	clock_settime.c \
-	close.c \
 	context.S \
 	environ.c \
 	errno.c \
@@ -239,12 +231,9 @@ lib_a_SOURCES := \
 	isatty.c \
 	kill.c \
 	link.c \
-	lseek.c \
 	makecontext.c \
 	nanosleep.c \
 	open.c \
-	poll.c \
-	read.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \
@@ -254,8 +243,7 @@ lib_a_SOURCES := \
 	sysconf.c \
 	times.c \
 	unlink.c \
-	wait.c \
-	write.c
+	wait.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
@@ -349,35 +337,11 @@ lib_a-chown.o: chown.c
 lib_a-chown.obj: chown.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-chown.obj `if test -f 'chown.c'; then $(CYGPATH_W) 'chown.c'; else $(CYGPATH_W) '$(srcdir)/chown.c'; fi`
 
-lib_a-clock_getres.o: clock_getres.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_getres.o `test -f 'clock_getres.c' || echo '$(srcdir)/'`clock_getres.c
-
-lib_a-clock_getres.obj: clock_getres.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_getres.obj `if test -f 'clock_getres.c'; then $(CYGPATH_W) 'clock_getres.c'; else $(CYGPATH_W) '$(srcdir)/clock_getres.c'; fi`
-
-lib_a-clock_gettime.o: clock_gettime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_gettime.o `test -f 'clock_gettime.c' || echo '$(srcdir)/'`clock_gettime.c
-
-lib_a-clock_gettime.obj: clock_gettime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_gettime.obj `if test -f 'clock_gettime.c'; then $(CYGPATH_W) 'clock_gettime.c'; else $(CYGPATH_W) '$(srcdir)/clock_gettime.c'; fi`
-
 lib_a-clock_nanosleep.o: clock_nanosleep.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_nanosleep.o `test -f 'clock_nanosleep.c' || echo '$(srcdir)/'`clock_nanosleep.c
 
 lib_a-clock_nanosleep.obj: clock_nanosleep.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_nanosleep.obj `if test -f 'clock_nanosleep.c'; then $(CYGPATH_W) 'clock_nanosleep.c'; else $(CYGPATH_W) '$(srcdir)/clock_nanosleep.c'; fi`
-
-lib_a-clock_settime.o: clock_settime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_settime.o `test -f 'clock_settime.c' || echo '$(srcdir)/'`clock_settime.c
-
-lib_a-clock_settime.obj: clock_settime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_settime.obj `if test -f 'clock_settime.c'; then $(CYGPATH_W) 'clock_settime.c'; else $(CYGPATH_W) '$(srcdir)/clock_settime.c'; fi`
-
-lib_a-close.o: close.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-close.o `test -f 'close.c' || echo '$(srcdir)/'`close.c
-
-lib_a-close.obj: close.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-close.obj `if test -f 'close.c'; then $(CYGPATH_W) 'close.c'; else $(CYGPATH_W) '$(srcdir)/close.c'; fi`
 
 lib_a-environ.o: environ.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-environ.o `test -f 'environ.c' || echo '$(srcdir)/'`environ.c
@@ -463,12 +427,6 @@ lib_a-link.o: link.c
 lib_a-link.obj: link.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-link.obj `if test -f 'link.c'; then $(CYGPATH_W) 'link.c'; else $(CYGPATH_W) '$(srcdir)/link.c'; fi`
 
-lib_a-lseek.o: lseek.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-lseek.o `test -f 'lseek.c' || echo '$(srcdir)/'`lseek.c
-
-lib_a-lseek.obj: lseek.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-lseek.obj `if test -f 'lseek.c'; then $(CYGPATH_W) 'lseek.c'; else $(CYGPATH_W) '$(srcdir)/lseek.c'; fi`
-
 lib_a-makecontext.o: makecontext.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.o `test -f 'makecontext.c' || echo '$(srcdir)/'`makecontext.c
 
@@ -486,18 +444,6 @@ lib_a-open.o: open.c
 
 lib_a-open.obj: open.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-open.obj `if test -f 'open.c'; then $(CYGPATH_W) 'open.c'; else $(CYGPATH_W) '$(srcdir)/open.c'; fi`
-
-lib_a-poll.o: poll.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.o `test -f 'poll.c' || echo '$(srcdir)/'`poll.c
-
-lib_a-poll.obj: poll.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-poll.obj `if test -f 'poll.c'; then $(CYGPATH_W) 'poll.c'; else $(CYGPATH_W) '$(srcdir)/poll.c'; fi`
-
-lib_a-read.o: read.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-read.o `test -f 'read.c' || echo '$(srcdir)/'`read.c
-
-lib_a-read.obj: read.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-read.obj `if test -f 'read.c'; then $(CYGPATH_W) 'read.c'; else $(CYGPATH_W) '$(srcdir)/read.c'; fi`
 
 lib_a-readlink.o: readlink.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-readlink.o `test -f 'readlink.c' || echo '$(srcdir)/'`readlink.c
@@ -558,12 +504,6 @@ lib_a-wait.o: wait.c
 
 lib_a-wait.obj: wait.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-wait.obj `if test -f 'wait.c'; then $(CYGPATH_W) 'wait.c'; else $(CYGPATH_W) '$(srcdir)/wait.c'; fi`
-
-lib_a-write.o: write.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-write.o `test -f 'write.c' || echo '$(srcdir)/'`write.c
-
-lib_a-write.obj: write.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-write.obj `if test -f 'write.c'; then $(CYGPATH_W) 'write.c'; else $(CYGPATH_W) '$(srcdir)/write.c'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

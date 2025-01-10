@@ -8,11 +8,7 @@ lib_a_SOURCES:= \
 	_exit.c \
 	alloc.c \
 	chown.c \
-	clock_getres.c \
-	clock_gettime.c \
 	clock_nanosleep.c \
-	clock_settime.c \
-	close.c \
 	context.S \
 	environ.c \
 	errno.c \
@@ -28,12 +24,9 @@ lib_a_SOURCES:= \
 	isatty.c \
 	kill.c \
 	link.c \
-	lseek.c \
 	makecontext.c \
 	nanosleep.c \
 	open.c \
-	poll.c \
-	read.c \
 	readlink.c \
 	sched.c \
 	setitimer.c \
@@ -43,8 +36,7 @@ lib_a_SOURCES:= \
 	sysconf.c \
 	times.c \
 	unlink.c \
-	wait.c \
-	write.c
+	wait.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
