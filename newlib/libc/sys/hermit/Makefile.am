@@ -7,7 +7,6 @@ noinst_LIBRARIES = lib.a
 lib_a_SOURCES:= \
 	_exit.c \
 	alloc.c \
-	chown.c \
 	clock_nanosleep.c \
 	context.S \
 	environ.c \
@@ -35,6 +34,7 @@ lib_a_SOURCES:= \
 	symlink.c \
 	sysconf.c \
 	times.c \
+	unistd.c \
 	unlink.c \
 	wait.c
 
