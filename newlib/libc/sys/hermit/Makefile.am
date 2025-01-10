@@ -9,7 +9,6 @@ lib_a_SOURCES:= \
 	alloc.c \
 	chown.c \
 	clock_nanosleep.c \
-	clock_settime.c \
 	context.S \
 	environ.c \
 	errno.c \
