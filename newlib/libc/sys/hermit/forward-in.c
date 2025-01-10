@@ -27,6 +27,7 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 // time.h
 
 int clock_getres(clockid_t clock_id, struct timespec *res);
+int clock_gettime(clockid_t clock_id, struct timespec *tp);
 
 // unistd.h
 

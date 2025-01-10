@@ -220,6 +220,19 @@ int clock_getres(clockid_t clock_id, struct timespec *res) {
     return ret;
 }
 
+int sys_clock_gettime(clockid_t clock_id, struct timespec *tp);
+
+int clock_gettime(clockid_t clock_id, struct timespec *tp) {
+    int ret = sys_clock_gettime(clock_id, tp);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 // unistd.h
 
 int sys_close(int fildes);

@@ -70,22 +70,22 @@ ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
-	lib_a-chown.$(OBJEXT) lib_a-clock_gettime.$(OBJEXT) \
-	lib_a-clock_nanosleep.$(OBJEXT) lib_a-clock_settime.$(OBJEXT) \
-	lib_a-context.$(OBJEXT) lib_a-environ.$(OBJEXT) \
-	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
-	lib_a-fork.$(OBJEXT) lib_a-forward.$(OBJEXT) \
-	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
-	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
-	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
-	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
-	lib_a-link.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
-	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
-	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
-	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-times.$(OBJEXT) \
-	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
+	lib_a-chown.$(OBJEXT) lib_a-clock_nanosleep.$(OBJEXT) \
+	lib_a-clock_settime.$(OBJEXT) lib_a-context.$(OBJEXT) \
+	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
+	lib_a-execve.$(OBJEXT) lib_a-fork.$(OBJEXT) \
+	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
+	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
+	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
+	lib_a-kill.$(OBJEXT) lib_a-link.$(OBJEXT) \
+	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
+	lib_a-open.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
+	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
+	lib_a-signal.$(OBJEXT) lib_a-stat.$(OBJEXT) \
+	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-times.$(OBJEXT) lib_a-unlink.$(OBJEXT) \
+	lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -216,7 +216,6 @@ lib_a_SOURCES := \
 	_exit.c \
 	alloc.c \
 	chown.c \
-	clock_gettime.c \
 	clock_nanosleep.c \
 	clock_settime.c \
 	context.S \
@@ -339,12 +338,6 @@ lib_a-chown.o: chown.c
 
 lib_a-chown.obj: chown.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-chown.obj `if test -f 'chown.c'; then $(CYGPATH_W) 'chown.c'; else $(CYGPATH_W) '$(srcdir)/chown.c'; fi`
-
-lib_a-clock_gettime.o: clock_gettime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_gettime.o `test -f 'clock_gettime.c' || echo '$(srcdir)/'`clock_gettime.c
-
-lib_a-clock_gettime.obj: clock_gettime.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_gettime.obj `if test -f 'clock_gettime.c'; then $(CYGPATH_W) 'clock_gettime.c'; else $(CYGPATH_W) '$(srcdir)/clock_gettime.c'; fi`
 
 lib_a-clock_nanosleep.o: clock_nanosleep.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_nanosleep.o `test -f 'clock_nanosleep.c' || echo '$(srcdir)/'`clock_nanosleep.c

@@ -8,7 +8,6 @@ lib_a_SOURCES:= \
 	_exit.c \
 	alloc.c \
 	chown.c \
-	clock_gettime.c \
 	clock_nanosleep.c \
 	clock_settime.c \
 	context.S \
