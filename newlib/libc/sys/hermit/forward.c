@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <poll.h>
 #include <sys/socket.h>
+#include <time.h>
 #include <unistd.h>
 
 // poll.h
@@ -195,6 +196,21 @@ ssize_t sys_sendto(int socket, const void *message, size_t length, int flags, co
 
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len) {
     int ret = sys_sendto(socket, message, length, flags, dest_addr, dest_len);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// time.h
+
+int sys_clock_getres(clockid_t clock_id, struct timespec *res);
+
+int clock_getres(clockid_t clock_id, struct timespec *res) {
+    int ret = sys_clock_getres(clock_id, res);
 
     if (ret < 0) {
         errno = -ret;
