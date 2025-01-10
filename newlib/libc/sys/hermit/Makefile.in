@@ -70,19 +70,19 @@ ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
-	lib_a-clock_nanosleep.$(OBJEXT) lib_a-context.$(OBJEXT) \
-	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
-	lib_a-execve.$(OBJEXT) lib_a-fork.$(OBJEXT) \
-	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
-	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
-	lib_a-getpid.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
-	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
-	lib_a-kill.$(OBJEXT) lib_a-link.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-readlink.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
-	lib_a-signal.$(OBJEXT) lib_a-stat.$(OBJEXT) \
-	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-context.$(OBJEXT) lib_a-environ.$(OBJEXT) \
+	lib_a-errno.$(OBJEXT) lib_a-execve.$(OBJEXT) \
+	lib_a-fork.$(OBJEXT) lib_a-forward.$(OBJEXT) \
+	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
+	lib_a-getpagesize.$(OBJEXT) lib_a-getpid.$(OBJEXT) \
+	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
+	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
+	lib_a-link.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
+	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
+	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
+	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
 	lib_a-times.$(OBJEXT) lib_a-unistd.$(OBJEXT) \
 	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
@@ -214,7 +214,6 @@ noinst_LIBRARIES = lib.a
 lib_a_SOURCES := \
 	_exit.c \
 	alloc.c \
-	clock_nanosleep.c \
 	context.S \
 	environ.c \
 	errno.c \
@@ -240,6 +239,7 @@ lib_a_SOURCES := \
 	stat.c \
 	symlink.c \
 	sysconf.c \
+	time.c \
 	times.c \
 	unistd.c \
 	unlink.c \
@@ -330,12 +330,6 @@ lib_a-alloc.o: alloc.c
 
 lib_a-alloc.obj: alloc.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-alloc.obj `if test -f 'alloc.c'; then $(CYGPATH_W) 'alloc.c'; else $(CYGPATH_W) '$(srcdir)/alloc.c'; fi`
-
-lib_a-clock_nanosleep.o: clock_nanosleep.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_nanosleep.o `test -f 'clock_nanosleep.c' || echo '$(srcdir)/'`clock_nanosleep.c
-
-lib_a-clock_nanosleep.obj: clock_nanosleep.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-clock_nanosleep.obj `if test -f 'clock_nanosleep.c'; then $(CYGPATH_W) 'clock_nanosleep.c'; else $(CYGPATH_W) '$(srcdir)/clock_nanosleep.c'; fi`
 
 lib_a-environ.o: environ.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-environ.o `test -f 'environ.c' || echo '$(srcdir)/'`environ.c
@@ -480,6 +474,12 @@ lib_a-sysconf.o: sysconf.c
 
 lib_a-sysconf.obj: sysconf.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sysconf.obj `if test -f 'sysconf.c'; then $(CYGPATH_W) 'sysconf.c'; else $(CYGPATH_W) '$(srcdir)/sysconf.c'; fi`
+
+lib_a-time.o: time.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-time.o `test -f 'time.c' || echo '$(srcdir)/'`time.c
+
+lib_a-time.obj: time.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-time.obj `if test -f 'time.c'; then $(CYGPATH_W) 'time.c'; else $(CYGPATH_W) '$(srcdir)/time.c'; fi`
 
 lib_a-times.o: times.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-times.o `test -f 'times.c' || echo '$(srcdir)/'`times.c
