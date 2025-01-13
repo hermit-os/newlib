@@ -1,4 +1,3 @@
-#include <reent.h>
 #include <stdalign.h>
 #include <stddef.h>
 #include <sys/param.h>
