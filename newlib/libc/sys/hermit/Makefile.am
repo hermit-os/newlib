@@ -30,11 +30,11 @@ lib_a_SOURCES:= \
 	setitimer.c \
 	signal.c \
 	stat.c \
+	stub.c \
 	symlink.c \
 	sysconf.c \
 	time.c \
 	times.c \
-	unistd.c \
 	unlink.c \
 	wait.c
 

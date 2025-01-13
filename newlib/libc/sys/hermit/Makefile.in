@@ -81,9 +81,9 @@ am_lib_a_OBJECTS = lib_a-_exit.$(OBJEXT) lib_a-alloc.$(OBJEXT) \
 	lib_a-nanosleep.$(OBJEXT) lib_a-open.$(OBJEXT) \
 	lib_a-readlink.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-signal.$(OBJEXT) \
-	lib_a-stat.$(OBJEXT) lib_a-symlink.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
-	lib_a-times.$(OBJEXT) lib_a-unistd.$(OBJEXT) \
+	lib_a-stat.$(OBJEXT) lib_a-stub.$(OBJEXT) \
+	lib_a-symlink.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-time.$(OBJEXT) lib_a-times.$(OBJEXT) \
 	lib_a-unlink.$(OBJEXT) lib_a-wait.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -237,11 +237,11 @@ lib_a_SOURCES := \
 	setitimer.c \
 	signal.c \
 	stat.c \
+	stub.c \
 	symlink.c \
 	sysconf.c \
 	time.c \
 	times.c \
-	unistd.c \
 	unlink.c \
 	wait.c
 
@@ -463,6 +463,12 @@ lib_a-stat.o: stat.c
 lib_a-stat.obj: stat.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stat.obj `if test -f 'stat.c'; then $(CYGPATH_W) 'stat.c'; else $(CYGPATH_W) '$(srcdir)/stat.c'; fi`
 
+lib_a-stub.o: stub.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stub.o `test -f 'stub.c' || echo '$(srcdir)/'`stub.c
+
+lib_a-stub.obj: stub.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stub.obj `if test -f 'stub.c'; then $(CYGPATH_W) 'stub.c'; else $(CYGPATH_W) '$(srcdir)/stub.c'; fi`
+
 lib_a-symlink.o: symlink.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-symlink.o `test -f 'symlink.c' || echo '$(srcdir)/'`symlink.c
 
@@ -486,12 +492,6 @@ lib_a-times.o: times.c
 
 lib_a-times.obj: times.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-times.obj `if test -f 'times.c'; then $(CYGPATH_W) 'times.c'; else $(CYGPATH_W) '$(srcdir)/times.c'; fi`
-
-lib_a-unistd.o: unistd.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-unistd.o `test -f 'unistd.c' || echo '$(srcdir)/'`unistd.c
-
-lib_a-unistd.obj: unistd.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-unistd.obj `if test -f 'unistd.c'; then $(CYGPATH_W) 'unistd.c'; else $(CYGPATH_W) '$(srcdir)/unistd.c'; fi`
 
 lib_a-unlink.o: unlink.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-unlink.o `test -f 'unlink.c' || echo '$(srcdir)/'`unlink.c
