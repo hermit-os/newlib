@@ -10,7 +10,37 @@ int chown(const char *path, uid_t owner, gid_t group) {
     return -1;
 }
 
+int execl(const char *path, const char *arg0, ... /*, (char *)0 */) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int execle(const char *path, const char *arg0, ... /*, (char *)0, char *const envp[]*/) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int execlp(const char *file, const char *arg0, ... /*, (char *)0 */) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int execv(const char *path, char *const argv[]) {
+    errno = ENOSYS;
+    return -1;
+}
+
 int execve(const char *path, char *const argv[], char *const envp[]) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int execvp(const char *file, char *const argv[]) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int fexecve(int fd, char *const argv[], char *const envp[]) {
     errno = ENOSYS;
     return -1;
 }
