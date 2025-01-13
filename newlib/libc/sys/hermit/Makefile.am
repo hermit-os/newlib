@@ -10,7 +10,6 @@ lib_a_SOURCES:= \
 	context.S \
 	environ.c \
 	errno.c \
-	fork.c \
 	forward.c \
 	fstat.c \
 	getaddrinfo.c \

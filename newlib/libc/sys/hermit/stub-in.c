@@ -10,3 +10,4 @@ int execv(const char *path, char *const argv[]);
 int execve(const char *path, char *const argv[], char *const envp[]);
 int execvp(const char *file, char *const argv[]);
 int fexecve(int fd, char *const argv[], char *const envp[]);
+pid_t fork(void);

@@ -44,3 +44,8 @@ int fexecve(int fd, char *const argv[], char *const envp[]) {
     errno = ENOSYS;
     return -1;
 }
+
+pid_t fork(void) {
+    errno = ENOSYS;
+    return -1;
+}
