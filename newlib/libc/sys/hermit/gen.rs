@@ -102,6 +102,7 @@ impl ItemFn {
     }
 }
 
+#[must_use]
 pub struct Sig<'a> {
     f: &'a ItemFn,
 }
@@ -178,6 +179,7 @@ impl ItemFn {
     }
 }
 
+#[must_use]
 pub struct Forward<'a> {
     f: &'a ItemFn,
 }
