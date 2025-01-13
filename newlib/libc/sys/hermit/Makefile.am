@@ -28,8 +28,7 @@ lib_a_SOURCES:= \
 	stat.c \
 	stub.c \
 	sysconf.c \
-	time.c \
-	wait.c
+	time.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)

@@ -1,9 +1,14 @@
 #include <sys/times.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 // sys/times.h
 
 clock_t times(struct tms *buffer);
+
+// sys/wait.h
+
+pid_t wait(int *stat_loc);
 
 // unistd.h
 

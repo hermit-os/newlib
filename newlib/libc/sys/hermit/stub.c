@@ -2,11 +2,19 @@
 
 #include <errno.h>
 #include <sys/times.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 // sys/times.h
 
 clock_t times(struct tms *buffer) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// sys/wait.h
+
+pid_t wait(int *stat_loc) {
     errno = ENOSYS;
     return -1;
 }
