@@ -1,5 +1,6 @@
 #include <stdalign.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <sys/param.h>
 
 void *sys_alloc(size_t size, size_t align);
