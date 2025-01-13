@@ -73,7 +73,7 @@ impl FromStr for ItemFn {
 
         let inputs = s
             .split(", ")
-            .map(|fn_arg| fn_arg.parse())
+            .map(str::parse)
             .collect::<Result<_, _>>()
             .map_err(|_| ParseItemFnError)?;
 
