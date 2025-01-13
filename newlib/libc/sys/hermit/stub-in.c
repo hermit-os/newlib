@@ -1,4 +1,9 @@
+#include <sys/times.h>
 #include <unistd.h>
+
+// sys/times.h
+
+clock_t times(struct tms *buffer);
 
 // unistd.h
 

@@ -29,7 +29,6 @@ lib_a_SOURCES:= \
 	stub.c \
 	sysconf.c \
 	time.c \
-	times.c \
 	unlink.c \
 	wait.c
 
