@@ -10,8 +10,6 @@ lib_a_SOURCES:= \
 	context.S \
 	environ.c \
 	errno.c \
-	execve.c \
-	fork.c \
 	forward.c \
 	fstat.c \
 	getaddrinfo.c \
@@ -21,22 +19,16 @@ lib_a_SOURCES:= \
 	inet_ntoa.c \
 	isatty.c \
 	kill.c \
-	link.c \
 	makecontext.c \
 	nanosleep.c \
 	open.c \
-	readlink.c \
 	sched.c \
 	setitimer.c \
 	signal.c \
 	stat.c \
 	stub.c \
-	symlink.c \
 	sysconf.c \
-	time.c \
-	times.c \
-	unlink.c \
-	wait.c
+	time.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)

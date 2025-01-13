@@ -302,6 +302,13 @@ impl FromStr for TypeIdent {
     type Err = ParseTypeIdentError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s == "void" {
+            return Ok(Self {
+                ty: "void".to_string(),
+                ident: "".to_string(),
+            })
+        }
+
         let (ty, ident) = s
             .rsplit_once_inclusive([' ', '*'])
             .ok_or(ParseTypeIdentError)?;
@@ -321,7 +328,7 @@ impl fmt::Display for TypeIdent {
         let Self { ty, ident } = self;
 
         f.write_str(ty)?;
-        if !ty.ends_with('*') {
+        if ty != "void" && !ty.ends_with('*') {
             f.write_char(' ')?;
         }
         f.write_str(ident)?;
