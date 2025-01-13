@@ -13,3 +13,4 @@ int fexecve(int fd, char *const argv[], char *const envp[]);
 pid_t fork(void);
 int link(const char *path1, const char *path2);
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize);
+int symlink(const char *path1, const char *path2);

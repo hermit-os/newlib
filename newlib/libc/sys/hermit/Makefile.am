@@ -27,7 +27,6 @@ lib_a_SOURCES:= \
 	signal.c \
 	stat.c \
 	stub.c \
-	symlink.c \
 	sysconf.c \
 	time.c \
 	times.c \
