@@ -144,11 +144,6 @@ int sys_kill(tid_t dest, int signum);
 int sys_signal(signal_handler_t handler);
 unsigned int sys_rand();
 
-void *sys_alloc(size_t size, size_t align);
-void *sys_alloc_zeroed(size_t size, size_t align);
-void *sys_realloc(void *ptr, size_t size, size_t align, size_t new_size);
-void sys_dealloc(void *ptr, size_t size, size_t align);
-
 struct ucontext;
 typedef struct ucontext ucontext_t;
 

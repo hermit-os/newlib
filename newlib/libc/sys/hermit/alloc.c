@@ -2,7 +2,10 @@
 #include <stddef.h>
 #include <sys/param.h>
 
-#include "syscall.h"
+void *sys_alloc(size_t size, size_t align);
+void *sys_alloc_zeroed(size_t size, size_t align);
+void *sys_realloc(void *ptr, size_t size, size_t align, size_t new_size);
+void sys_dealloc(void *ptr, size_t size, size_t align);
 
 void *malloc(size_t size) { return aligned_alloc(alignof(max_align_t), size); }
 
