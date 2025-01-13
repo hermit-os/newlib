@@ -29,7 +29,6 @@ lib_a_SOURCES:= \
 	stub.c \
 	sysconf.c \
 	time.c \
-	unlink.c \
 	wait.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)

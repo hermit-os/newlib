@@ -72,3 +72,8 @@ int symlink(const char *path1, const char *path2) {
     errno = ENOSYS;
     return -1;
 }
+
+int unlink(const char *path) {
+    errno = ENOSYS;
+    return -1;
+}
