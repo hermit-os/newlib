@@ -5,7 +5,6 @@ AM_CCASFLAGS = $(INCLUDES)
 noinst_LIBRARIES = lib.a
 
 lib_a_SOURCES:= \
-	_exit.c \
 	alloc.c \
 	context.S \
 	environ.c \
@@ -28,7 +27,8 @@ lib_a_SOURCES:= \
 	stat.c \
 	stub.c \
 	sysconf.c \
-	time.c
+	time.c \
+	unistd.c
 
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 lib_a_CFLAGS = $(AM_CFLAGS)
