@@ -49,3 +49,8 @@ pid_t fork(void) {
     errno = ENOSYS;
     return -1;
 }
+
+int link(const char *path1, const char *path2) {
+    errno = ENOSYS;
+    return -1;
+}

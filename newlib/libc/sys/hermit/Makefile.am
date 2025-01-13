@@ -19,7 +19,6 @@ lib_a_SOURCES:= \
 	inet_ntoa.c \
 	isatty.c \
 	kill.c \
-	link.c \
 	makecontext.c \
 	nanosleep.c \
 	open.c \

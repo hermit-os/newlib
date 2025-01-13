@@ -11,3 +11,4 @@ int execve(const char *path, char *const argv[], char *const envp[]);
 int execvp(const char *file, char *const argv[]);
 int fexecve(int fd, char *const argv[], char *const envp[]);
 pid_t fork(void);
+int link(const char *path1, const char *path2);
