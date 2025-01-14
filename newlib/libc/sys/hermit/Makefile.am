@@ -23,7 +23,6 @@ lib_a_SOURCES:= \
 	open.c \
 	sched.c \
 	setitimer.c \
-	signal.c \
 	stat.c \
 	stub.c \
 	sysconf.c \
