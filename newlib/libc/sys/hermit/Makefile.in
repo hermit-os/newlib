@@ -74,11 +74,11 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
 	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
 	lib_a-getpagesize.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
-	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
-	lib_a-stub.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
-	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
+	lib_a-isatty.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-setitimer.$(OBJEXT) lib_a-stub.$(OBJEXT) \
+	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
+	lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -217,7 +217,6 @@ lib_a_SOURCES := \
 	getpagesize.c \
 	inet_ntoa.c \
 	isatty.c \
-	kill.c \
 	makecontext.c \
 	nanosleep.c \
 	sched.c \
@@ -360,12 +359,6 @@ lib_a-isatty.o: isatty.c
 
 lib_a-isatty.obj: isatty.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-isatty.obj `if test -f 'isatty.c'; then $(CYGPATH_W) 'isatty.c'; else $(CYGPATH_W) '$(srcdir)/isatty.c'; fi`
-
-lib_a-kill.o: kill.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-kill.o `test -f 'kill.c' || echo '$(srcdir)/'`kill.c
-
-lib_a-kill.obj: kill.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-kill.obj `if test -f 'kill.c'; then $(CYGPATH_W) 'kill.c'; else $(CYGPATH_W) '$(srcdir)/kill.c'; fi`
 
 lib_a-makecontext.o: makecontext.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.o `test -f 'makecontext.c' || echo '$(srcdir)/'`makecontext.c

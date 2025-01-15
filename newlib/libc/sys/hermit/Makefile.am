@@ -16,7 +16,6 @@ lib_a_SOURCES:= \
 	getpagesize.c \
 	inet_ntoa.c \
 	isatty.c \
-	kill.c \
 	makecontext.c \
 	nanosleep.c \
 	sched.c \
