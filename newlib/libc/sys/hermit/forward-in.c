@@ -1,5 +1,6 @@
 #include <poll.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -23,6 +24,10 @@ ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, st
 ssize_t recv(int socket, void *buffer, size_t length, int flags);
 ssize_t send(int socket, const void *buffer, size_t length, int flags);
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+
+// sys/stat.h
+
+int stat(const char *restrict path, struct stat *restrict buf);
 
 // time.h
 
