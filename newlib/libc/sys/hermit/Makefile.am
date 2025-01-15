@@ -22,7 +22,6 @@ lib_a_SOURCES:= \
 	nanosleep.c \
 	sched.c \
 	setitimer.c \
-	stat.c \
 	stub.c \
 	sysconf.c \
 	time.c \
