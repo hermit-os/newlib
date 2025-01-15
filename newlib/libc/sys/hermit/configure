@@ -612,7 +612,7 @@ PACKAGE_STRING='newlib 3.0.0'
 PACKAGE_BUGREPORT=''
 PACKAGE_URL=''
 
-ac_unique_file="open.c"
+ac_unique_file="Makefile.am"
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
 sys_dir
