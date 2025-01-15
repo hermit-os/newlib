@@ -13,7 +13,6 @@ lib_a_SOURCES:= \
 	fstat.c \
 	getaddrinfo.c \
 	getpagesize.c \
-	getpid.c \
 	gettod.c \
 	inet_ntoa.c \
 	isatty.c \
