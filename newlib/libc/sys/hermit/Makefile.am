@@ -14,7 +14,6 @@ lib_a_SOURCES:= \
 	fstat.c \
 	getaddrinfo.c \
 	getpagesize.c \
-	gettod.c \
 	inet_ntoa.c \
 	isatty.c \
 	kill.c \

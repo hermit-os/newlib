@@ -73,13 +73,12 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
 	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
-	lib_a-getpagesize.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
-	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
-	lib_a-kill.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
-	lib_a-nanosleep.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-setitimer.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
-	lib_a-unistd.$(OBJEXT)
+	lib_a-getpagesize.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
+	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
+	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
+	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
+	lib_a-stub.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -216,7 +215,6 @@ lib_a_SOURCES := \
 	fstat.c \
 	getaddrinfo.c \
 	getpagesize.c \
-	gettod.c \
 	inet_ntoa.c \
 	isatty.c \
 	kill.c \
@@ -350,12 +348,6 @@ lib_a-getpagesize.o: getpagesize.c
 
 lib_a-getpagesize.obj: getpagesize.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getpagesize.obj `if test -f 'getpagesize.c'; then $(CYGPATH_W) 'getpagesize.c'; else $(CYGPATH_W) '$(srcdir)/getpagesize.c'; fi`
-
-lib_a-gettod.o: gettod.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-gettod.o `test -f 'gettod.c' || echo '$(srcdir)/'`gettod.c
-
-lib_a-gettod.obj: gettod.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-gettod.obj `if test -f 'gettod.c'; then $(CYGPATH_W) 'gettod.c'; else $(CYGPATH_W) '$(srcdir)/gettod.c'; fi`
 
 lib_a-inet_ntoa.o: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.o `test -f 'inet_ntoa.c' || echo '$(srcdir)/'`inet_ntoa.c

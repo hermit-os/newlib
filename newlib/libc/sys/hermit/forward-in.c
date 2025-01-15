@@ -1,6 +1,7 @@
 #include <poll.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -28,6 +29,10 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 // sys/stat.h
 
 int stat(const char *restrict path, struct stat *restrict buf);
+
+// sys/time.h
+
+int gettimeofday(struct timeval *restrict tp, void *restrict tzp);
 
 // time.h
 
