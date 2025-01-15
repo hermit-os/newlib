@@ -4,6 +4,7 @@
 #include <poll.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -212,6 +213,21 @@ int sys_stat(const char *restrict path, struct stat *restrict buf);
 
 int stat(const char *restrict path, struct stat *restrict buf) {
     int ret = sys_stat(path, buf);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// sys/time.h
+
+int sys_gettimeofday(struct timeval *restrict tp, void *restrict tzp);
+
+int gettimeofday(struct timeval *restrict tp, void *restrict tzp) {
+    int ret = sys_gettimeofday(tp, tzp);
 
     if (ret < 0) {
         errno = -ret;
