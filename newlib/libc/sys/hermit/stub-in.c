@@ -1,6 +1,11 @@
+#include <signal.h>
 #include <sys/times.h>
 #include <sys/wait.h>
 #include <unistd.h>
+
+// signal.h
+
+int kill(pid_t pid, int sig);
 
 // sys/times.h
 
