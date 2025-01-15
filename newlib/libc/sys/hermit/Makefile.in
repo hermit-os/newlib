@@ -71,12 +71,12 @@ lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
-	lib_a-forward.$(OBJEXT) lib_a-fstat.$(OBJEXT) \
-	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
-	lib_a-gettod.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
-	lib_a-isatty.$(OBJEXT) lib_a-kill.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-open.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
+	lib_a-fstat.$(OBJEXT) lib_a-getaddrinfo.$(OBJEXT) \
+	lib_a-getpagesize.$(OBJEXT) lib_a-gettod.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
+	lib_a-kill.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-nanosleep.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-setitimer.$(OBJEXT) lib_a-stat.$(OBJEXT) \
 	lib_a-stub.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
 	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
@@ -211,6 +211,7 @@ lib_a_SOURCES := \
 	context.S \
 	environ.c \
 	errno.c \
+	fcntl.c \
 	forward.c \
 	fstat.c \
 	getaddrinfo.c \
@@ -221,7 +222,6 @@ lib_a_SOURCES := \
 	kill.c \
 	makecontext.c \
 	nanosleep.c \
-	open.c \
 	sched.c \
 	setitimer.c \
 	stat.c \
@@ -322,6 +322,12 @@ lib_a-errno.o: errno.c
 lib_a-errno.obj: errno.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-errno.obj `if test -f 'errno.c'; then $(CYGPATH_W) 'errno.c'; else $(CYGPATH_W) '$(srcdir)/errno.c'; fi`
 
+lib_a-fcntl.o: fcntl.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-fcntl.o `test -f 'fcntl.c' || echo '$(srcdir)/'`fcntl.c
+
+lib_a-fcntl.obj: fcntl.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-fcntl.obj `if test -f 'fcntl.c'; then $(CYGPATH_W) 'fcntl.c'; else $(CYGPATH_W) '$(srcdir)/fcntl.c'; fi`
+
 lib_a-forward.o: forward.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-forward.o `test -f 'forward.c' || echo '$(srcdir)/'`forward.c
 
@@ -381,12 +387,6 @@ lib_a-nanosleep.o: nanosleep.c
 
 lib_a-nanosleep.obj: nanosleep.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-nanosleep.obj `if test -f 'nanosleep.c'; then $(CYGPATH_W) 'nanosleep.c'; else $(CYGPATH_W) '$(srcdir)/nanosleep.c'; fi`
-
-lib_a-open.o: open.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-open.o `test -f 'open.c' || echo '$(srcdir)/'`open.c
-
-lib_a-open.obj: open.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-open.obj `if test -f 'open.c'; then $(CYGPATH_W) 'open.c'; else $(CYGPATH_W) '$(srcdir)/open.c'; fi`
 
 lib_a-sched.o: sched.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.o `test -f 'sched.c' || echo '$(srcdir)/'`sched.c

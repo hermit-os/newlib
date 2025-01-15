@@ -9,6 +9,7 @@ lib_a_SOURCES:= \
 	context.S \
 	environ.c \
 	errno.c \
+	fcntl.c \
 	forward.c \
 	fstat.c \
 	getaddrinfo.c \
@@ -19,7 +20,6 @@ lib_a_SOURCES:= \
 	kill.c \
 	makecontext.c \
 	nanosleep.c \
-	open.c \
 	sched.c \
 	setitimer.c \
 	stat.c \
