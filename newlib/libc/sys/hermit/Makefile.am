@@ -11,7 +11,6 @@ lib_a_SOURCES:= \
 	errno.c \
 	fcntl.c \
 	forward.c \
-	fstat.c \
 	getaddrinfo.c \
 	getpagesize.c \
 	inet_ntoa.c \

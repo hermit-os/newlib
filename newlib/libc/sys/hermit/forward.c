@@ -222,6 +222,19 @@ int stat(const char *restrict path, struct stat *restrict buf) {
     return ret;
 }
 
+int sys_fstat(int fildes, struct stat *buf);
+
+int fstat(int fildes, struct stat *buf) {
+    int ret = sys_fstat(fildes, buf);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 // sys/time.h
 
 int sys_gettimeofday(struct timeval *restrict tp, void *restrict tzp);
