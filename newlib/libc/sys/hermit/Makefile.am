@@ -14,7 +14,6 @@ lib_a_SOURCES:= \
 	getaddrinfo.c \
 	getpagesize.c \
 	inet_ntoa.c \
-	isatty.c \
 	makecontext.c \
 	sched.c \
 	stub.c \

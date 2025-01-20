@@ -11,3 +11,7 @@ pid_t sys_getpid(void);
 pid_t getpid(void) {
 	return sys_getpid();
 }
+
+int isatty(int fildes) {
+	return fildes < 3;
+}
