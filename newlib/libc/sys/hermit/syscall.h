@@ -91,7 +91,7 @@ typedef void (*signal_handler_t)(int);
  * => classical system calls are realized as normal function
  * => forward declaration of system calls as function
  */
-tid_t sys_getpid(void);
+pid_t sys_getpid(void);
 int sys_fork(void);
 int sys_wait(int* status);
 int sys_execve(const char* name, char * const * argv, char * const * env);
