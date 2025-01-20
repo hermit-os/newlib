@@ -16,9 +16,7 @@ lib_a_SOURCES:= \
 	inet_ntoa.c \
 	isatty.c \
 	makecontext.c \
-	nanosleep.c \
 	sched.c \
-	setitimer.c \
 	stub.c \
 	sysconf.c \
 	time.c \

@@ -74,8 +74,7 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
 	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
 	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-nanosleep.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-setitimer.$(OBJEXT) \
+	lib_a-makecontext.$(OBJEXT) lib_a-sched.$(OBJEXT) \
 	lib_a-stub.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
 	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
@@ -216,9 +215,7 @@ lib_a_SOURCES := \
 	inet_ntoa.c \
 	isatty.c \
 	makecontext.c \
-	nanosleep.c \
 	sched.c \
-	setitimer.c \
 	stub.c \
 	sysconf.c \
 	time.c \
@@ -358,23 +355,11 @@ lib_a-makecontext.o: makecontext.c
 lib_a-makecontext.obj: makecontext.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.obj `if test -f 'makecontext.c'; then $(CYGPATH_W) 'makecontext.c'; else $(CYGPATH_W) '$(srcdir)/makecontext.c'; fi`
 
-lib_a-nanosleep.o: nanosleep.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-nanosleep.o `test -f 'nanosleep.c' || echo '$(srcdir)/'`nanosleep.c
-
-lib_a-nanosleep.obj: nanosleep.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-nanosleep.obj `if test -f 'nanosleep.c'; then $(CYGPATH_W) 'nanosleep.c'; else $(CYGPATH_W) '$(srcdir)/nanosleep.c'; fi`
-
 lib_a-sched.o: sched.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.o `test -f 'sched.c' || echo '$(srcdir)/'`sched.c
 
 lib_a-sched.obj: sched.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.obj `if test -f 'sched.c'; then $(CYGPATH_W) 'sched.c'; else $(CYGPATH_W) '$(srcdir)/sched.c'; fi`
-
-lib_a-setitimer.o: setitimer.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-setitimer.o `test -f 'setitimer.c' || echo '$(srcdir)/'`setitimer.c
-
-lib_a-setitimer.obj: setitimer.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-setitimer.obj `if test -f 'setitimer.c'; then $(CYGPATH_W) 'setitimer.c'; else $(CYGPATH_W) '$(srcdir)/setitimer.c'; fi`
 
 lib_a-stub.o: stub.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stub.o `test -f 'stub.c' || echo '$(srcdir)/'`stub.c

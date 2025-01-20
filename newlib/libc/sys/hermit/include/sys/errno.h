@@ -13,8 +13,8 @@
 __BEGIN_DECLS
 
 #ifndef _REENT_ONLY
-#define errno (*__errno())
-extern int *__errno (void);
+#define errno (*sys_errno_location())
+extern int *sys_errno_location (void);
 #endif
 
 extern __IMPORT const char* const _sys_errlist[];

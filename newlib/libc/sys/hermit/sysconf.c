@@ -54,7 +54,7 @@ sysconf (int name)
 		case _SC_THREAD_SAFE_FUNCTIONS: return 1;
 		case _SC_VERSION: return _POSIX_VERSION;
 		default:
-			*__errno() = EINVAL;
+			errno = EINVAL;
 			return -1;
 	}
 }
