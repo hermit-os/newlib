@@ -31,7 +31,7 @@
 #include <_syslist.h>
 #include "warning.h"
 
-int * __errno(void)
+int * sys_errno_location(void)
 {
 	return &_REENT->_errno;
 }
