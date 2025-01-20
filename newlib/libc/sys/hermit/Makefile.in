@@ -75,9 +75,8 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
 	lib_a-inet_ntoa.$(OBJEXT) lib_a-isatty.$(OBJEXT) \
 	lib_a-makecontext.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-setitimer.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
-	lib_a-unistd.$(OBJEXT)
+	lib_a-stub.$(OBJEXT) lib_a-sysconf.$(OBJEXT) \
+	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -217,7 +216,6 @@ lib_a_SOURCES := \
 	isatty.c \
 	makecontext.c \
 	sched.c \
-	setitimer.c \
 	stub.c \
 	sysconf.c \
 	time.c \
@@ -362,12 +360,6 @@ lib_a-sched.o: sched.c
 
 lib_a-sched.obj: sched.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.obj `if test -f 'sched.c'; then $(CYGPATH_W) 'sched.c'; else $(CYGPATH_W) '$(srcdir)/sched.c'; fi`
-
-lib_a-setitimer.o: setitimer.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-setitimer.o `test -f 'setitimer.c' || echo '$(srcdir)/'`setitimer.c
-
-lib_a-setitimer.obj: setitimer.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-setitimer.obj `if test -f 'setitimer.c'; then $(CYGPATH_W) 'setitimer.c'; else $(CYGPATH_W) '$(srcdir)/setitimer.c'; fi`
 
 lib_a-stub.o: stub.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stub.o `test -f 'stub.c' || echo '$(srcdir)/'`stub.c

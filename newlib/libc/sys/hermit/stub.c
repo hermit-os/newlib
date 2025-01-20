@@ -2,6 +2,7 @@
 
 #include <errno.h>
 #include <signal.h>
+#include <sys/time.h>
 #include <sys/times.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -9,6 +10,13 @@
 // signal.h
 
 int kill(pid_t pid, int sig) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// sys/time.h
+
+int setitimer(int which, const struct itimerval *restrict value, struct itimerval *restrict ovalue) {
     errno = ENOSYS;
     return -1;
 }

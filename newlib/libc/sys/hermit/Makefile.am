@@ -17,7 +17,6 @@ lib_a_SOURCES:= \
 	isatty.c \
 	makecontext.c \
 	sched.c \
-	setitimer.c \
 	stub.c \
 	sysconf.c \
 	time.c \
