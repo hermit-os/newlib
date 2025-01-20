@@ -17,7 +17,6 @@ lib_a_SOURCES:= \
 	makecontext.c \
 	sched.c \
 	stub.c \
-	sysconf.c \
 	time.c \
 	unistd.c
 
