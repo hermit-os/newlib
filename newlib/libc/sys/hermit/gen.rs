@@ -250,6 +250,7 @@ impl fmt::Display for Forward<'_> {
             sys_f
         };
 
+        let output = &self.f.output;
         let sig = self.f.sig();
         let sys_call = sys_f.call();
         writeln!(
@@ -257,7 +258,7 @@ impl fmt::Display for Forward<'_> {
             "{sys_f}
 
 {sig} {{
-    int ret = {sys_call};
+    {output} ret = {sys_call};
 
     if (ret < 0) {{
         ret = -1;

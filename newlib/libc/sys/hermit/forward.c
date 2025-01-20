@@ -146,7 +146,7 @@ int socket(int domain, int type, int protocol) {
 ssize_t sys_recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
 
 ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len) {
-    int ret = sys_recvfrom(socket, buffer, length, flags, address, address_len);
+    ssize_t ret = sys_recvfrom(socket, buffer, length, flags, address, address_len);
 
     if (ret < 0) {
         ret = -1;
@@ -158,7 +158,7 @@ ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, st
 ssize_t sys_recv(int socket, void *buffer, size_t length, int flags);
 
 ssize_t recv(int socket, void *buffer, size_t length, int flags) {
-    int ret = sys_recv(socket, buffer, length, flags);
+    ssize_t ret = sys_recv(socket, buffer, length, flags);
 
     if (ret < 0) {
         ret = -1;
@@ -170,7 +170,7 @@ ssize_t recv(int socket, void *buffer, size_t length, int flags) {
 ssize_t sys_send(int socket, const void *buffer, size_t length, int flags);
 
 ssize_t send(int socket, const void *buffer, size_t length, int flags) {
-    int ret = sys_send(socket, buffer, length, flags);
+    ssize_t ret = sys_send(socket, buffer, length, flags);
 
     if (ret < 0) {
         ret = -1;
@@ -182,7 +182,7 @@ ssize_t send(int socket, const void *buffer, size_t length, int flags) {
 ssize_t sys_sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
 
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len) {
-    int ret = sys_sendto(socket, message, length, flags, dest_addr, dest_len);
+    ssize_t ret = sys_sendto(socket, message, length, flags, dest_addr, dest_len);
 
     if (ret < 0) {
         ret = -1;
@@ -298,7 +298,7 @@ int close(int fildes) {
 off_t sys_lseek(int fildes, off_t offset, int whence);
 
 off_t lseek(int fildes, off_t offset, int whence) {
-    int ret = sys_lseek(fildes, offset, whence);
+    off_t ret = sys_lseek(fildes, offset, whence);
 
     if (ret < 0) {
         ret = -1;
@@ -310,7 +310,7 @@ off_t lseek(int fildes, off_t offset, int whence) {
 ssize_t sys_read(int fildes, void *buf, size_t nbyte);
 
 ssize_t read(int fildes, void *buf, size_t nbyte) {
-    int ret = sys_read(fildes, buf, nbyte);
+    ssize_t ret = sys_read(fildes, buf, nbyte);
 
     if (ret < 0) {
         ret = -1;
@@ -322,7 +322,7 @@ ssize_t read(int fildes, void *buf, size_t nbyte) {
 ssize_t sys_write(int fildes, const void *buf, size_t nbyte);
 
 ssize_t write(int fildes, const void *buf, size_t nbyte) {
-    int ret = sys_write(fildes, buf, nbyte);
+    ssize_t ret = sys_write(fildes, buf, nbyte);
 
     if (ret < 0) {
         ret = -1;
