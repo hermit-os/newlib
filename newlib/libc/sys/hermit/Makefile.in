@@ -75,8 +75,7 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
 	lib_a-inet_ntoa.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
 	lib_a-sched.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-sysconf.$(OBJEXT) lib_a-time.$(OBJEXT) \
-	lib_a-unistd.$(OBJEXT)
+	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -216,7 +215,6 @@ lib_a_SOURCES := \
 	makecontext.c \
 	sched.c \
 	stub.c \
-	sysconf.c \
 	time.c \
 	unistd.c
 
@@ -359,12 +357,6 @@ lib_a-stub.o: stub.c
 
 lib_a-stub.obj: stub.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stub.obj `if test -f 'stub.c'; then $(CYGPATH_W) 'stub.c'; else $(CYGPATH_W) '$(srcdir)/stub.c'; fi`
-
-lib_a-sysconf.o: sysconf.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sysconf.o `test -f 'sysconf.c' || echo '$(srcdir)/'`sysconf.c
-
-lib_a-sysconf.obj: sysconf.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sysconf.obj `if test -f 'sysconf.c'; then $(CYGPATH_W) 'sysconf.c'; else $(CYGPATH_W) '$(srcdir)/sysconf.c'; fi`
 
 lib_a-time.o: time.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-time.o `test -f 'time.c' || echo '$(srcdir)/'`time.c
