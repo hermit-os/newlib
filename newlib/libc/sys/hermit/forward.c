@@ -291,6 +291,19 @@ int clock_settime(clockid_t clock_id, const struct timespec *tp) {
     return ret;
 }
 
+int sys_nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
+
+int nanosleep(const struct timespec *rqtp, struct timespec *rmtp) {
+    int ret = sys_nanosleep(rqtp, rmtp);
+
+    if (ret < 0) {
+        errno = -ret;
+        ret = -1;
+    }
+
+    return ret;
+}
+
 // unistd.h
 
 int sys_close(int fildes);
