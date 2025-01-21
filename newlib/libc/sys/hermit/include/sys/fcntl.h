@@ -95,6 +95,4 @@ extern int fcntl (int, int, ...);
 
 extern int _fcntl (int, int, ...);
 
-#define fcntl           sys_fcntl
-
 #endif
