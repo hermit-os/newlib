@@ -20,6 +20,12 @@ int isatty(int fildes) {
 	return fildes < 3;
 }
 
+int sys_getpagesize(void);
+
+int getpagesize(void) {
+	return sys_getpagesize();
+}
+
 long sysconf(int name) {
 	switch (name) {
 		case _SC_ARG_MAX: return ARG_MAX;

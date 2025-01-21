@@ -72,10 +72,10 @@ lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
-	lib_a-getaddrinfo.$(OBJEXT) lib_a-getpagesize.$(OBJEXT) \
-	lib_a-inet_ntoa.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
+	lib_a-getaddrinfo.$(OBJEXT) lib_a-inet_ntoa.$(OBJEXT) \
+	lib_a-makecontext.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-stub.$(OBJEXT) lib_a-time.$(OBJEXT) \
+	lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -210,7 +210,6 @@ lib_a_SOURCES := \
 	fcntl.c \
 	forward.c \
 	getaddrinfo.c \
-	getpagesize.c \
 	inet_ntoa.c \
 	makecontext.c \
 	sched.c \
@@ -327,12 +326,6 @@ lib_a-getaddrinfo.o: getaddrinfo.c
 
 lib_a-getaddrinfo.obj: getaddrinfo.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getaddrinfo.obj `if test -f 'getaddrinfo.c'; then $(CYGPATH_W) 'getaddrinfo.c'; else $(CYGPATH_W) '$(srcdir)/getaddrinfo.c'; fi`
-
-lib_a-getpagesize.o: getpagesize.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getpagesize.o `test -f 'getpagesize.c' || echo '$(srcdir)/'`getpagesize.c
-
-lib_a-getpagesize.obj: getpagesize.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-getpagesize.obj `if test -f 'getpagesize.c'; then $(CYGPATH_W) 'getpagesize.c'; else $(CYGPATH_W) '$(srcdir)/getpagesize.c'; fi`
 
 lib_a-inet_ntoa.o: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.o `test -f 'inet_ntoa.c' || echo '$(srcdir)/'`inet_ntoa.c

@@ -12,7 +12,6 @@ lib_a_SOURCES:= \
 	fcntl.c \
 	forward.c \
 	getaddrinfo.c \
-	getpagesize.c \
 	inet_ntoa.c \
 	makecontext.c \
 	sched.c \
