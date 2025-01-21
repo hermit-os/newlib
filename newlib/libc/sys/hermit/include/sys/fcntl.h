@@ -12,6 +12,8 @@
 #define F_SETLK  6
 #define F_SETLKW 7
 
+#define FD_CLOEXEC 1
+
 int fcntl(int fildes, int cmd, ...);
 
 #define O_RDONLY    0000000
