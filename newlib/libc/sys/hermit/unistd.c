@@ -1,4 +1,3 @@
-#include "syscall.h"
 #include <errno.h>
 #include <limits.h>
 #include <pthread.h>
@@ -25,6 +24,8 @@ int sys_getpagesize(void);
 int getpagesize(void) {
 	return sys_getpagesize();
 }
+
+size_t sys_get_processor_count(void);
 
 long sysconf(int name) {
 	switch (name) {
