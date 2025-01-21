@@ -13,6 +13,7 @@ lib_a_SOURCES:= \
 	forward.c \
 	getaddrinfo.c \
 	inet_ntoa.c \
+	ioctl.c \
 	makecontext.c \
 	sched.c \
 	stub.c \
