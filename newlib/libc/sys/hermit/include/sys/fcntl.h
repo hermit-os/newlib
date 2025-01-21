@@ -78,21 +78,7 @@
 #define F_SETLKW	7
 #endif
 
-/* --- redundant stuff below --- */
-
-#include <_ansi.h>
-
-extern int creat (const char*, mode_t);
-extern int _open (const char*, int, ...);
-
-#ifdef __KERNEL_PROTOTYPES
-extern int open(const char* pathname, int flags, mode_t mode);
-extern int fcntl(int fd, int cmd, long arg);
-#else
-extern int open (const char*, int, ...);
-extern int fcntl (int, int, ...);
-#endif
-
-extern int _fcntl (int, int, ...);
+int fcntl(int fildes, int cmd, ...);
+int open(const char *path, int oflag, ...);
 
 #endif
