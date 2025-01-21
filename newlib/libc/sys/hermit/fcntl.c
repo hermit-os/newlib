@@ -3,6 +3,31 @@
 #include <stdarg.h>
 #include <sys/stat.h>
 
+int sys_fcntl(int fildes, int cmd, int arg);
+
+int fcntl(int fildes, int cmd, ...) {
+    int arg = 0;
+
+    // missing:
+    // F_SETOWN => int,
+    // F_GETLK | F_SETLK => struct flock *,
+    int has_int = cmd == F_DUPFD || cmd == F_SETFD || cmd == F_SETFL;
+    if (has_int) {
+        va_list args;
+        va_start(args, cmd);
+        arg = va_arg(args, int);
+        va_end(args);
+    }
+
+    int ret = sys_fcntl(fildes, cmd, arg);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_open(const char *path, int oflag, mode_t mode);
 
 int open(const char *path, int oflag, ...) {
@@ -19,7 +44,6 @@ int open(const char *path, int oflag, ...) {
     int ret = sys_open(path, oflag, mode);
 
     if (ret < 0) {
-        errno = -ret;
         ret = -1;
     }
 
