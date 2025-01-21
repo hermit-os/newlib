@@ -19,7 +19,6 @@ int open(const char *path, int oflag, ...) {
     int ret = sys_open(path, oflag, mode);
 
     if (ret < 0) {
-        errno = -ret;
         ret = -1;
     }
 
