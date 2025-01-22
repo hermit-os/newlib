@@ -15,6 +15,7 @@ lib_a_SOURCES:= \
 	inet_ntoa.c \
 	ioctl.c \
 	makecontext.c \
+	resource.c \
 	sched.c \
 	stub.c \
 	time.c \
