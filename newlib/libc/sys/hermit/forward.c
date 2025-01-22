@@ -194,6 +194,30 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int sys_fstat(int fildes, struct stat *buf);
+
+int fstat(int fildes, struct stat *buf) {
+    int ret = sys_fstat(fildes, buf);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_lstat(const char *restrict path, struct stat *restrict buf);
+
+int lstat(const char *restrict path, struct stat *restrict buf) {
+    int ret = sys_lstat(path, buf);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_mkdir(const char *path, mode_t mode);
 
 int mkdir(const char *path, mode_t mode) {
@@ -210,18 +234,6 @@ int sys_stat(const char *restrict path, struct stat *restrict buf);
 
 int stat(const char *restrict path, struct stat *restrict buf) {
     int ret = sys_stat(path, buf);
-
-    if (ret < 0) {
-        ret = -1;
-    }
-
-    return ret;
-}
-
-int sys_fstat(int fildes, struct stat *buf);
-
-int fstat(int fildes, struct stat *buf) {
-    int ret = sys_fstat(fildes, buf);
 
     if (ret < 0) {
         ret = -1;
