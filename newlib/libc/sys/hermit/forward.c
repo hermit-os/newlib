@@ -206,6 +206,18 @@ int fstat(int fildes, struct stat *buf) {
     return ret;
 }
 
+int sys_lstat(const char *restrict path, struct stat *restrict buf);
+
+int lstat(const char *restrict path, struct stat *restrict buf) {
+    int ret = sys_lstat(path, buf);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_mkdir(const char *path, mode_t mode);
 
 int mkdir(const char *path, mode_t mode) {
