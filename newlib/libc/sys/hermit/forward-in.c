@@ -29,9 +29,9 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int fstat(int fildes, struct stat *buf);
 int mkdir(const char *path, mode_t mode);
 int stat(const char *restrict path, struct stat *restrict buf);
-int fstat(int fildes, struct stat *buf);
 
 // sys/time.h
 
