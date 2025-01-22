@@ -2,6 +2,7 @@
 
 #include <errno.h>
 #include <signal.h>
+#include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/times.h>
 #include <sys/wait.h>
@@ -10,6 +11,13 @@
 // signal.h
 
 int kill(pid_t pid, int sig) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// sys/stat.h
+
+int chmod(const char *path, mode_t mode) {
     errno = ENOSYS;
     return -1;
 }
