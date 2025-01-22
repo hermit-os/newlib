@@ -2,6 +2,7 @@
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
+#include <sys/uio.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -35,6 +36,11 @@ int fstat(int fildes, struct stat *buf);
 // sys/time.h
 
 int gettimeofday(struct timeval *restrict tp, void *restrict tzp);
+
+// sys/uio.h
+
+ssize_t readv(int fildes, const struct iovec *iov, int iovcnt);
+ssize_t writev(int fildes, const struct iovec *iov, int iovcnt);
 
 // time.h
 

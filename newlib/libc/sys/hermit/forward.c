@@ -4,6 +4,7 @@
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
+#include <sys/uio.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -235,6 +236,32 @@ int sys_gettimeofday(struct timeval *restrict tp, void *restrict tzp);
 
 int gettimeofday(struct timeval *restrict tp, void *restrict tzp) {
     int ret = sys_gettimeofday(tp, tzp);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// sys/uio.h
+
+ssize_t sys_readv(int fildes, const struct iovec *iov, int iovcnt);
+
+ssize_t readv(int fildes, const struct iovec *iov, int iovcnt) {
+    ssize_t ret = sys_readv(fildes, iov, iovcnt);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+ssize_t sys_writev(int fildes, const struct iovec *iov, int iovcnt);
+
+ssize_t writev(int fildes, const struct iovec *iov, int iovcnt) {
+    ssize_t ret = sys_writev(fildes, iov, iovcnt);
 
     if (ret < 0) {
         ret = -1;
