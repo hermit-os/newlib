@@ -52,6 +52,7 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
 // unistd.h
 
 int close(int fildes);
+int dup(int fildes);
 off_t lseek(int fildes, off_t offset, int whence);
 ssize_t read(int fildes, void *buf, size_t nbyte);
 ssize_t write(int fildes, const void *buf, size_t nbyte);
