@@ -193,6 +193,18 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int sys_mkdir(const char *path, mode_t mode);
+
+int mkdir(const char *path, mode_t mode) {
+    int ret = sys_mkdir(path, mode);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_stat(const char *restrict path, struct stat *restrict buf);
 
 int stat(const char *restrict path, struct stat *restrict buf) {
