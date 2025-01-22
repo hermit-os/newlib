@@ -334,6 +334,18 @@ int close(int fildes) {
     return ret;
 }
 
+int sys_dup(int fildes);
+
+int dup(int fildes) {
+    int ret = sys_dup(fildes);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 off_t sys_lseek(int fildes, off_t offset, int whence);
 
 off_t lseek(int fildes, off_t offset, int whence) {
