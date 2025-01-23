@@ -39,22 +39,6 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 #define AF_INET 0
 #define AF_INET6 1
 
-#define IPPROTO_IP 0
-#define IPPROTO_IPV6 41
-#define IPPROTO_TCP 6
-#define IPPROTO_UDP 17
-
-#define IPV6_ADD_MEMBERSHIP 12
-#define IPV6_DROP_MEMBERSHIP 13
-#define IPV6_MULTICAST_LOOP 19
-#define IPV6_V6ONLY 27
-
-#define IP_TOS 1
-#define IP_TTL 2
-#define IP_MULTICAST_TTL 5
-#define IP_MULTICAST_LOOP 7
-#define IP_ADD_MEMBERSHIP 3
-#define IP_DROP_MEMBERSHIP 4
 
 #define SHUT_RD 0
 #define SHUT_WR 1
