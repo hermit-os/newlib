@@ -48,6 +48,7 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 #define IPV6_MULTICAST_LOOP 19
 #define IPV6_V6ONLY 27
 
+#define IP_TOS 1
 #define IP_TTL 2
 #define IP_MULTICAST_TTL 5
 #define IP_MULTICAST_LOOP 7
