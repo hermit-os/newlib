@@ -19,9 +19,6 @@ struct sockaddr {
   char sa_data[14];
 };
 
-/* Protocol families, same as address families. */
-#define PF_INET AF_INET
-
 // Define socket API functions
 int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 int bind(int socket, const struct sockaddr *address, socklen_t address_len);
