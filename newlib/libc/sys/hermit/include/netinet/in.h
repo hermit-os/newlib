@@ -22,15 +22,7 @@ struct sockaddr_in {
     char sin_zero[8];
 };
 
-// Functions for converting between string and network addresses
-int inet_pton(int af, const char *src, void *dst);
-const char *inet_ntop(int af, const void *src, char *dst, __socklen_t size);
-char *inet_ntoa(struct in_addr in);
-in_addr_t inet_addr(const char *cp);
-
 typedef uint16_t in_port_t;
-
-int inet_pton(int af, const char *src, void *dst);
 
 /** 255.255.255.255 */
 #define IPADDR_NONE         ((uint32_t)0xffffffffUL)
