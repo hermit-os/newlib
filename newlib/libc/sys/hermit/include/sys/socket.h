@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
+#include <sys/uio.h>
 
 __BEGIN_DECLS
 
@@ -16,6 +17,16 @@ struct sockaddr {
   uint8_t sa_len;
   sa_family_t sa_family;
   char sa_data[14];
+};
+
+struct msghdr {
+  void *msg_name;
+  socklen_t msg_namelen;
+  struct iovec *msg_iov;
+  int msg_iovlen;
+  void *msg_control;
+  socklen_t msg_controllen;
+  int msg_flags;
 };
 
 #define SOCK_STREAM 1
@@ -53,7 +64,9 @@ int getsockopt(int socket, int level, int option_name, void *restrict option_val
 int listen(int socket, int backlog);
 ssize_t recv(int socket, void *buffer, size_t length, int flags);
 ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
+ssize_t recvmsg(int socket, struct msghdr *message, int flags);
 ssize_t send(int socket, const void *buffer, size_t length, int flags);
+ssize_t sendmsg(int socket, const struct msghdr *message, int flags);
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
 int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
 int shutdown(int socket, int how);
