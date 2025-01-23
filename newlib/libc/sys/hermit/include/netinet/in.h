@@ -1,5 +1,5 @@
-#ifndef __NETINET_IN_H__
-#define __NETINET_IN_H__
+#ifndef _NETINET_IN_H
+#define _NETINET_IN_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -49,4 +49,4 @@ int inet_pton(int af, const char *src, void *dst);
 
 __END_DECLS
 
-#endif /* __NETINET_IN_H__ */
+#endif /* _NETINET_IN_H */
