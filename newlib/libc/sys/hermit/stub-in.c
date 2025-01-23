@@ -1,4 +1,5 @@
 #include <signal.h>
+#include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/times.h>
@@ -8,6 +9,11 @@
 // signal.h
 
 int kill(pid_t pid, int sig);
+
+// sys/socket.h
+
+ssize_t recvmsg(int socket, struct msghdr *message, int flags);
+ssize_t sendmsg(int socket, const struct msghdr *message, int flags);
 
 // sys/stat.h
 
