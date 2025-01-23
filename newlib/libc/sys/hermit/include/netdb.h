@@ -3,10 +3,9 @@
 
 #include <stdint.h>
 #include <sys/cdefs.h>
+#include <sys/socket.h>
 
 __BEGIN_DECLS
-
-typedef __socklen_t socklen_t;
 
 struct addrinfo {
     int ai_flags;

@@ -5,11 +5,12 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <netinet/in.h>
-#include <netdb.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
 __BEGIN_DECLS
+
+typedef __socklen_t socklen_t;
 
 /* Protocol families, same as address families. */
 #define PF_INET AF_INET
