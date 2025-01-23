@@ -15,6 +15,22 @@ pid_t getpid(void) {
 	return sys_getpid();
 }
 
+uid_t getuid(void) {
+	return 0;
+}
+
+uid_t geteuid(void) {
+	return 0;
+}
+
+gid_t getgid(void) {
+	return 0;
+}
+
+gid_t getegid(void) {
+	return 0;
+}
+
 int isatty(int fildes) {
 	return fildes < 3;
 }
