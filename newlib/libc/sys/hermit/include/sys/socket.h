@@ -38,9 +38,6 @@ ssize_t recv(int socket, void *buffer, size_t length, int flags);
 ssize_t send(int socket, const void *buffer, size_t length, int flags);
 ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
 
-void freeaddrinfo(struct addrinfo *ai);
-int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
-
 // Defines from librs
 #define AF_INET 0
 #define AF_INET6 1
@@ -84,18 +81,6 @@ int getaddrinfo(const char *restrict nodename, const char *restrict servname, co
 #define TCP_NODELAY 1
 #define MSG_PEEK 1
 #define FIONBIO (int32_t)2148034174u
-
-#define EAI_AGAIN 2
-#define EAI_BADFLAGS 3
-#define EAI_FAIL 4
-#define EAI_FAMILY 5
-#define EAI_MEMORY 6
-#define EAI_NODATA 7
-#define EAI_NONAME 8
-#define EAI_SERVICE 9
-#define EAI_SOCKTYPE 10
-#define EAI_SYSTEM 11
-#define EAI_OVERFLOW 14
 
 // Seperate defines
 #define SO_SNDBUF       0x1001
