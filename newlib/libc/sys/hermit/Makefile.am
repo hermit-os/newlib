@@ -15,6 +15,7 @@ lib_a_SOURCES:= \
 	ioctl.c \
 	makecontext.c \
 	netdb.c \
+	pwd.c \
 	resource.c \
 	sched.c \
 	stub.c \
