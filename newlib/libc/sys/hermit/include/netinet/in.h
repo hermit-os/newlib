@@ -22,23 +22,10 @@ struct sockaddr_in {
     char sin_zero[8];
 };
 
-/** 255.255.255.255 */
-#define IPADDR_NONE         ((uint32_t)0xffffffffUL)
-/** 127.0.0.1 */
-#define IPADDR_LOOPBACK     ((uint32_t)0x7f000001UL)
-/** 0.0.0.0 */
-#define IPADDR_ANY          ((uint32_t)0x00000000UL)
-/** 255.255.255.255 */
-#define IPADDR_BROADCAST    ((uint32_t)0xffffffffUL)
-
-/** 255.255.255.255 */
-#define INADDR_NONE         IPADDR_NONE
-/** 127.0.0.1 */
-#define INADDR_LOOPBACK     IPADDR_LOOPBACK
-/** 0.0.0.0 */
-#define INADDR_ANY          IPADDR_ANY
-/** 255.255.255.255 */
-#define INADDR_BROADCAST    IPADDR_BROADCAST
+#define INADDR_LOOPBACK  ((in_addr_t)0x7f000001)
+#define INADDR_ANY       ((in_addr_t)0x00000000)
+#define INADDR_BROADCAST ((in_addr_t)0xffffffff)
+#define INADDR_NONE      ((in_addr_t)0xffffffff)
 
 __END_DECLS
 
