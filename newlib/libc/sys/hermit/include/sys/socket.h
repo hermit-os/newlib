@@ -78,10 +78,6 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 #define MSG_PEEK 1
 #define FIONBIO (int32_t)2148034174u
 
-// Seperate defines
-#define SO_SNDBUF       0x1001
-#define SO_RCVBUF       0x1002
-
 __END_DECLS
 
 #endif /* _SYS_SOCKET_H */
