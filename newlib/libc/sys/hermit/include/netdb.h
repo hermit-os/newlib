@@ -1,5 +1,5 @@
-#ifndef NETDB_H
-#define NETDB_H
+#ifndef _NETDB_H
+#define _NETDB_H
 
 #include <stdint.h>
 #include <sys/cdefs.h>
@@ -33,4 +33,4 @@ struct sockaddr_in {
 
 __END_DECLS
 
-#endif /* NETDB_H */
+#endif /* _NETDB_H */
