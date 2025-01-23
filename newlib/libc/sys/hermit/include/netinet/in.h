@@ -9,6 +9,18 @@
 
 __BEGIN_DECLS
 
+struct in_addr {
+    uint32_t s_addr;
+};
+
+struct sockaddr_in {
+    uint8_t sin_len;
+    uint8_t sin_family;
+    uint16_t sin_port;
+    struct in_addr sin_addr;
+    char sin_zero[8];
+};
+
 // Functions for converting between string and network addresses
 int inet_pton(int af, const char *src, void *dst);
 const char *inet_ntop(int af, const void *src, char *dst, __socklen_t size);

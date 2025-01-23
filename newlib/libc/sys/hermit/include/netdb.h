@@ -1,6 +1,7 @@
 #ifndef _NETDB_H
 #define _NETDB_H
 
+#include <netinet/in.h>
 #include <stdint.h>
 #include <sys/cdefs.h>
 #include <sys/socket.h>
@@ -16,18 +17,6 @@ struct addrinfo {
     struct sockaddr *ai_addr;
     char *ai_canonname;
     struct addrinfo *ai_next;
-};
-
-struct in_addr {
-    uint32_t s_addr;
-};
-
-struct sockaddr_in {
-    uint8_t sin_len;
-    uint8_t sin_family;
-    uint16_t sin_port;
-    struct in_addr sin_addr;
-    char sin_zero[8];
 };
 
 #define EAI_AGAIN 2
