@@ -1,5 +1,5 @@
-#ifndef SOCKET_H
-#define SOCKET_H
+#ifndef _SYS_SOCKET_H
+#define _SYS_SOCKET_H
 
 #include <fcntl.h>
 #include <stddef.h>
@@ -109,4 +109,4 @@ typedef struct fd_set {
 
 __END_DECLS
 
-#endif /* SOCKET_H */
+#endif /* _SYS_SOCKET_H */
