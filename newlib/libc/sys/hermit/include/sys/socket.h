@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <netinet/in.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
