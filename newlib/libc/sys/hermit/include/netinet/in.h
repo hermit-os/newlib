@@ -22,8 +22,6 @@ struct sockaddr_in {
     char sin_zero[8];
 };
 
-typedef uint16_t in_port_t;
-
 /** 255.255.255.255 */
 #define IPADDR_NONE         ((uint32_t)0xffffffffUL)
 /** 127.0.0.1 */
