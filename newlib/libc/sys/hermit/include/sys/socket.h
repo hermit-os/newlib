@@ -76,7 +76,6 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 #define TCP_NODELAY 1
 #define MSG_PEEK 1
-#define FIONBIO (int32_t)2148034174u
 
 __END_DECLS
 
