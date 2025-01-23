@@ -13,14 +13,14 @@ __BEGIN_DECLS
 typedef __socklen_t socklen_t;
 typedef __sa_family_t sa_family_t;
 
+struct sockaddr {
+  uint8_t sa_len;
+  sa_family_t sa_family;
+  char sa_data[14];
+};
+
 /* Protocol families, same as address families. */
 #define PF_INET AF_INET
-
-typedef struct sockaddr {
-  uint8_t sa_len;
-  uint8_t sa_family;
-  uint8_t sa_data[14];
-};
 
 // Define socket API functions
 int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
