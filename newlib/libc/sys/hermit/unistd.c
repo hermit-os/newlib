@@ -36,6 +36,10 @@ char *getlogin(void) {
 	return "root";
 }
 
+int issetugid(void) {
+	return 0;
+}
+
 int getlogin_r(char *name, size_t namesize) {
 	if (name == NULL) {
 		return ERANGE;
