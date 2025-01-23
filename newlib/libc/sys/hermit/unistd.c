@@ -1,6 +1,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <pthread.h>
+#include <string.h>
 #include <unistd.h>
 
 void sys_exit(int status);
@@ -28,6 +29,27 @@ gid_t getgid(void) {
 }
 
 gid_t getegid(void) {
+	return 0;
+}
+
+char *getlogin(void) {
+	return "root";
+}
+
+int getlogin_r(char *name, size_t namesize) {
+	if (name == NULL) {
+		return ERANGE;
+	}
+
+	char *login = getlogin();
+	size_t len = strlen(login) + 1;
+
+	if (len > namesize) {
+		return ERANGE;
+	}
+
+	memcpy(name, login, len);
+
 	return 0;
 }
 
