@@ -74,7 +74,6 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 #define SO_RCVTIMEO 0x1006
 #define SO_ERROR 0x1007
 
-#define TCP_NODELAY 1
 #define MSG_PEEK 1
 
 __END_DECLS
