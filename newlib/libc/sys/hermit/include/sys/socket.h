@@ -19,33 +19,9 @@ struct sockaddr {
   char sa_data[14];
 };
 
-// Define socket API functions
-int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-int bind(int socket, const struct sockaddr *address, socklen_t address_len);
-int connect(int socket, const struct sockaddr *address, socklen_t address_len);
-int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
-int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
-int listen(int socket, int backlog);
-int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
-int shutdown(int socket, int how);
-int socket(int domain, int type, int protocol);
-ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
-ssize_t recv(int socket, void *buffer, size_t length, int flags);
-ssize_t send(int socket, const void *buffer, size_t length, int flags);
-ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
-
-// Defines from librs
-#define AF_INET 0
-#define AF_INET6 1
-
-
-#define SHUT_RD 0
-#define SHUT_WR 1
-#define SHUT_RDWR 2
-
-#define SOCK_DGRAM 2
 #define SOCK_STREAM 1
+#define SOCK_DGRAM 2
+
 #define SOCK_NONBLOCK O_NONBLOCK
 
 #define SOL_SOCKET 4095
@@ -61,6 +37,28 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 #define SO_ERROR 0x1007
 
 #define MSG_PEEK 1
+
+#define AF_INET 0
+#define AF_INET6 1
+
+#define SHUT_RD 0
+#define SHUT_WR 1
+#define SHUT_RDWR 2
+
+int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int bind(int socket, const struct sockaddr *address, socklen_t address_len);
+int connect(int socket, const struct sockaddr *address, socklen_t address_len);
+int getpeername(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int getsockname(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
+int getsockopt(int socket, int level, int option_name, void *restrict option_value, socklen_t *restrict option_len);
+int listen(int socket, int backlog);
+ssize_t recv(int socket, void *buffer, size_t length, int flags);
+ssize_t recvfrom(int socket, void *restrict buffer, size_t length, int flags, struct sockaddr *restrict address, socklen_t *restrict address_len);
+ssize_t send(int socket, const void *buffer, size_t length, int flags);
+ssize_t sendto(int socket, const void *message, size_t length, int flags, const struct sockaddr *dest_addr, socklen_t dest_len);
+int setsockopt(int socket, int level, int option_name, const void *option_value, socklen_t option_len);
+int shutdown(int socket, int how);
+int socket(int domain, int type, int protocol);
 
 __END_DECLS
 
