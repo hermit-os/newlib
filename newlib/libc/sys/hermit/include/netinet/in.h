@@ -2,11 +2,10 @@
 #define _NETINET_IN_H
 
 #include <arpa/inet.h>
-#include <stddef.h>
-#include <stdint.h>
+#include <inttypes.h>
+#include <netdb.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
-#include <netdb.h>
 
 __BEGIN_DECLS
 
