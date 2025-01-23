@@ -85,11 +85,17 @@ int getaddrinfo(const char *restrict nodename, const char *restrict servname, co
 #define MSG_PEEK 1
 #define FIONBIO (int32_t)2148034174u
 
-#define EAI_NONAME -2200
-#define EAI_SERVICE -2201
-#define EAI_FAIL -2202
-#define EAI_MEMORY -2203
-#define EAI_FAMILY -2204
+#define EAI_AGAIN 2
+#define EAI_BADFLAGS 3
+#define EAI_FAIL 4
+#define EAI_FAMILY 5
+#define EAI_MEMORY 6
+#define EAI_NODATA 7
+#define EAI_NONAME 8
+#define EAI_SERVICE 9
+#define EAI_SOCKTYPE 10
+#define EAI_SYSTEM 11
+#define EAI_OVERFLOW 14
 
 // Seperate defines
 #define SO_SNDBUF       0x1001
