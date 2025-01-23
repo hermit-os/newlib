@@ -9,14 +9,14 @@ __BEGIN_DECLS
 #define socklen_t __socklen_t
 
 struct addrinfo {
-    int32_t ai_flags;
-    int32_t ai_family;
-    int32_t ai_socktype;
-    int32_t ai_protocol;
+    int ai_flags;
+    int ai_family;
+    int ai_socktype;
+    int ai_protocol;
     socklen_t ai_addrlen;
     struct sockaddr *ai_addr;
-    uint8_t *ai_canonname;
-    struct addrinfo_t *ai_next;
+    char *ai_canonname;
+    struct addrinfo *ai_next;
 };
 
 struct in_addr {
