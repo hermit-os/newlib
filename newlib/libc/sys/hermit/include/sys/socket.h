@@ -95,18 +95,6 @@ int getaddrinfo(const char *restrict nodename, const char *restrict servname, co
 #define SO_SNDBUF       0x1001
 #define SO_RCVBUF       0x1002
 
-
-#define FD_BIT	      (1 << 30)
-#define FD_SETSIZE    32
-#define FD_SET(n, p)  ((p)->fd_bits[((n) & ~FD_BIT)/8] |=  (1 << (((n) & ~FD_BIT) & 7)))
-#define FD_CLR(n, p)  ((p)->fd_bits[((n) & ~FD_BIT)/8] &= ~(1 << (((n) & ~FD_BIT) & 7)))
-#define FD_ISSET(n,p) ((p)->fd_bits[((n) & ~FD_BIT)/8] &   (1 << (((n) & ~FD_BIT) & 7)))
-#define FD_ZERO(p)    memset((void*)(p),0,sizeof(*(p)))
-
-typedef struct fd_set {
-	unsigned char fd_bits [(FD_SETSIZE+7)/8];
-} fd_set;
-
 __END_DECLS
 
 #endif /* _SYS_SOCKET_H */
