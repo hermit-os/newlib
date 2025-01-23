@@ -6,7 +6,7 @@
 
 __BEGIN_DECLS
 
-#define socklen_t __socklen_t
+typedef __socklen_t socklen_t;
 
 struct addrinfo {
     int ai_flags;
