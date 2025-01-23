@@ -1,4 +1,4 @@
-#include <sys/socket.h>
+#include <netdb.h>
 
 void sys_freeaddrinfo(struct addrinfo *ai);
 

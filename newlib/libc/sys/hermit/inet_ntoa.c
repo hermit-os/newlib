@@ -20,9 +20,9 @@
    License along with the GNU C Library; if not, see
    <http://www.gnu.org/licenses/>.  */
 
+#include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <netdb.h>
 
 /* The interface of this function is completely stupid, it requires a
    static buffer.  We relax this a bit in that we allow one buffer for

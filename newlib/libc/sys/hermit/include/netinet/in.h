@@ -1,62 +1,48 @@
-/* 
- * Written by the Chair for Operating Systems, RWTH Aachen University
- * 
- * NO Copyright (C) 2010-2011, Stefan Lankes
- * consider these trivial macros to be public domain.
- * 
- * These functions are distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- */
+#ifndef _NETINET_IN_H
+#define _NETINET_IN_H
 
-#ifndef __NETINET_IN_H__
-#define __NETINET_IN_H__
-
-#include <stddef.h>
-#include <stdint.h>
+#include <arpa/inet.h>
+#include <inttypes.h>
+#include <netdb.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
-#include <netdb.h>
 
 __BEGIN_DECLS
 
-// Functions for converting between string and network addresses
-int inet_pton(int af, const char *src, void *dst);
-const char *inet_ntop(int af, const void *src, char *dst, __socklen_t size);
-char *inet_ntoa(struct in_addr in);
-in_addr_t inet_addr(const char *cp);
+struct in_addr {
+    in_addr_t s_addr;
+};
 
-typedef uint16_t in_port_t;
-#define htons __htons
-#define htonl __htonl
-#define ntohl __ntohl
-#define ntohs __ntohs
+struct sockaddr_in {
+    uint8_t sin_len;
+    sa_family_t sin_family;
+    in_port_t sin_port;
+    struct in_addr sin_addr;
+    char sin_zero[8];
+};
 
-// Functions for converting between host and network byte order
-uint32_t htonl(uint32_t hostlong);
-uint16_t htons(uint16_t hostshort);
-uint32_t ntohl(uint32_t netlong);
-uint16_t ntohs(uint16_t netshort);
+#define INADDR_LOOPBACK  ((in_addr_t)0x7f000001)
+#define INADDR_ANY       ((in_addr_t)0x00000000)
+#define INADDR_BROADCAST ((in_addr_t)0xffffffff)
+#define INADDR_NONE      ((in_addr_t)0xffffffff)
 
-int inet_pton(int af, const char *src, void *dst);
+#define IPPROTO_IP 0
+#define IPPROTO_TCP 6
+#define IPPROTO_UDP 17
+#define IPPROTO_IPV6 41
 
-/** 255.255.255.255 */
-#define IPADDR_NONE         ((uint32_t)0xffffffffUL)
-/** 127.0.0.1 */
-#define IPADDR_LOOPBACK     ((uint32_t)0x7f000001UL)
-/** 0.0.0.0 */
-#define IPADDR_ANY          ((uint32_t)0x00000000UL)
-/** 255.255.255.255 */
-#define IPADDR_BROADCAST    ((uint32_t)0xffffffffUL)
+#define IP_TOS 1
+#define IP_TTL 2
+#define IP_ADD_MEMBERSHIP 3
+#define IP_DROP_MEMBERSHIP 4
+#define IP_MULTICAST_TTL 5
+#define IP_MULTICAST_LOOP 7
 
-/** 255.255.255.255 */
-#define INADDR_NONE         IPADDR_NONE
-/** 127.0.0.1 */
-#define INADDR_LOOPBACK     IPADDR_LOOPBACK
-/** 0.0.0.0 */
-#define INADDR_ANY          IPADDR_ANY
-/** 255.255.255.255 */
-#define INADDR_BROADCAST    IPADDR_BROADCAST
+#define IPV6_ADD_MEMBERSHIP 12
+#define IPV6_DROP_MEMBERSHIP 13
+#define IPV6_MULTICAST_LOOP 19
+#define IPV6_V6ONLY 27
 
 __END_DECLS
 
-#endif /* __NETINET_IN_H__ */
+#endif /* _NETINET_IN_H */

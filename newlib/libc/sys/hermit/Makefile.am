@@ -11,10 +11,10 @@ lib_a_SOURCES:= \
 	errno.c \
 	fcntl.c \
 	forward.c \
-	getaddrinfo.c \
 	inet_ntoa.c \
 	ioctl.c \
 	makecontext.c \
+	netdb.c \
 	resource.c \
 	sched.c \
 	stub.c \

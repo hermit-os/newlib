@@ -1,36 +1,39 @@
-#ifndef NETDB_H
-#define NETDB_H
+#ifndef _NETDB_H
+#define _NETDB_H
 
+#include <netinet/in.h>
 #include <stdint.h>
 #include <sys/cdefs.h>
+#include <sys/socket.h>
 
 __BEGIN_DECLS
 
-#define socklen_t __socklen_t
-
 struct addrinfo {
-    int32_t ai_flags;
-    int32_t ai_family;
-    int32_t ai_socktype;
-    int32_t ai_protocol;
+    int ai_flags;
+    int ai_family;
+    int ai_socktype;
+    int ai_protocol;
     socklen_t ai_addrlen;
     struct sockaddr *ai_addr;
-    uint8_t *ai_canonname;
-    struct addrinfo_t *ai_next;
+    char *ai_canonname;
+    struct addrinfo *ai_next;
 };
 
-struct in_addr {
-    uint32_t s_addr;
-};
+#define EAI_AGAIN 2
+#define EAI_BADFLAGS 3
+#define EAI_FAIL 4
+#define EAI_FAMILY 5
+#define EAI_MEMORY 6
+#define EAI_NODATA 7
+#define EAI_NONAME 8
+#define EAI_SERVICE 9
+#define EAI_SOCKTYPE 10
+#define EAI_SYSTEM 11
+#define EAI_OVERFLOW 14
 
-struct sockaddr_in {
-    uint8_t sin_len;
-    uint8_t sin_family;
-    uint16_t sin_port;
-    struct in_addr sin_addr;
-    char sin_zero[8];
-};
+void freeaddrinfo(struct addrinfo *ai);
+int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
 
 __END_DECLS
 
-#endif /* NETDB_H */
+#endif /* _NETDB_H */
