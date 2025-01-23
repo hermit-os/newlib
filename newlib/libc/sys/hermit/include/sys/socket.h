@@ -11,12 +11,10 @@
 __BEGIN_DECLS
 
 typedef __socklen_t socklen_t;
+typedef __sa_family_t sa_family_t;
 
 /* Protocol families, same as address families. */
 #define PF_INET AF_INET
-
-// Define socket address structure
-#define sa_family_t __sa_family_t
 
 typedef struct sockaddr {
   uint8_t sa_len;
