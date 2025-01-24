@@ -1,5 +1,5 @@
 #ifndef _SYS_DIRENT_H
-# define _SYS_DIRENT_H
+#define _SYS_DIRENT_H
 
 /*
  * This file was written to be compatible with the BSD directory
@@ -33,4 +33,4 @@ typedef struct dirent {
 	char	d_name[256];
 } dirent_t;
 
-#endif
+#endif /* _SYS_DIRENT_H */
