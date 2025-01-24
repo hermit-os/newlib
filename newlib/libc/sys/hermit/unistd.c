@@ -57,8 +57,16 @@ int getlogin_r(char *name, size_t namesize) {
 	return 0;
 }
 
-int isatty(int fildes) {
-	return fildes < 3;
+int sys_isatty(int fildes);
+
+int _isatty(int fildes) {
+	int ret = sys_isatty(fildes);
+
+	if (ret < 0) {
+		ret = 0;
+	}
+
+	return ret;
 }
 
 int sys_getpagesize(void);
