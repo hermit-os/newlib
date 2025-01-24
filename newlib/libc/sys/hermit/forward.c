@@ -358,6 +358,18 @@ int dup(int fildes) {
     return ret;
 }
 
+int sys_dup2(int fildes, int fildes2);
+
+int dup2(int fildes, int fildes2) {
+    int ret = sys_dup2(fildes, fildes2);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 off_t sys_lseek(int fildes, off_t offset, int whence);
 
 off_t lseek(int fildes, off_t offset, int whence) {
