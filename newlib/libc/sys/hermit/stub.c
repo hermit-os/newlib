@@ -63,11 +63,6 @@ int chown(const char *path, uid_t owner, gid_t group) {
     return -1;
 }
 
-int dup2(int fildes, int fildes2) {
-    errno = ENOSYS;
-    return -1;
-}
-
 int _execve(const char *path, char *const argv[], char *const envp[]) {
     errno = ENOSYS;
     return -1;

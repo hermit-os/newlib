@@ -34,7 +34,6 @@ pid_t wait(int *stat_loc);
 // unistd.h
 
 int chown(const char *path, uid_t owner, gid_t group);
-int dup2(int fildes, int fildes2);
 int _execve(const char *path, char *const argv[], char *const envp[]);
 pid_t fork(void);
 int link(const char *path1, const char *path2);
