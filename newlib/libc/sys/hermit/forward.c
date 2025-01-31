@@ -394,6 +394,18 @@ ssize_t read(int fildes, void *buf, size_t nbyte) {
     return ret;
 }
 
+int sys_rmdir(const char *path);
+
+int rmdir(const char *path) {
+    int ret = sys_rmdir(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 ssize_t sys_write(int fildes, const void *buf, size_t nbyte);
 
 ssize_t write(int fildes, const void *buf, size_t nbyte) {
