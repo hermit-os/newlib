@@ -28,6 +28,19 @@ struct	stat
 {
   dev_t		st_dev;
   ino_t		st_ino;
+#if defined(__hermit__)
+  nlink_t st_nlink;
+  mode_t  st_mode;
+  uid_t   st_uid;
+  gid_t   st_gid;
+  dev_t   st_rdev;
+  off_t   st_size;
+  blksize_t st_blksize;
+  blkcnt_t st_blocks;
+  struct timespec st_atim;
+  struct timespec st_mtim;
+  struct timespec st_ctim;
+#else
   mode_t	st_mode;
   nlink_t	st_nlink;
   uid_t		st_uid;
@@ -58,9 +71,10 @@ struct	stat
   long	st_spare4[2];
 #endif
 #endif
+#endif
 };
 
-#if defined(__rtems__)
+#if defined(__rtems__) || defined(__hermit__)
 #define st_atime st_atim.tv_sec
 #define st_ctime st_ctim.tv_sec
 #define st_mtime st_mtim.tv_sec
