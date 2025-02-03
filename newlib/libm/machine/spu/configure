@@ -680,6 +680,11 @@ am__isrc
 INSTALL_DATA
 INSTALL_SCRIPT
 INSTALL_PROGRAM
+newlib_basedir
+MAY_SUPPLY_SYSCALLS_FALSE
+MAY_SUPPLY_SYSCALLS_TRUE
+HERMIT_FALSE
+HERMIT_TRUE
 host_os
 host_vendor
 host_cpu
@@ -688,9 +693,6 @@ build_os
 build_vendor
 build_cpu
 build
-newlib_basedir
-MAY_SUPPLY_SYSCALLS_FALSE
-MAY_SUPPLY_SYSCALLS_TRUE
 target_alias
 host_alias
 build_alias
@@ -1979,9 +1981,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
 
-
-
-
   # Make sure we can run config.sub.
 $SHELL "${ac_aux_dir}config.sub" sun4 >/dev/null 2>&1 ||
   as_fn_error $? "cannot run $SHELL ${ac_aux_dir}config.sub" "$LINENO" 5
@@ -2053,6 +2052,26 @@ shift; shift
 host_os=$*
 IFS=$ac_save_IFS
 case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+
+
+build_hermit=no
+case "${host_os}" in
+    hermit*)
+        build_hermit=yes
+        ;;
+    *)
+        ;;
+esac
+ if test "$build_hermit" = "yes"; then
+  HERMIT_TRUE=
+  HERMIT_FALSE='#'
+else
+  HERMIT_TRUE='#'
+  HERMIT_FALSE=
+fi
+
+
+
 
 
 am__api_version='1.11'
@@ -3806,6 +3825,10 @@ LIBOBJS=$ac_libobjs
 LTLIBOBJS=$ac_ltlibobjs
 
 
+if test -z "${HERMIT_TRUE}" && test -z "${HERMIT_FALSE}"; then
+  as_fn_error $? "conditional \"HERMIT\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
 if test -z "${MAY_SUPPLY_SYSCALLS_TRUE}" && test -z "${MAY_SUPPLY_SYSCALLS_FALSE}"; then
   as_fn_error $? "conditional \"MAY_SUPPLY_SYSCALLS\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
