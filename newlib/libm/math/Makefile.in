@@ -140,8 +140,9 @@ am__objects_2 = lib_a-kf_rem_pio2.$(OBJEXT) lib_a-kf_cos.$(OBJEXT) \
 	lib_a-wf_exp2.$(OBJEXT) lib_a-wf_tgamma.$(OBJEXT) \
 	lib_a-wf_log2.$(OBJEXT)
 am__objects_3 = lib_a-el_hypot.$(OBJEXT)
-@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_1) \
-@USE_LIBTOOL_FALSE@	$(am__objects_2) $(am__objects_3)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_1) \
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@	$(am__objects_2) \
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@	$(am__objects_3)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libmath_la_LIBADD =
@@ -172,13 +173,15 @@ am__objects_5 = kf_rem_pio2.lo kf_cos.lo kf_sin.lo kf_tan.lo \
 	sf_ldexp.lo sf_signif.lo sf_sin.lo sf_tan.lo sf_tanh.lo \
 	wf_exp2.lo wf_tgamma.lo wf_log2.lo
 am__objects_6 = el_hypot.lo
-@USE_LIBTOOL_TRUE@am_libmath_la_OBJECTS = $(am__objects_4) \
-@USE_LIBTOOL_TRUE@	$(am__objects_5) $(am__objects_6)
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@am_libmath_la_OBJECTS =  \
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@	$(am__objects_4) \
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@	$(am__objects_5) \
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@	$(am__objects_6)
 libmath_la_OBJECTS = $(am_libmath_la_OBJECTS)
 libmath_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(libmath_la_LDFLAGS) $(LDFLAGS) -o $@
-@USE_LIBTOOL_TRUE@am_libmath_la_rpath =
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@am_libmath_la_rpath =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
 am__depfiles_maybe =
@@ -213,7 +216,6 @@ CCAS = @CCAS@
 CCASFLAGS = @CCASFLAGS@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
-CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
@@ -317,6 +319,7 @@ pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+runstatedir = @runstatedir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -378,13 +381,13 @@ fsrc = kf_rem_pio2.c \
 
 lsrc = el_hypot.c
 libmath_la_LDFLAGS = -Xcompiler -nostdlib
-@USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libmath.la
-@USE_LIBTOOL_TRUE@libmath_la_SOURCES = $(src) $(fsrc) $(lsrc)
-@USE_LIBTOOL_FALSE@noinst_DATA = 
-@USE_LIBTOOL_TRUE@noinst_DATA = objectlist.awk.in
-@USE_LIBTOOL_FALSE@noinst_LIBRARIES = lib.a
-@USE_LIBTOOL_FALSE@lib_a_SOURCES = $(src) $(fsrc) $(lsrc)
-@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libmath.la
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@libmath_la_SOURCES = $(src) $(fsrc) $(lsrc)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@noinst_DATA = 
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@noinst_DATA = objectlist.awk.in
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@noinst_LIBRARIES = lib.a
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@lib_a_SOURCES = $(src) $(fsrc) $(lsrc)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
 
 #
 # documentation rules
