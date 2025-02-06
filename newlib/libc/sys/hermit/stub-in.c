@@ -36,6 +36,7 @@ pid_t wait(int *stat_loc);
 
 int chown(const char *path, uid_t owner, gid_t group);
 int _execve(const char *path, char *const argv[], char *const envp[]);
+int execvpe(const char *file, char *const argv[], char *const envp[]);
 pid_t fork(void);
 int link(const char *path1, const char *path2);
 int pipe(int fildes[2]);

@@ -73,6 +73,11 @@ int _execve(const char *path, char *const argv[], char *const envp[]) {
     return -1;
 }
 
+int execvpe(const char *file, char *const argv[], char *const envp[]) {
+    errno = ENOSYS;
+    return -1;
+}
+
 pid_t fork(void) {
     errno = ENOSYS;
     return -1;
