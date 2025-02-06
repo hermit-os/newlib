@@ -32,6 +32,42 @@ gid_t getegid(void) {
 	return 0;
 }
 
+int setuid(uid_t uid) {
+	if (uid != 0) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
+int seteuid(uid_t euid) {
+	if (euid != 0) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
+int setgid(gid_t gid) {
+	if (gid != 0) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
+int setegid(gid_t egid) {
+	if (egid != 0) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
 char *getlogin(void) {
 	return "root";
 }
