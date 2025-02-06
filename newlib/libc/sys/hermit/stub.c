@@ -12,7 +12,17 @@
 
 // sched.h
 
+int sched_getparam(pid_t pid, struct sched_param *param) {
+    errno = ENOSYS;
+    return -1;
+}
+
 int sched_getscheduler(pid_t pid) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int sched_setparam(pid_t pid, const struct sched_param *param) {
     errno = ENOSYS;
     return -1;
 }
