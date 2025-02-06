@@ -31,6 +31,7 @@ clock_t times(struct tms *buffer);
 // sys/wait.h
 
 pid_t wait(int *stat_loc);
+pid_t waitpid(pid_t pid, int *stat_loc, int options);
 
 // unistd.h
 
