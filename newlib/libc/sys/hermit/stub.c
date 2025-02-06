@@ -107,3 +107,8 @@ int unlink(const char *path) {
     errno = ENOSYS;
     return -1;
 }
+
+pid_t vfork(void) {
+    errno = ENOSYS;
+    return -1;
+}
