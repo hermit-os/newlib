@@ -69,6 +69,29 @@ int setegid(gid_t egid) {
 	return 0;
 }
 
+pid_t getpgid(pid_t pid) {
+	if (pid != getpid()) {
+		errno = ESRCH;
+		return -1;
+	}
+
+	return getgid();
+}
+
+int setpgid(pid_t pid, pid_t pgid) {
+	if (pid != getpid()) {
+		errno = ESRCH;
+		return -1;
+	}
+
+	if (pgid != getgid()) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
 char *getlogin(void) {
 	return "root";
 }
