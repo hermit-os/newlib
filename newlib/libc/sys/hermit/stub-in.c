@@ -9,6 +9,7 @@
 // signal.h
 
 int kill(pid_t pid, int sig);
+int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
 
 // sys/socket.h
 
