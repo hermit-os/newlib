@@ -21,24 +21,16 @@ uid_t getuid(void) {
 	return 0;
 }
 
-uid_t geteuid(void) {
-	return 0;
-}
-
-gid_t getgid(void) {
-	return 0;
-}
-
-gid_t getegid(void) {
-	return 0;
-}
-
 int setuid(uid_t uid) {
 	if (uid != 0) {
 		errno = EINVAL;
 		return -1;
 	}
 
+	return 0;
+}
+
+uid_t geteuid(void) {
 	return 0;
 }
 
@@ -51,6 +43,10 @@ int seteuid(uid_t euid) {
 	return 0;
 }
 
+gid_t getgid(void) {
+	return 0;
+}
+
 int setgid(gid_t gid) {
 	if (gid != 0) {
 		errno = EINVAL;
@@ -60,8 +56,35 @@ int setgid(gid_t gid) {
 	return 0;
 }
 
+gid_t getegid(void) {
+	return 0;
+}
+
 int setegid(gid_t egid) {
 	if (egid != 0) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
+}
+
+pid_t getpgid(pid_t pid) {
+	if (pid != getpid()) {
+		errno = ESRCH;
+		return -1;
+	}
+
+	return getgid();
+}
+
+int setpgid(pid_t pid, pid_t pgid) {
+	if (pid != getpid()) {
+		errno = ESRCH;
+		return -1;
+	}
+
+	if (pgid != getgid()) {
 		errno = EINVAL;
 		return -1;
 	}
