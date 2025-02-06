@@ -83,6 +83,16 @@ int link(const char *path1, const char *path2) {
     return -1;
 }
 
+int pipe(int fildes[2]) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int pipe2(int fildes[2], int flag) {
+    errno = ENOSYS;
+    return -1;
+}
+
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize) {
     errno = ENOSYS;
     return -1;
