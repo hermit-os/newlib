@@ -1,6 +1,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <pthread.h>
+#include <stdint.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -139,4 +140,22 @@ long sysconf(int name) {
 			errno = EINVAL;
 			return -1;
 	}
+}
+
+ssize_t sys_read_entropy(void *buffer, size_t length, uint32_t flags);
+
+int getentropy(void *buffer, size_t length) {
+	ssize_t ret = sys_read_entropy(buffer, length, 0);
+
+	if (ret < 0) {
+		errno = -ret;
+		return -1;
+	}
+
+	if (ret != length) {
+		errno = EINVAL;
+		return -1;
+	}
+
+	return 0;
 }
