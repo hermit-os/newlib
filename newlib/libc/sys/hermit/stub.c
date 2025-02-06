@@ -16,6 +16,11 @@ int kill(pid_t pid, int sig) {
     return -1;
 }
 
+int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset) {
+    errno = ENOSYS;
+    return -1;
+}
+
 // sys/socket.h
 
 ssize_t recvmsg(int socket, struct msghdr *message, int flags) {
