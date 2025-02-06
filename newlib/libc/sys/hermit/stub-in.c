@@ -1,3 +1,4 @@
+#include <sched.h>
 #include <signal.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -5,6 +6,13 @@
 #include <sys/times.h>
 #include <sys/wait.h>
 #include <unistd.h>
+
+// sched.h
+
+int sched_getparam(pid_t pid, struct sched_param *param);
+int sched_getscheduler(pid_t pid);
+int sched_setparam(pid_t pid, const struct sched_param *param);
+int sched_setscheduler(pid_t pid, int policy, const struct sched_param *param);
 
 // signal.h
 
