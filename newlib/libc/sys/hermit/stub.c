@@ -61,6 +61,11 @@ pid_t wait(int *stat_loc) {
     return -1;
 }
 
+pid_t waitpid(pid_t pid, int *stat_loc, int options) {
+    errno = ENOSYS;
+    return -1;
+}
+
 // unistd.h
 
 int chown(const char *path, uid_t owner, gid_t group) {
