@@ -39,6 +39,11 @@ int kill(pid_t pid, int sig) {
     return -1;
 }
 
+int sigaction(int sig, const struct sigaction *restrict act, struct sigaction *restrict oact) {
+    errno = ENOSYS;
+    return -1;
+}
+
 int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset) {
     errno = ENOSYS;
     return -1;
