@@ -1,12 +1,6 @@
 #ifndef _SYS_DIRENT_H
 #define _SYS_DIRENT_H
 
-/*
- * This file was written to be compatible with the BSD directory
- * routines, so it looks like it.  But it was written from scratch.
- * Sean Eric Fagan, sef@Kithrup.COM
- */
-
 typedef struct _dirdesc {
 	int	dd_fd;
 	long	dd_loc;
