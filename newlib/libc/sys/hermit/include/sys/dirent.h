@@ -1,6 +1,8 @@
 #ifndef _SYS_DIRENT_H
 #define _SYS_DIRENT_H
 
+#include <sys/types.h>
+
 typedef struct _dirdesc {
 	int	dd_fd;
 	long	dd_loc;
@@ -16,8 +18,7 @@ DIR *opendir (const char *);
 struct dirent *readdir (DIR *);
 void rewinddir (DIR *);
 int closedir (DIR *);
-
-#include <sys/types.h>
+ssize_t getdents64(int fd, void *dirp, size_t count);
 
 struct dirent {
 	ino_t d_ino;
