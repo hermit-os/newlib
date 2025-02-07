@@ -141,11 +141,6 @@ int symlink(const char *path1, const char *path2) {
     return -1;
 }
 
-int unlink(const char *path) {
-    errno = ENOSYS;
-    return -1;
-}
-
 pid_t vfork(void) {
     errno = ENOSYS;
     return -1;

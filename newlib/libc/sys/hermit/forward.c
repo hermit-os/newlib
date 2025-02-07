@@ -406,6 +406,18 @@ int rmdir(const char *path) {
     return ret;
 }
 
+int sys_unlink(const char *path);
+
+int unlink(const char *path) {
+    int ret = sys_unlink(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 ssize_t sys_write(int fildes, const void *buf, size_t nbyte);
 
 ssize_t write(int fildes, const void *buf, size_t nbyte) {
