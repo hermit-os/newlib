@@ -19,12 +19,12 @@ int closedir (DIR *);
 
 #include <sys/types.h>
 
-typedef struct dirent {
-	long	d_ino;
-	off_t	d_off;
-	unsigned short	d_reclen;
-	/* we need better syntax for variable-sized arrays */
-	char	d_name[256];
-} dirent_t;
+struct dirent {
+	ino_t d_ino;
+	off_t d_off;
+	unsigned short d_reclen;
+	unsigned char d_type;
+	char d_name[];
+};
 
 #endif /* _SYS_DIRENT_H */
