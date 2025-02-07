@@ -53,5 +53,4 @@ int pipe(int fildes[2]);
 int pipe2(int fildes[2], int flag);
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize);
 int symlink(const char *path1, const char *path2);
-int unlink(const char *path);
 pid_t vfork(void);
