@@ -1,11 +1,7 @@
 #ifndef _SYS_DIRENT_H
-# define _SYS_DIRENT_H
+#define _SYS_DIRENT_H
 
-/*
- * This file was written to be compatible with the BSD directory
- * routines, so it looks like it.  But it was written from scratch.
- * Sean Eric Fagan, sef@Kithrup.COM
- */
+#include <sys/types.h>
 
 typedef struct _dirdesc {
 	int	dd_fd;
@@ -22,15 +18,14 @@ DIR *opendir (const char *);
 struct dirent *readdir (DIR *);
 void rewinddir (DIR *);
 int closedir (DIR *);
+ssize_t getdents64(int fd, void *dirp, size_t count);
 
-#include <sys/types.h>
+struct dirent {
+	ino_t d_ino;
+	off_t d_off;
+	unsigned short d_reclen;
+	unsigned char d_type;
+	char d_name[];
+};
 
-typedef struct dirent {
-	long	d_ino;
-	off_t	d_off;
-	unsigned short	d_reclen;
-	/* we need better syntax for variable-sized arrays */
-	char	d_name[256];
-} dirent_t;
-
-#endif
+#endif /* _SYS_DIRENT_H */

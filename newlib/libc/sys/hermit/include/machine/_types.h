@@ -12,6 +12,9 @@ typedef __int64_t __blksize_t;
 typedef __int64_t _off_t;
 #define __machine_off_t_defined
 
+typedef __int64_t _off64_t;
+#define __machine_off64_t_defined
+
 typedef __uint64_t __dev_t;
 #define __machine_dev_t_defined
 
@@ -26,6 +29,9 @@ typedef __uint32_t __id_t;
 
 typedef __uint64_t __ino_t;
 #define __machine_ino_t_defined
+
+typedef __uint64_t __ino64_t;
+#define __machine_ino64_t_defined
 
 typedef __uint32_t __mode_t;
 #define __machine_mode_t_defined
@@ -47,5 +53,8 @@ typedef __int32_t __suseconds_t;
 
 typedef __uint32_t __useconds_t;
 #define __machine_useconds_t_defined
+
+typedef __ino64_t ino64_t;
+typedef _off64_t off64_t;
 
 #endif /* _MACHINE__TYPES_H */

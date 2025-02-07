@@ -1,3 +1,4 @@
+#include <dirent.h>
 #include <poll.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -5,6 +6,10 @@
 #include <sys/uio.h>
 #include <time.h>
 #include <unistd.h>
+
+// dirent.h
+
+ssize_t getdents64(int fd, void *dirp, size_t count);
 
 // poll.h
 
