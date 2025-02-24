@@ -1,3 +1,4 @@
+#include <errno.h>
 #include <stdalign.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -114,4 +115,24 @@ void *aligned_alloc(size_t alignment, size_t size) {
     *((size_t *)ptr - 1) = mem_align;
 
     return ptr;
+}
+
+int posix_memalign(void **memptr, size_t alignment, size_t size) {
+    if ((alignment & (alignment - 1)) != 0) {
+        return EINVAL;
+    }
+
+    if (size == 0) {
+        *memptr = alignment;
+        return 0;
+    }
+
+    void *ptr = aligned_alloc(alignment, size);
+    *memptr = ptr;
+    
+    if (ptr == NULL) {
+        return ENOMEM;
+    }
+
+    return 0;
 }
