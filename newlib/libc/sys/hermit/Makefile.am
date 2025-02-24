@@ -14,6 +14,7 @@ lib_a_SOURCES:= \
 	inet_ntoa.c \
 	ioctl.c \
 	makecontext.c \
+	mman.c \
 	netdb.c \
 	pwd.c \
 	resource.c \
