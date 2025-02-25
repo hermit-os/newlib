@@ -29,6 +29,11 @@ struct msghdr {
   int msg_flags;
 };
 
+struct linger {
+  int l_onoff;
+  int l_linger;
+};
+
 #define SOCK_STREAM 1
 #define SOCK_DGRAM 2
 
