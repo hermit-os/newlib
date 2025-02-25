@@ -44,7 +44,6 @@ pid_t waitpid(pid_t pid, int *stat_loc, int options);
 
 // unistd.h
 
-int chown(const char *path, uid_t owner, gid_t group);
 int _execve(const char *path, char *const argv[], char *const envp[]);
 int execvpe(const char *file, char *const argv[], char *const envp[]);
 pid_t fork(void);

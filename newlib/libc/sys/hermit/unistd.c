@@ -11,6 +11,10 @@ void _exit(int status) {
 	sys_exit(status);
 }
 
+int chown(const char *path, uid_t owner, gid_t group) {
+	return 0;
+}
+
 pid_t sys_getpid(void);
 
 pid_t getpid(void) {
