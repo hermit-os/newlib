@@ -19,6 +19,7 @@ lib_a_SOURCES:= \
 	pwd.c \
 	resource.c \
 	sched.c \
+	stdlib.c \
 	stub.c \
 	time.c \
 	unistd.c
