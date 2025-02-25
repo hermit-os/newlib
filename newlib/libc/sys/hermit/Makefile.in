@@ -73,10 +73,11 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
 	lib_a-inet_ntoa.$(OBJEXT) lib_a-ioctl.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-netdb.$(OBJEXT) \
-	lib_a-pwd.$(OBJEXT) lib_a-resource.$(OBJEXT) \
-	lib_a-sched.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
+	lib_a-makecontext.$(OBJEXT) lib_a-mman.$(OBJEXT) \
+	lib_a-netdb.$(OBJEXT) lib_a-pwd.$(OBJEXT) \
+	lib_a-resource.$(OBJEXT) lib_a-sched.$(OBJEXT) \
+	lib_a-stub.$(OBJEXT) lib_a-time.$(OBJEXT) \
+	lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -213,6 +214,7 @@ lib_a_SOURCES := \
 	inet_ntoa.c \
 	ioctl.c \
 	makecontext.c \
+	mman.c \
 	netdb.c \
 	pwd.c \
 	resource.c \
@@ -342,6 +344,12 @@ lib_a-makecontext.o: makecontext.c
 
 lib_a-makecontext.obj: makecontext.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-makecontext.obj `if test -f 'makecontext.c'; then $(CYGPATH_W) 'makecontext.c'; else $(CYGPATH_W) '$(srcdir)/makecontext.c'; fi`
+
+lib_a-mman.o: mman.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-mman.o `test -f 'mman.c' || echo '$(srcdir)/'`mman.c
+
+lib_a-mman.obj: mman.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-mman.obj `if test -f 'mman.c'; then $(CYGPATH_W) 'mman.c'; else $(CYGPATH_W) '$(srcdir)/mman.c'; fi`
 
 lib_a-netdb.o: netdb.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-netdb.o `test -f 'netdb.c' || echo '$(srcdir)/'`netdb.c
