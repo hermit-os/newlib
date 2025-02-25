@@ -2,6 +2,7 @@
 #define _SYS_RESOURCE_H
 
 #include <sys/cdefs.h>
+#include <sys/types.h>
 
 __BEGIN_DECLS
 
@@ -31,6 +32,16 @@ struct rlimit {
 
 int getrlimit(int resource, struct rlimit *rlp);
 int setrlimit(int resource, const struct rlimit *rlp);
+
+#define PRIO_PROCESS 0
+#define PRIO_PGRP 1
+#define PRIO_USER 2
+
+int getpriority(int which, id_t who);
+int setpriority(int which, id_t who, int value);
+
+// This belongs into `limits.h`, but gcc overrides that with `include-fixed/limits.h`
+#define NZERO 20
 
 __END_DECLS
 

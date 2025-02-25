@@ -9,3 +9,11 @@ int getrlimit(int resource, struct rlimit *rlp) {
 int setrlimit(int resource, const struct rlimit *rlp) {
     return 0;
 }
+
+int getpriority(int which, id_t who) {
+    return 0;
+}
+
+int setpriority(int which, id_t who, int value) {
+    return 0;
+}
