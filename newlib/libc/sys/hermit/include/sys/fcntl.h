@@ -6,6 +6,14 @@
 
 __BEGIN_DECLS
 
+struct flock {
+    short l_type;
+    short l_whence;
+    off_t l_start;
+    off_t l_len;
+    pid_t l_pid;
+};
+
 #define F_DUPFD  0
 #define F_GETFD  1
 #define F_SETFD  2
@@ -16,6 +24,10 @@ __BEGIN_DECLS
 #define F_SETLKW 7
 
 #define FD_CLOEXEC 1
+
+#define F_RDLCK 1
+#define F_UNLCK 2
+#define F_WRLCK 3
 
 int fcntl(int fildes, int cmd, ...);
 
