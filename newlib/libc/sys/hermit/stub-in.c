@@ -17,7 +17,6 @@ int sched_setscheduler(pid_t pid, int policy, const struct sched_param *param);
 // signal.h
 
 int kill(pid_t pid, int sig);
-int sigaction(int sig, const struct sigaction *restrict act, struct sigaction *restrict oact);
 int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
 
 // sys/socket.h
