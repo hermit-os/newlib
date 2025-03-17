@@ -18,7 +18,6 @@ lib_a_SOURCES:= \
 	netdb.c \
 	pwd.c \
 	resource.c \
-	sched.c \
 	stdlib.c \
 	stub.c \
 	time.c \
