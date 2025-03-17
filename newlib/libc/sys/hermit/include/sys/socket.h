@@ -52,6 +52,8 @@ struct linger {
 #define SO_RCVTIMEO 0x1006
 #define SO_ERROR 0x1007
 
+#define SOMAXCONN 128
+
 #define MSG_PEEK 1
 
 #define AF_UNSPEC 0
