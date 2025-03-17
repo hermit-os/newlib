@@ -57,6 +57,10 @@ struct linger {
 #define AF_INET 0
 #define AF_INET6 1
 
+#define PF_UNSPEC AF_UNSPEC
+#define PF_INET AF_INET
+#define PF_INET6 AF_INET6
+
 #define SHUT_RD 0
 #define SHUT_WR 1
 #define SHUT_RDWR 2
