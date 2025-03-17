@@ -72,9 +72,9 @@ lib_a_LIBADD =
 am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-environ.$(OBJEXT) lib_a-errno.$(OBJEXT) \
 	lib_a-fcntl.$(OBJEXT) lib_a-forward.$(OBJEXT) \
-	lib_a-inet_ntoa.$(OBJEXT) lib_a-ioctl.$(OBJEXT) \
-	lib_a-makecontext.$(OBJEXT) lib_a-mman.$(OBJEXT) \
-	lib_a-netdb.$(OBJEXT) lib_a-pwd.$(OBJEXT) \
+	lib_a-inet_ntoa.$(OBJEXT) lib_a-inet.$(OBJEXT) \
+	lib_a-ioctl.$(OBJEXT) lib_a-makecontext.$(OBJEXT) \
+	lib_a-mman.$(OBJEXT) lib_a-netdb.$(OBJEXT) lib_a-pwd.$(OBJEXT) \
 	lib_a-resource.$(OBJEXT) lib_a-signal.$(OBJEXT) \
 	lib_a-stdlib.$(OBJEXT) lib_a-stub.$(OBJEXT) \
 	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
@@ -212,6 +212,7 @@ lib_a_SOURCES := \
 	fcntl.c \
 	forward.c \
 	inet_ntoa.c \
+	inet.c \
 	ioctl.c \
 	makecontext.c \
 	mman.c \
@@ -333,6 +334,12 @@ lib_a-inet_ntoa.o: inet_ntoa.c
 
 lib_a-inet_ntoa.obj: inet_ntoa.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet_ntoa.obj `if test -f 'inet_ntoa.c'; then $(CYGPATH_W) 'inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/inet_ntoa.c'; fi`
+
+lib_a-inet.o: inet.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet.o `test -f 'inet.c' || echo '$(srcdir)/'`inet.c
+
+lib_a-inet.obj: inet.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-inet.obj `if test -f 'inet.c'; then $(CYGPATH_W) 'inet.c'; else $(CYGPATH_W) '$(srcdir)/inet.c'; fi`
 
 lib_a-ioctl.o: ioctl.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-ioctl.o `test -f 'ioctl.c' || echo '$(srcdir)/'`ioctl.c
