@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <sched.h>
 #include <signal.h>
+#include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -45,6 +46,13 @@ int sigaction(int sig, const struct sigaction *restrict act, struct sigaction *r
 }
 
 int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// sys/select.h
+
+int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout) {
     errno = ENOSYS;
     return -1;
 }
