@@ -36,6 +36,7 @@ struct linger {
 
 #define SOCK_STREAM 1
 #define SOCK_DGRAM 2
+#define SOCK_RAW 3
 
 #define SOCK_NONBLOCK O_NONBLOCK
 
