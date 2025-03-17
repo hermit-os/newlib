@@ -12,6 +12,7 @@ lib_a_SOURCES:= \
 	fcntl.c \
 	forward.c \
 	inet_ntoa.c \
+	inet.c \
 	ioctl.c \
 	makecontext.c \
 	mman.c \
