@@ -75,9 +75,9 @@ am_lib_a_OBJECTS = lib_a-alloc.$(OBJEXT) lib_a-context.$(OBJEXT) \
 	lib_a-inet_ntoa.$(OBJEXT) lib_a-ioctl.$(OBJEXT) \
 	lib_a-makecontext.$(OBJEXT) lib_a-mman.$(OBJEXT) \
 	lib_a-netdb.$(OBJEXT) lib_a-pwd.$(OBJEXT) \
-	lib_a-resource.$(OBJEXT) lib_a-sched.$(OBJEXT) \
-	lib_a-stdlib.$(OBJEXT) lib_a-stub.$(OBJEXT) \
-	lib_a-time.$(OBJEXT) lib_a-unistd.$(OBJEXT)
+	lib_a-resource.$(OBJEXT) lib_a-stdlib.$(OBJEXT) \
+	lib_a-stub.$(OBJEXT) lib_a-time.$(OBJEXT) \
+	lib_a-unistd.$(OBJEXT)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -218,7 +218,6 @@ lib_a_SOURCES := \
 	netdb.c \
 	pwd.c \
 	resource.c \
-	sched.c \
 	stdlib.c \
 	stub.c \
 	time.c \
@@ -369,12 +368,6 @@ lib_a-resource.o: resource.c
 
 lib_a-resource.obj: resource.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-resource.obj `if test -f 'resource.c'; then $(CYGPATH_W) 'resource.c'; else $(CYGPATH_W) '$(srcdir)/resource.c'; fi`
-
-lib_a-sched.o: sched.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.o `test -f 'sched.c' || echo '$(srcdir)/'`sched.c
-
-lib_a-sched.obj: sched.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sched.obj `if test -f 'sched.c'; then $(CYGPATH_W) 'sched.c'; else $(CYGPATH_W) '$(srcdir)/sched.c'; fi`
 
 lib_a-stdlib.o: stdlib.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-stdlib.o `test -f 'stdlib.c' || echo '$(srcdir)/'`stdlib.c
