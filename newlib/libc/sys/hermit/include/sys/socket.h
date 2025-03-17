@@ -36,6 +36,7 @@ struct linger {
 
 #define SOCK_STREAM 1
 #define SOCK_DGRAM 2
+#define SOCK_RAW 3
 
 #define SOCK_NONBLOCK O_NONBLOCK
 
@@ -51,10 +52,17 @@ struct linger {
 #define SO_RCVTIMEO 0x1006
 #define SO_ERROR 0x1007
 
+#define SOMAXCONN 128
+
 #define MSG_PEEK 1
 
+#define AF_UNSPEC 0
 #define AF_INET 0
 #define AF_INET6 1
+
+#define PF_UNSPEC AF_UNSPEC
+#define PF_INET AF_INET
+#define PF_INET6 AF_INET6
 
 #define SHUT_RD 0
 #define SHUT_WR 1
