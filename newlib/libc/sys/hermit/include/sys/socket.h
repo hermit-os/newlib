@@ -53,6 +53,7 @@ struct linger {
 
 #define MSG_PEEK 1
 
+#define AF_UNSPEC 0
 #define AF_INET 0
 #define AF_INET6 1
 
