@@ -590,7 +590,7 @@ esac
 
 case "${host}" in
   *-*-hermit*)
-	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES -D__DYNAMIC_REENT__ -DSIGNAL_PROVIDED -DHAVE_NANOSLEEP -DMALLOC_PROVIDED"
+	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES -D__DYNAMIC_REENT__ -DSIGNAL_PROVIDED -D_COMPILING_NEWLIB -DHAVE_NANOSLEEP -DMALLOC_PROVIDED"
 	;;
   *-*-cygwin*)
 	test -z "$cygwin_srcdir" && cygwin_srcdir=`cd ${srcdir}/../winsup/cygwin; pwd`

@@ -29,6 +29,7 @@ struct dirent *readdir (DIR *);
 void rewinddir (DIR *);
 int closedir (DIR *);
 ssize_t getdents64(int fd, void *dirp, size_t count);
+void _seekdir(DIR *dirp, long loc);
 
 struct dirent {
 	ino_t d_ino;
