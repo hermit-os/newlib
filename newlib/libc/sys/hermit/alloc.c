@@ -123,7 +123,7 @@ int posix_memalign(void **memptr, size_t alignment, size_t size) {
     }
 
     if (size == 0) {
-        *memptr = alignment;
+        *memptr = (void *)alignment;
         return 0;
     }
 
