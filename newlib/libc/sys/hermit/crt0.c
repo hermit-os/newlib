@@ -35,6 +35,12 @@ extern void __libc_fini_array (void);
 extern int _init_signal(void);
 extern char** environ;
 
+#ifdef __riscv
+/* These don't have to do anything since we use init_array/fini_array. */
+void _init(void) {}
+void _fini(void) {}
+#endif /* __riscv */
+
 void runtime_entry(int argc, char** argv, char** env)
 {
    int ret;
