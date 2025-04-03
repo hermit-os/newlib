@@ -703,6 +703,11 @@ am__isrc
 INSTALL_DATA
 INSTALL_SCRIPT
 INSTALL_PROGRAM
+newlib_basedir
+MAY_SUPPLY_SYSCALLS_FALSE
+MAY_SUPPLY_SYSCALLS_TRUE
+HERMIT_FALSE
+HERMIT_TRUE
 host_os
 host_vendor
 host_cpu
@@ -711,9 +716,6 @@ build_os
 build_vendor
 build_cpu
 build
-newlib_basedir
-MAY_SUPPLY_SYSCALLS_FALSE
-MAY_SUPPLY_SYSCALLS_TRUE
 HAVE_LONG_DOUBLE_FALSE
 HAVE_LONG_DOUBLE_TRUE
 NEWLIB_HW_FP_FALSE
@@ -2295,6 +2297,26 @@ shift; shift
 host_os=$*
 IFS=$ac_save_IFS
 case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+
+
+build_hermit=no
+case "${host_os}" in
+    hermit*)
+        build_hermit=yes
+        ;;
+    *)
+        ;;
+esac
+ if test "$build_hermit" = "yes"; then
+  HERMIT_TRUE=
+  HERMIT_FALSE='#'
+else
+  HERMIT_TRUE='#'
+  HERMIT_FALSE=
+fi
+
+
+
 
 
 am__api_version='1.11'
@@ -12003,6 +12025,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_LONG_DOUBLE_TRUE}" && test -z "${HAVE_LONG_DOUBLE_FALSE}"; then
   as_fn_error $? "conditional \"HAVE_LONG_DOUBLE\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${HERMIT_TRUE}" && test -z "${HERMIT_FALSE}"; then
+  as_fn_error $? "conditional \"HERMIT\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${MAY_SUPPLY_SYSCALLS_TRUE}" && test -z "${MAY_SUPPLY_SYSCALLS_FALSE}"; then

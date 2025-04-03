@@ -48,11 +48,15 @@ GENERAL_SOURCES = \
 	renamer.c \
 	signalr.c \
 	signgam.c \
-	sbrkr.c \
 	statr.c \
 	timesr.c \
 	unlinkr.c \
 	writer.c
+
+if !HERMIT
+GENERAL_SOURCES += \
+	sbrkr.c
+endif # !HERMIT
 
 libreent_la_LDFLAGS = -Xcompiler -nostdlib
 
@@ -83,12 +87,16 @@ CHEWOUT_FILES = \
 	readr.def \
 	renamer.def \
 	signalr.def \
-	sbrkr.def \
 	statr.def \
 	timesr.def \
 	unlinkr.def \
 	$(STDIO64_DEFS) \
 	writer.def
+
+if !HERMIT
+CHEWOUT_FILES += \
+	sbrkr.def
+endif # !HERMIT
 
 CHAPTERS = reent.tex
 

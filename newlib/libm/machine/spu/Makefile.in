@@ -133,7 +133,7 @@ am__objects_1 = lib_a-feclearexcept.$(OBJEXT) \
 	lib_a-w_pow.$(OBJEXT) lib_a-w_remainder.$(OBJEXT) \
 	lib_a-w_sincos.$(OBJEXT) lib_a-w_sinh.$(OBJEXT) \
 	lib_a-w_sqrt.$(OBJEXT) lib_a-w_tgamma.$(OBJEXT)
-am_lib_a_OBJECTS = $(am__objects_1)
+@HERMIT_FALSE@am_lib_a_OBJECTS = $(am__objects_1)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
@@ -282,11 +282,11 @@ LIB_SOURCES = \
 	wf_tgamma.c w_hypot.c w_lgamma.c w_log10.c w_log.c w_pow.c \
 	w_remainder.c w_sincos.c w_sinh.c w_sqrt.c w_tgamma.c
 
-noinst_LIBRARIES = lib.a
-lib_a_SOURCES = $(LIB_SOURCES)
-lib_a_CFLAGS = $(AM_CFLAGS)
-lib_a_CCASFLAGS = $(AM_CCASFLAGS)
-noinst_DATA = 
+@HERMIT_FALSE@noinst_LIBRARIES = lib.a
+@HERMIT_FALSE@lib_a_SOURCES = $(LIB_SOURCES)
+@HERMIT_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
+@HERMIT_FALSE@lib_a_CCASFLAGS = $(AM_CCASFLAGS)
+@HERMIT_FALSE@noinst_DATA = 
 
 #
 # documentation rules

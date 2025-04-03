@@ -53,8 +53,14 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
+@HERMIT_FALSE@am__append_1 = \
+@HERMIT_FALSE@	sbrkr.c
+
 DIST_COMMON = $(srcdir)/../../Makefile.shared $(srcdir)/Makefile.in \
 	$(srcdir)/Makefile.am
+@HERMIT_FALSE@am__append_2 = \
+@HERMIT_FALSE@	sbrkr.def
+
 subdir = reent
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/../../libtool.m4 \
@@ -72,7 +78,8 @@ LIBRARIES = $(noinst_LIBRARIES)
 ARFLAGS = cru
 lib_a_AR = $(AR) $(ARFLAGS)
 lib_a_LIBADD =
-am__objects_1 = lib_a-closer.$(OBJEXT) lib_a-reent.$(OBJEXT) \
+@HERMIT_FALSE@am__objects_1 = lib_a-sbrkr.$(OBJEXT)
+am__objects_2 = lib_a-closer.$(OBJEXT) lib_a-reent.$(OBJEXT) \
 	lib_a-impure.$(OBJEXT) lib_a-fcntlr.$(OBJEXT) \
 	lib_a-fstatr.$(OBJEXT) lib_a-getreent.$(OBJEXT) \
 	lib_a-gettimeofdayr.$(OBJEXT) lib_a-isattyr.$(OBJEXT) \
@@ -80,40 +87,41 @@ am__objects_1 = lib_a-closer.$(OBJEXT) lib_a-reent.$(OBJEXT) \
 	lib_a-mkdirr.$(OBJEXT) lib_a-openr.$(OBJEXT) \
 	lib_a-readr.$(OBJEXT) lib_a-renamer.$(OBJEXT) \
 	lib_a-signalr.$(OBJEXT) lib_a-signgam.$(OBJEXT) \
-	lib_a-sbrkr.$(OBJEXT) lib_a-statr.$(OBJEXT) \
-	lib_a-timesr.$(OBJEXT) lib_a-unlinkr.$(OBJEXT) \
-	lib_a-writer.$(OBJEXT)
-@HAVE_STDIO64_DIR_TRUE@am__objects_2 = lib_a-fstat64r.$(OBJEXT) \
+	lib_a-statr.$(OBJEXT) lib_a-timesr.$(OBJEXT) \
+	lib_a-unlinkr.$(OBJEXT) lib_a-writer.$(OBJEXT) \
+	$(am__objects_1)
+@HAVE_STDIO64_DIR_TRUE@am__objects_3 = lib_a-fstat64r.$(OBJEXT) \
 @HAVE_STDIO64_DIR_TRUE@	lib_a-lseek64r.$(OBJEXT) \
 @HAVE_STDIO64_DIR_TRUE@	lib_a-stat64r.$(OBJEXT) \
 @HAVE_STDIO64_DIR_TRUE@	lib_a-open64r.$(OBJEXT)
-am__objects_3 = $(am__objects_2)
-am__objects_4 = lib_a-execr.$(OBJEXT)
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@am__objects_5 =  \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_3) \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_4)
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_5 =  \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@	$(am__objects_3)
-@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_1) \
-@USE_LIBTOOL_FALSE@	$(am__objects_5)
+am__objects_4 = $(am__objects_3)
+am__objects_5 = lib_a-execr.$(OBJEXT)
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@am__objects_6 =  \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_4) \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_5)
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_6 =  \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@	$(am__objects_4)
+@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_2) \
+@USE_LIBTOOL_FALSE@	$(am__objects_6)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libreent_la_LIBADD =
-am__objects_6 = closer.lo reent.lo impure.lo fcntlr.lo fstatr.lo \
+@HERMIT_FALSE@am__objects_7 = sbrkr.lo
+am__objects_8 = closer.lo reent.lo impure.lo fcntlr.lo fstatr.lo \
 	getreent.lo gettimeofdayr.lo isattyr.lo linkr.lo lseekr.lo \
 	mkdirr.lo openr.lo readr.lo renamer.lo signalr.lo signgam.lo \
-	sbrkr.lo statr.lo timesr.lo unlinkr.lo writer.lo
-@HAVE_STDIO64_DIR_TRUE@am__objects_7 = fstat64r.lo lseek64r.lo \
+	statr.lo timesr.lo unlinkr.lo writer.lo $(am__objects_7)
+@HAVE_STDIO64_DIR_TRUE@am__objects_9 = fstat64r.lo lseek64r.lo \
 @HAVE_STDIO64_DIR_TRUE@	stat64r.lo open64r.lo
-am__objects_8 = $(am__objects_7)
-am__objects_9 = execr.lo
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@am__objects_10 =  \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_8) \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_9)
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_10 =  \
-@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@	$(am__objects_8)
-@USE_LIBTOOL_TRUE@am_libreent_la_OBJECTS = $(am__objects_6) \
-@USE_LIBTOOL_TRUE@	$(am__objects_10)
+am__objects_10 = $(am__objects_9)
+am__objects_11 = execr.lo
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@am__objects_12 =  \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_10) \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@	$(am__objects_11)
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@am__objects_12 =  \
+@ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@	$(am__objects_10)
+@USE_LIBTOOL_TRUE@am_libreent_la_OBJECTS = $(am__objects_8) \
+@USE_LIBTOOL_TRUE@	$(am__objects_12)
 libreent_la_OBJECTS = $(am_libreent_la_OBJECTS)
 libreent_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -303,29 +311,10 @@ ELIX_3_SOURCES = execr.c
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_FALSE@ELIX_SOURCES = $(ELIX_2_SOURCES) $(ELIX_3_SOURCES)
 @ELIX_LEVEL_1_FALSE@@ELIX_LEVEL_2_TRUE@ELIX_SOURCES = $(ELIX_2_SOURCES)
 @ELIX_LEVEL_1_TRUE@ELIX_SOURCES = 
-GENERAL_SOURCES = \
-	closer.c \
-	reent.c \
-	impure.c \
-	fcntlr.c \
-	fstatr.c \
-	getreent.c \
-	gettimeofdayr.c \
-	isattyr.c \
-	linkr.c \
-	lseekr.c \
-	mkdirr.c \
-	openr.c \
-	readr.c \
-	renamer.c \
-	signalr.c \
-	signgam.c \
-	sbrkr.c \
-	statr.c \
-	timesr.c \
-	unlinkr.c \
-	writer.c
-
+GENERAL_SOURCES = closer.c reent.c impure.c fcntlr.c fstatr.c \
+	getreent.c gettimeofdayr.c isattyr.c linkr.c lseekr.c mkdirr.c \
+	openr.c readr.c renamer.c signalr.c signgam.c statr.c timesr.c \
+	unlinkr.c writer.c $(am__append_1)
 libreent_la_LDFLAGS = -Xcompiler -nostdlib
 @USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libreent.la
 @USE_LIBTOOL_TRUE@libreent_la_SOURCES = $(GENERAL_SOURCES) $(ELIX_SOURCES)
@@ -344,27 +333,10 @@ DOCBOOK_CHEW = ${top_srcdir}/../doc/makedocbook.py
 DOCBOOK_OUT_FILES = $(CHEWOUT_FILES:.def=.xml)
 DOCBOOK_CHAPTERS = $(CHAPTERS:.tex=.xml)
 CLEANFILES = $(CHEWOUT_FILES) $(DOCBOOK_OUT_FILES)
-CHEWOUT_FILES = \
-	closer.def \
-	reent.def \
-	execr.def \
-	fcntlr.def \
-	fstatr.def \
-	gettimeofdayr.def \
-	linkr.def \
-	lseekr.def \
-	mkdirr.def \
-	openr.def \
-	readr.def \
-	renamer.def \
-	signalr.def \
-	sbrkr.def \
-	statr.def \
-	timesr.def \
-	unlinkr.def \
-	$(STDIO64_DEFS) \
-	writer.def
-
+CHEWOUT_FILES = closer.def reent.def execr.def fcntlr.def fstatr.def \
+	gettimeofdayr.def linkr.def lseekr.def mkdirr.def openr.def \
+	readr.def renamer.def signalr.def statr.def timesr.def \
+	unlinkr.def $(STDIO64_DEFS) writer.def $(am__append_2)
 CHAPTERS = reent.tex
 all: all-am
 
@@ -531,12 +503,6 @@ lib_a-signgam.o: signgam.c
 lib_a-signgam.obj: signgam.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-signgam.obj `if test -f 'signgam.c'; then $(CYGPATH_W) 'signgam.c'; else $(CYGPATH_W) '$(srcdir)/signgam.c'; fi`
 
-lib_a-sbrkr.o: sbrkr.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sbrkr.o `test -f 'sbrkr.c' || echo '$(srcdir)/'`sbrkr.c
-
-lib_a-sbrkr.obj: sbrkr.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sbrkr.obj `if test -f 'sbrkr.c'; then $(CYGPATH_W) 'sbrkr.c'; else $(CYGPATH_W) '$(srcdir)/sbrkr.c'; fi`
-
 lib_a-statr.o: statr.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-statr.o `test -f 'statr.c' || echo '$(srcdir)/'`statr.c
 
@@ -560,6 +526,12 @@ lib_a-writer.o: writer.c
 
 lib_a-writer.obj: writer.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-writer.obj `if test -f 'writer.c'; then $(CYGPATH_W) 'writer.c'; else $(CYGPATH_W) '$(srcdir)/writer.c'; fi`
+
+lib_a-sbrkr.o: sbrkr.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sbrkr.o `test -f 'sbrkr.c' || echo '$(srcdir)/'`sbrkr.c
+
+lib_a-sbrkr.obj: sbrkr.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-sbrkr.obj `if test -f 'sbrkr.c'; then $(CYGPATH_W) 'sbrkr.c'; else $(CYGPATH_W) '$(srcdir)/sbrkr.c'; fi`
 
 lib_a-fstat64r.o: fstat64r.c
 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_a_CFLAGS) $(CFLAGS) -c -o lib_a-fstat64r.o `test -f 'fstat64r.c' || echo '$(srcdir)/'`fstat64r.c

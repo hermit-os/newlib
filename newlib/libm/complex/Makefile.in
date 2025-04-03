@@ -306,7 +306,7 @@ libcomplex_la_LDFLAGS = -Xcompiler -nostdlib
 @USE_LIBTOOL_TRUE@noinst_DATA = objectlist.awk.in
 @USE_LIBTOOL_FALSE@noinst_LIBRARIES = lib.a
 @USE_LIBTOOL_FALSE@lib_a_SOURCES = $(src) $(fsrc) $(lsrc)
-@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
+@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS) -Wno-implicit-function-declaration
 
 #
 # documentation rules

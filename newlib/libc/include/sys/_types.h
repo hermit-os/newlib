@@ -207,9 +207,17 @@ typedef	__uint8_t	__sa_family_t;
 typedef	__uint32_t	__socklen_t;
 #endif
 
+#ifndef __machine_nlink_t_defined
 typedef	unsigned short	__nlink_t;
+#endif
+
+#ifndef __machine_suseconds_t_defined
 typedef	long		__suseconds_t;	/* microseconds (signed) */
+#endif
+
+#ifndef __machine_useconds_t_defined
 typedef	unsigned long	__useconds_t;	/* microseconds (unsigned) */
+#endif
 
 #ifdef __GNUCLIKE_BUILTIN_VARARGS
 typedef	__builtin_va_list	__va_list;

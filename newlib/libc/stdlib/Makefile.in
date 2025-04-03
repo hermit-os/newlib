@@ -372,30 +372,30 @@ GENERAL_SOURCES = __adjust.c __atexit.c __call_atexit.c __exp10.c \
 	strtoimax.c strtol.c strtorx.c strtoul.c strtoumax.c utoa.c \
 	wcstod.c wcstoimax.c wcstol.c wcstoul.c wcstoumax.c wcstombs.c \
 	wcstombs_r.c wctomb.c wctomb_r.c $(am__append_1)
-@NEWLIB_NANO_MALLOC_FALSE@MALIGNR = malignr
-@NEWLIB_NANO_MALLOC_TRUE@MALIGNR = nano-malignr
-@NEWLIB_NANO_MALLOC_FALSE@MALLOPTR = malloptr
-@NEWLIB_NANO_MALLOC_TRUE@MALLOPTR = nano-malloptr
-@NEWLIB_NANO_MALLOC_FALSE@PVALLOCR = pvallocr
-@NEWLIB_NANO_MALLOC_TRUE@PVALLOCR = nano-pvallocr
-@NEWLIB_NANO_MALLOC_FALSE@VALLOCR = vallocr
-@NEWLIB_NANO_MALLOC_TRUE@VALLOCR = nano-vallocr
-@NEWLIB_NANO_MALLOC_FALSE@FREER = freer
-@NEWLIB_NANO_MALLOC_TRUE@FREER = nano-freer
-@NEWLIB_NANO_MALLOC_FALSE@REALLOCR = reallocr
-@NEWLIB_NANO_MALLOC_TRUE@REALLOCR = nano-reallocr
-@NEWLIB_NANO_MALLOC_FALSE@CALLOCR = callocr
-@NEWLIB_NANO_MALLOC_TRUE@CALLOCR = nano-callocr
-@NEWLIB_NANO_MALLOC_FALSE@CFREER = cfreer
-@NEWLIB_NANO_MALLOC_TRUE@CFREER = nano-cfreer
-@NEWLIB_NANO_MALLOC_FALSE@MALLINFOR = mallinfor
-@NEWLIB_NANO_MALLOC_TRUE@MALLINFOR = nano-mallinfor
-@NEWLIB_NANO_MALLOC_FALSE@MALLSTATSR = mallstatsr
-@NEWLIB_NANO_MALLOC_TRUE@MALLSTATSR = nano-mallstatsr
-@NEWLIB_NANO_MALLOC_FALSE@MSIZER = msizer
-@NEWLIB_NANO_MALLOC_TRUE@MSIZER = nano-msizer
-@NEWLIB_NANO_MALLOC_FALSE@MALLOCR = mallocr
-@NEWLIB_NANO_MALLOC_TRUE@MALLOCR = nano-mallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MALIGNR = malignr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MALIGNR = nano-malignr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MALLOPTR = malloptr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MALLOPTR = nano-malloptr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@PVALLOCR = pvallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@PVALLOCR = nano-pvallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@VALLOCR = vallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@VALLOCR = nano-vallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@FREER = freer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@FREER = nano-freer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@REALLOCR = reallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@REALLOCR = nano-reallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@CALLOCR = callocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@CALLOCR = nano-callocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@CFREER = cfreer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@CFREER = nano-cfreer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MALLINFOR = mallinfor
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MALLINFOR = nano-mallinfor
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MALLSTATSR = mallstatsr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MALLSTATSR = nano-mallstatsr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MSIZER = msizer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MSIZER = nano-msizer
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_FALSE@MALLOCR = mallocr
+@HERMIT_FALSE@@NEWLIB_NANO_MALLOC_TRUE@MALLOCR = nano-mallocr
 EXTENDED_SOURCES = \
 	arc4random.c	\
 	arc4random_uniform.c \
@@ -446,11 +446,11 @@ ELIX_2_SOURCES = \
 	wcsrtombs.c	\
 	wctob.c
 
-ELIX_2_OBJS = \
-	$(lpfx)$(MALIGNR).$(oext)	\
-	$(lpfx)$(MALLOPTR).$(oext) \
-	$(lpfx)$(PVALLOCR).$(oext)	\
-	$(lpfx)$(VALLOCR).$(oext)
+@HERMIT_FALSE@ELIX_2_OBJS = \
+@HERMIT_FALSE@	$(lpfx)$(MALIGNR).$(oext)	\
+@HERMIT_FALSE@	$(lpfx)$(MALLOPTR).$(oext) \
+@HERMIT_FALSE@	$(lpfx)$(PVALLOCR).$(oext)	\
+@HERMIT_FALSE@	$(lpfx)$(VALLOCR).$(oext)
 
 ELIX_3_SOURCES = \
 	putenv.c	\
@@ -472,10 +472,10 @@ ELIX_4_SOURCES = \
 @ELIX_LEVEL_1_TRUE@ELIX_OBJS = 
 
 # Because of how libtool moves objects around, mallocr must be built last.
-LIBADD_OBJS = $(lpfx)$(FREER).$(oext) $(lpfx)$(REALLOCR).$(oext) \
-	$(lpfx)$(CALLOCR).$(oext) $(lpfx)$(CFREER).$(oext) \
-	$(lpfx)$(MALLINFOR).$(oext) $(lpfx)$(MALLSTATSR).$(oext) \
-	$(lpfx)$(MSIZER).$(oext) $(lpfx)$(MALLOCR).$(oext)
+@HERMIT_FALSE@LIBADD_OBJS = $(lpfx)$(FREER).$(oext) $(lpfx)$(REALLOCR).$(oext) \
+@HERMIT_FALSE@	$(lpfx)$(CALLOCR).$(oext) $(lpfx)$(CFREER).$(oext) \
+@HERMIT_FALSE@	$(lpfx)$(MALLINFOR).$(oext) $(lpfx)$(MALLSTATSR).$(oext) \
+@HERMIT_FALSE@	$(lpfx)$(MSIZER).$(oext) $(lpfx)$(MALLOCR).$(oext)
 
 libstdlib_la_LDFLAGS = -Xcompiler -nostdlib
 @USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libstdlib.la
@@ -501,7 +501,7 @@ DOCBOOK_CHEW = ${top_srcdir}/../doc/makedocbook.py
 DOCBOOK_OUT_FILES = $(CHEWOUT_FILES:.def=.xml)
 DOCBOOK_CHAPTERS = $(CHAPTERS:.tex=.xml)
 CLEANFILES = $(CHEWOUT_FILES) $(DOCBOOK_OUT_FILES)
-MALLOC_COMPILE = $(LIB_COMPILE) -DINTERNAL_NEWLIB
+@HERMIT_FALSE@MALLOC_COMPILE = $(LIB_COMPILE) -DINTERNAL_NEWLIB
 CHEWOUT_FILES = \
 	_Exit.def	\
 	a64l.def	\
@@ -1582,41 +1582,41 @@ docbook: $(DOCBOOK_OUT_FILES)
 	  ${top_srcdir}/../doc/chapter-texi2docbook.py <$(srcdir)/$${chapter%.xml}.tex >../$$chapter ; \
 	done
 
-$(lpfx)$(MALLOCR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MALLOC -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MALLOCR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MALLOC -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(FREER).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_FREE -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(FREER).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_FREE -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(REALLOCR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_REALLOC -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(REALLOCR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_REALLOC -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(CALLOCR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_CALLOC -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(CALLOCR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_CALLOC -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(CFREER).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_CFREE -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(CFREER).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_CFREE -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(MALIGNR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MEMALIGN -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MALIGNR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MEMALIGN -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(VALLOCR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_VALLOC -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(VALLOCR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_VALLOC -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(PVALLOCR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_PVALLOC -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(PVALLOCR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_PVALLOC -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(MALLINFOR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MALLINFO -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MALLINFOR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MALLINFO -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(MALLSTATSR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MALLOC_STATS -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MALLSTATSR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MALLOC_STATS -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(MSIZER).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MALLOC_USABLE_SIZE -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MSIZER).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MALLOC_USABLE_SIZE -c $(srcdir)/$(MALLOCR).c -o $@
 
-$(lpfx)$(MALLOPTR).$(oext): $(MALLOCR).c
-	$(MALLOC_COMPILE) -DDEFINE_MALLOPT -c $(srcdir)/$(MALLOCR).c -o $@
+@HERMIT_FALSE@$(lpfx)$(MALLOPTR).$(oext): $(MALLOCR).c
+@HERMIT_FALSE@	$(MALLOC_COMPILE) -DDEFINE_MALLOPT -c $(srcdir)/$(MALLOCR).c -o $@
 
 $(lpfx)dtoa.$(oext): dtoa.c mprec.h
 $(lpfx)ldtoa.$(oext): ldtoa.c mprec.h
