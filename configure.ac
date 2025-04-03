@@ -1056,6 +1056,9 @@ case "${target}" in
       with_gmp=/usr/local
     fi
     ;;
+  *-*-hermit*)
+    noconfigdirs="$noconfigdirs target-libgloss"
+    ;;
   *-*-kaos*)
     # Remove unsupported stuff on all kaOS configurations.
     noconfigdirs="$noconfigdirs target-libgloss"

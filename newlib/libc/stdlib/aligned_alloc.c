@@ -26,6 +26,8 @@
    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
+#ifndef MALLOC_PROVIDED
+
 #include <reent.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -35,3 +37,5 @@ aligned_alloc (size_t align, size_t size)
 {
   return _memalign_r (_REENT, align, size);
 }
+
+#endif // MALLOC_PROVIDED

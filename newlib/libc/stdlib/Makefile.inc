@@ -7,16 +7,12 @@ libc_a_SOURCES += \
 	%D%/_Exit.c \
 	%D%/abort.c \
 	%D%/abs.c \
-	%D%/aligned_alloc.c \
 	%D%/assert.c \
 	%D%/atexit.c \
 	%D%/atof.c \
 	%D%/atoff.c \
 	%D%/atoi.c \
 	%D%/atol.c \
-	%D%/calloc.c \
-	%D%/callocr.c \
-	%D%/cfreer.c \
 	%D%/div.c \
 	%D%/dtoa.c \
 	%D%/dtoastub.c \
@@ -24,7 +20,6 @@ libc_a_SOURCES += \
 	%D%/envlock.c \
 	%D%/eprintf.c \
 	%D%/exit.c \
-	%D%/freer.c \
 	%D%/gdtoa-gethex.c \
 	%D%/gdtoa-hexnan.c \
 	%D%/getenv.c \
@@ -39,9 +34,6 @@ libc_a_SOURCES += \
 	%D%/gdtoa-gdtoa.c \
 	%D%/gdtoa-dmisc.c \
 	%D%/gdtoa-gmisc.c \
-	%D%/mallinfor.c \
-	%D%/malloc.c \
-	%D%/mallocr.c \
 	%D%/mallstatsr.c \
 	%D%/mblen.c \
 	%D%/mblen_r.c \
@@ -51,17 +43,14 @@ libc_a_SOURCES += \
 	%D%/mbtowc_r.c \
 	%D%/mlock.c \
 	%D%/mprec.c \
-	%D%/msizer.c \
 	%D%/mstats.c \
 	%D%/on_exit_args.c \
 	%D%/quick_exit.c \
 	%D%/rand.c \
 	%D%/rand_r.c \
 	%D%/random.c \
-	%D%/realloc.c \
 	%D%/reallocarray.c \
 	%D%/reallocf.c \
-	%D%/reallocr.c \
 	%D%/sb_charsets.c \
 	%D%/strtod.c \
 	%D%/strtoimax.c \
@@ -86,6 +75,21 @@ libc_a_SOURCES += \
 	%D%/strtorx.c \
 	%D%/wcstold.c
 endif # HAVE_LONG_DOUBLE
+
+if !HERMIT
+
+libc_a_SOURCES += \
+	%D%/aligned_alloc.c \
+	%D%/calloc.c \
+	%D%/callocr.c \
+	%D%/cfreer.c \
+	%D%/freer.c \
+	%D%/malloc.c \
+	%D%/mallocr.c \
+	%D%/mallinfor.c \
+	%D%/msizer.c \
+	%D%/realloc.c \
+	%D%/reallocr.c
 
 if NEWLIB_NANO_MALLOC
 MALIGNR = nano-malignr
@@ -114,6 +118,7 @@ MALLSTATSR = mallstatsr
 MSIZER = msizer
 MALLOCR = mallocr
 endif
+endif # !HERMIT
 
 libc_a_SOURCES += \
 	%D%/arc4random.c \
@@ -152,22 +157,26 @@ libc_a_SOURCES += \
 	%D%/getopt.c \
 	%D%/getsubopt.c \
 	%D%/l64a.c \
-	%D%/malign.c \
-	%D%/malignr.c \
-	%D%/malloptr.c \
 	%D%/mbrlen.c \
 	%D%/mbrtowc.c \
 	%D%/mbsinit.c \
 	%D%/mbsnrtowcs.c \
 	%D%/mbsrtowcs.c \
 	%D%/on_exit.c \
-	%D%/pvallocr.c \
-	%D%/valloc.c \
-	%D%/vallocr.c \
 	%D%/wcrtomb.c \
 	%D%/wcsnrtombs.c \
 	%D%/wcsrtombs.c \
 	%D%/wctob.c
+
+if !HERMIT
+%C%_ELIX_2_SOURCES += \
+	%D%/malign.c \
+	%D%/malignr.c \
+	%D%/malloptr.c \
+	%D%/pvallocr.c \
+	%D%/valloc.c \
+	%D%/vallocr.c
+endif # !HERMIT
 
 %C%_ELIX_3_SOURCES = \
 	%D%/putenv.c \
