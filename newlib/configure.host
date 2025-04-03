@@ -429,6 +429,10 @@ esac
 # THIS TABLE IS ALPHA SORTED.  KEEP IT THAT WAY.
 
 case "${host}" in
+  *-*-hermit*)
+	posix_dir=posix
+	sys_dir=hermit
+	;;
   *-*-cygwin*)
 	posix_dir=posix
 	stdio64_dir=stdio64
@@ -633,6 +637,9 @@ esac
 # THIS TABLE IS ALPHA SORTED.  KEEP IT THAT WAY.
 
 case "${host}" in
+  *-*-hermit*)
+	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES -D__DYNAMIC_REENT__ -DSIGNAL_PROVIDED -D_COMPILING_NEWLIB -DHAVE_NANOSLEEP -DMALLOC_PROVIDED"
+	;;
   *-*-cygwin*)
 	test -z "$cygwin_srcdir" && cygwin_srcdir=`cd ${srcdir}/../winsup/cygwin; pwd`
 	export cygwin_srcdir

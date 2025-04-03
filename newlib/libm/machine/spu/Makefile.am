@@ -29,11 +29,13 @@ LIB_SOURCES = \
 	wf_tgamma.c w_hypot.c w_lgamma.c w_log10.c w_log.c w_pow.c \
 	w_remainder.c w_sincos.c w_sinh.c w_sqrt.c w_tgamma.c
 
+if !HERMIT
 noinst_LIBRARIES = lib.a
 lib_a_SOURCES = $(LIB_SOURCES)
 lib_a_CFLAGS = $(AM_CFLAGS)
 lib_a_CCASFLAGS = $(AM_CCASFLAGS)
 noinst_DATA =
+endif # !HERMIT
 
 include $(srcdir)/../../../Makefile.shared
 
