@@ -15,11 +15,15 @@ libc_a_SOURCES += \
 	%D%/readr.c \
 	%D%/renamer.c \
 	%D%/signalr.c \
-	%D%/sbrkr.c \
 	%D%/statr.c \
 	%D%/timesr.c \
 	%D%/unlinkr.c \
 	%D%/writer.c
+
+if !HERMIT
+libc_a_SOURCES += \
+	%D%/sbrkr.c
+endif # !HERMIT
 
 %C%_ELIX_2_SOURCES =
 if HAVE_STDIO64_DIR

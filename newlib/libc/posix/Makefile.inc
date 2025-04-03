@@ -6,7 +6,13 @@ libc_a_SOURCES += \
 	%D%/opendir.c %D%/readdir.c %D%/readdir_r.c \
 	%D%/regcomp.c %D%/regerror.c %D%/regexec.c %D%/regfree.c \
 	%D%/rewinddir.c %D%/sleep.c %D%/usleep.c \
-	%D%/telldir.c %D%/ftw.c %D%/nftw.c
+	%D%/telldir.c
+
+if !HERMIT
+libc_a_SOURCES += \
+ 	%D%/ftw.c \
+	%D%/nftw.c
+endif # !HERMIT
 
 %C%_ELIX_2_SOURCES = \
 	%D%/scandir.c %D%/seekdir.c

@@ -15,7 +15,7 @@ int _dummy_getreent;
 #undef __getreent
 #endif
 
-struct _reent *
+struct _reent * __attribute__((weak))
 __getreent (void)
 {
   return _impure_ptr;
