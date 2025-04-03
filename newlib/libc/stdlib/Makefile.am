@@ -81,6 +81,7 @@ GENERAL_SOURCES += \
 	wcstold.c
 endif # HAVE_LONG_DOUBLE
 
+if !HERMIT
 if NEWLIB_NANO_MALLOC
 MALIGNR=nano-malignr
 MALLOPTR=nano-malloptr
@@ -108,6 +109,7 @@ MALLSTATSR=mallstatsr
 MSIZER=msizer
 MALLOCR=mallocr
 endif
+endif # !HERMIT
 
 EXTENDED_SOURCES = \
 	arc4random.c	\
@@ -159,11 +161,13 @@ ELIX_2_SOURCES = \
 	wcsrtombs.c	\
 	wctob.c
 
+if !HERMIT
 ELIX_2_OBJS = \
 	$(lpfx)$(MALIGNR).$(oext)	\
 	$(lpfx)$(MALLOPTR).$(oext) \
 	$(lpfx)$(PVALLOCR).$(oext)	\
 	$(lpfx)$(VALLOCR).$(oext)
+endif # !HERMIT
 
 ELIX_3_SOURCES = \
 	putenv.c	\
@@ -193,11 +197,13 @@ endif
 endif
 endif
 
+if !HERMIT
 # Because of how libtool moves objects around, mallocr must be built last.
 LIBADD_OBJS = $(lpfx)$(FREER).$(oext) $(lpfx)$(REALLOCR).$(oext) \
 	$(lpfx)$(CALLOCR).$(oext) $(lpfx)$(CFREER).$(oext) \
 	$(lpfx)$(MALLINFOR).$(oext) $(lpfx)$(MALLSTATSR).$(oext) \
 	$(lpfx)$(MSIZER).$(oext) $(lpfx)$(MALLOCR).$(oext)
+endif # !HERMIT
 
 libstdlib_la_LDFLAGS = -Xcompiler -nostdlib
 
@@ -220,6 +226,7 @@ endif # USE_LIBTOOL
 
 include $(srcdir)/../../Makefile.shared
 
+if !HERMIT
 MALLOC_COMPILE = $(LIB_COMPILE) -DINTERNAL_NEWLIB
 
 $(lpfx)$(MALLOCR).$(oext): $(MALLOCR).c
@@ -257,6 +264,7 @@ $(lpfx)$(MSIZER).$(oext): $(MALLOCR).c
 
 $(lpfx)$(MALLOPTR).$(oext): $(MALLOCR).c
 	$(MALLOC_COMPILE) -DDEFINE_MALLOPT -c $(srcdir)/$(MALLOCR).c -o $@
+endif # !HERMIT
 
 CHEWOUT_FILES= \
 	_Exit.def	\

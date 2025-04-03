@@ -55,6 +55,7 @@ lsrc = el_hypot.c
 
 libmath_la_LDFLAGS = -Xcompiler -nostdlib
 
+if !HERMIT
 if USE_LIBTOOL
 noinst_LTLIBRARIES = libmath.la
 libmath_la_SOURCES = $(src) $(fsrc) $(lsrc)
@@ -65,6 +66,7 @@ lib_a_SOURCES = $(src) $(fsrc) $(lsrc)
 lib_a_CFLAGS = $(AM_CFLAGS)
 noinst_DATA =
 endif # USE_LIBTOOL
+endif # !HERMIT
 
 include $(srcdir)/../../Makefile.shared
 

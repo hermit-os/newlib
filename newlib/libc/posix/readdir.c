@@ -35,7 +35,11 @@ static char sccsid[] = "@(#)readdir.c	5.7 (Berkeley) 6/1/90";
 
 #include <dirent.h>
 
+#ifdef __hermit__
+#define getdents getdents64
+#else
 extern int getdents (int fd, void *dp, int count);
+#endif /* __hermit */
 
 /*
  * get next entry in a directory.
