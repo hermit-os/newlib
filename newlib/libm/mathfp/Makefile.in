@@ -120,8 +120,8 @@ am__objects_2 = lib_a-sf_ceil.$(OBJEXT) lib_a-sf_acos.$(OBJEXT) \
 	lib_a-sf_fmod.$(OBJEXT) lib_a-ef_scalb.$(OBJEXT) \
 	lib_a-sf_signif.$(OBJEXT) lib_a-sf_exp2.$(OBJEXT) \
 	lib_a-sf_tgamma.$(OBJEXT)
-@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_1) \
-@USE_LIBTOOL_FALSE@	$(am__objects_2)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@am_lib_a_OBJECTS = $(am__objects_1) \
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@	$(am__objects_2)
 lib_a_OBJECTS = $(am_lib_a_OBJECTS)
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libmathfp_la_LIBADD =
@@ -144,13 +144,14 @@ am__objects_4 = sf_ceil.lo sf_acos.lo sf_frexp.lo sf_cos.lo sf_sinh.lo \
 	sf_erf.lo ef_j0.lo ef_j1.lo wf_jn.lo ef_hypot.lo wf_cabs.lo \
 	wf_drem.lo sf_asinh.lo sf_fmod.lo ef_scalb.lo sf_signif.lo \
 	sf_exp2.lo sf_tgamma.lo
-@USE_LIBTOOL_TRUE@am_libmathfp_la_OBJECTS = $(am__objects_3) \
-@USE_LIBTOOL_TRUE@	$(am__objects_4)
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@am_libmathfp_la_OBJECTS =  \
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@	$(am__objects_3) \
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@	$(am__objects_4)
 libmathfp_la_OBJECTS = $(am_libmathfp_la_OBJECTS)
 libmathfp_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(libmathfp_la_LDFLAGS) $(LDFLAGS) -o $@
-@USE_LIBTOOL_TRUE@am_libmathfp_la_rpath =
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@am_libmathfp_la_rpath =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp =
 am__depfiles_maybe =
@@ -341,13 +342,13 @@ fsrc = sf_ceil.c \
 	sf_exp2.c sf_tgamma.c
 
 libmathfp_la_LDFLAGS = -Xcompiler -nostdlib
-@USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libmathfp.la
-@USE_LIBTOOL_TRUE@libmathfp_la_SOURCES = $(src) $(fsrc)
-@USE_LIBTOOL_FALSE@noinst_DATA = 
-@USE_LIBTOOL_TRUE@noinst_DATA = objectlist.awk.in
-@USE_LIBTOOL_FALSE@noinst_LIBRARIES = lib.a
-@USE_LIBTOOL_FALSE@lib_a_SOURCES = $(src) $(fsrc)
-@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@noinst_LTLIBRARIES = libmathfp.la
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@libmathfp_la_SOURCES = $(src) $(fsrc)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@noinst_DATA = 
+@HERMIT_FALSE@@USE_LIBTOOL_TRUE@noinst_DATA = objectlist.awk.in
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@noinst_LIBRARIES = lib.a
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@lib_a_SOURCES = $(src) $(fsrc)
+@HERMIT_FALSE@@USE_LIBTOOL_FALSE@lib_a_CFLAGS = $(AM_CFLAGS)
 
 #
 # documentation rules

@@ -34,6 +34,17 @@ fi
 rm -f conftest*])
 AM_CONDITIONAL(HAVE_LONG_DOUBLE, test x"$acnewlib_cv_type_long_double" = x"yes")
 
+AC_CANONICAL_HOST
+build_hermit=no
+case "${host_os}" in
+    hermit*)
+        build_hermit=yes
+        ;;
+    *)
+        ;;
+esac
+AM_CONDITIONAL(HERMIT, test "$build_hermit" = "yes")
+
 dnl Can't be done in NEWLIB_CONFIGURE because that confuses automake. 
 AC_CONFIG_AUX_DIR(../..)
 
