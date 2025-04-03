@@ -802,6 +802,7 @@ or1k
 phoenix
 rdos
 rtems
+hermit
 sh
 sparc64
 sun4
@@ -11855,6 +11856,8 @@ subdirs="$subdirs a29khif"
 	rdos) subdirs="$subdirs rdos"
  ;;
 	rtems) subdirs="$subdirs rtems"
+ ;;
+	hermit) subdirs="$subdirs hermit"
  ;;
 	sh) subdirs="$subdirs sh"
  ;;

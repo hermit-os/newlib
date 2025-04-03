@@ -31,7 +31,7 @@ noinst_DATA = objectlist.awk.in
 else
 noinst_LIBRARIES = lib.a
 lib_a_SOURCES = $(src) $(fsrc) $(lsrc)
-lib_a_CFLAGS = $(AM_CFLAGS)
+lib_a_CFLAGS = $(AM_CFLAGS) -Wno-implicit-function-declaration
 noinst_DATA =
 endif # USE_LIBTOOL
 

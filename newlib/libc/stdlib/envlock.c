@@ -35,7 +35,7 @@ that it already holds.
 __LOCK_INIT_RECURSIVE(static, __env_recursive_mutex);
 #endif
 
-void
+void __attribute__((weak))
 __env_lock (ptr)
      struct _reent *ptr;
 {
@@ -44,7 +44,7 @@ __env_lock (ptr)
 #endif
 }
 
-void
+void __attribute__((weak))
 __env_unlock (ptr)
      struct _reent *ptr;
 {

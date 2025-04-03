@@ -114,8 +114,6 @@ struct sigaction {
 
 #else /* defined(__rtems__) */
 
-#define SA_NOCLDSTOP 1  /* only value supported now for sa_flags */
-
 typedef void (*_sig_func_ptr)(int);
 
 struct sigaction 
@@ -145,6 +143,22 @@ struct sigaction
 #define	SS_ONSTACK	0x1
 #define	SS_DISABLE	0x2
 
+#endif
+
+#if defined(__hermit__)
+/*
+ * Possible values for ss_flags in stack_t below.
+ */
+#define SS_ONSTACK	0x1
+#define SS_DISABLE	0x2
+
+#define SA_ONSTACK 0x0001
+#define SA_SIGINFO 0x0040
+#define SA_RESTART 0x0002
+#define SA_RESETHAND 0x0004
+#define SA_NOCLDSTOP 0x0008
+#define SA_NODEFER 0x0010
+#define SA_NOCLDWAIT 0x0020
 #endif
 
 /*
@@ -222,7 +236,7 @@ int sigpause (int);
 int sigaltstack (const stack_t *__restrict, stack_t *__restrict);
 #endif
 
-#if __POSIX_VISIBLE >= 199506
+#if __POSIX_VISIBLE >= 199506 && !defined(__hermit__)
 int pthread_kill (pthread_t, int);
 #endif
 

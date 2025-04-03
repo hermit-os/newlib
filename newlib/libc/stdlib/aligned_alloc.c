@@ -24,6 +24,8 @@
  * SUCH DAMAGE.
  */
 
+#ifndef MALLOC_PROVIDED
+
 #include <stdlib.h>
 
 void *
@@ -36,3 +38,5 @@ aligned_alloc(size_t alignment, size_t size)
 
 	return (error == 0 ? p : NULL);
 }
+
+#endif // MALLOC_PROVIDED

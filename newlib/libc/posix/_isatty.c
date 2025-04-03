@@ -1,5 +1,7 @@
 /* isatty.c */
 
+#ifndef __hermit__
+
 /* Dumb implementation so programs will at least run.  */
 
 #include <sys/stat.h>
@@ -19,3 +21,5 @@ _isatty (int fd)
   errno = ENOTTY;
   return 0;
 }
+
+#endif /* __hermit__ */
