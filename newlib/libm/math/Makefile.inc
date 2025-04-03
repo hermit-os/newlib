@@ -1,3 +1,5 @@
+if !HERMIT
+
 %C%_src = \
 	%D%/k_standard.c %D%/k_rem_pio2.c \
 	%D%/k_cos.c %D%/k_sin.c %D%/k_tan.c \
@@ -62,3 +64,5 @@ LIBM_CHEWOUT_FILES += \
 	%D%/w_sqrt.def %D%/s_tan.def %D%/s_tanh.def
 
 LIBM_CHAPTERS += %D%/math.tex
+
+endif # !HERMIT

@@ -106,6 +106,9 @@ AWK_UNIQUE_OBJS = $(AWK) '{ \
     print objs[i]; \
 }'
 
+if HERMIT
+MATHOBJS_IN_LIBC =
+else
 # The functions ldexp, frexp and modf are traditionally supplied in
 # both libc.a and libm.a.  We build them in libm.a and copy them over,
 # along with some required supporting routines.
@@ -123,6 +126,7 @@ MATHOBJS_IN_LIBC = \
 	libm_a-sf_scalbn.o \
 	libm_a-s_finite.o libm_a-sf_finite.o \
 	libm_a-s_copysign.o libm_a-sf_copysign.o
+endif
 
 ## Place the libm_a objects in libc/ to keep the top dir tidy.
 stamp-libc-math-objects: libm.a

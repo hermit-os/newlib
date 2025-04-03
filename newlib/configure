@@ -795,6 +795,8 @@ HAVE_LIBC_SYS_MMIXWARE_DIR_FALSE
 HAVE_LIBC_SYS_MMIXWARE_DIR_TRUE
 HAVE_LIBC_SYS_M88KBUG_DIR_FALSE
 HAVE_LIBC_SYS_M88KBUG_DIR_TRUE
+HAVE_LIBC_SYS_HERMIT_DIR_FALSE
+HAVE_LIBC_SYS_HERMIT_DIR_TRUE
 HAVE_LIBC_SYS_H8500HMS_DIR_FALSE
 HAVE_LIBC_SYS_H8500HMS_DIR_TRUE
 HAVE_LIBC_SYS_H8300HMS_DIR_FALSE
@@ -900,6 +902,13 @@ am__isrc
 INSTALL_DATA
 INSTALL_SCRIPT
 INSTALL_PROGRAM
+abs_newlib_basedir
+newlib_basedir
+MAY_SUPPLY_SYSCALLS_FALSE
+MAY_SUPPLY_SYSCALLS_TRUE
+multi_basedir
+HERMIT_FALSE
+HERMIT_TRUE
 host_os
 host_vendor
 host_cpu
@@ -908,11 +917,6 @@ build_os
 build_vendor
 build_cpu
 build
-abs_newlib_basedir
-newlib_basedir
-MAY_SUPPLY_SYSCALLS_FALSE
-MAY_SUPPLY_SYSCALLS_TRUE
-multi_basedir
 NEWLIB_RETARGETABLE_LOCKING_FALSE
 NEWLIB_RETARGETABLE_LOCKING_TRUE
 NEWLIB_NANO_FORMATTED_IO_FALSE
@@ -2556,70 +2560,6 @@ else
 fi
 
 
-# Check whether --enable-newlib-long-time_t was given.
-if test "${enable_newlib_long_time_t+set}" = set; then :
-  enableval=$enable_newlib_long_time_t; if test "${newlib_long_time_t+set}" != set; then
-  case "${enableval}" in
-    yes) newlib_long_time_t=yes ;;
-    no)  newlib_long_time_t=no  ;;
-    *)   as_fn_error $? "bad value ${enableval} for newlib-long-time_t option" "$LINENO" 5 ;;
-  esac
- fi
-else
-  newlib_long_time_t=no
-fi
-
-# Check whether --enable-newlib-use-gdtoa was given.
-if test "${enable_newlib_use_gdtoa+set}" = set; then :
-  enableval=$enable_newlib_use_gdtoa; if test "${newlib_use_gdtoa+set}" != set; then
-  case "${enableval}" in
-    yes) newlib_use_gdtoa=yes ;;
-    no)  newlib_use_gdtoa=no  ;;
-    *)   as_fn_error $? "bad value ${enableval} for newlib-use-gdtoa option" "$LINENO" 5 ;;
-  esac
- fi
-else
-  newlib_use_gdtoa=yes
-fi
-
-# Default to --enable-multilib
-# Check whether --enable-multilib was given.
-if test "${enable_multilib+set}" = set; then :
-  enableval=$enable_multilib; case "$enableval" in
-  yes) multilib=yes ;;
-  no)  multilib=no ;;
-  *)   as_fn_error $? "bad value $enableval for multilib option" "$LINENO" 5 ;;
- esac
-else
-  multilib=yes
-fi
-
-
-# We may get other options which we leave undocumented:
-# --with-target-subdir, --with-multisrctop, --with-multisubdir
-# See config-ml.in if you want the gory details.
-
-if test "$srcdir" = "."; then
-  if test "$with_target_subdir" != "."; then
-    multi_basedir="$srcdir/$with_multisrctop../.."
-  else
-    multi_basedir="$srcdir/$with_multisrctop.."
-  fi
-else
-  multi_basedir="$srcdir/.."
-fi
-
-
-# Even if the default multilib is not a cross compilation,
-# it may be that some of the other multilibs are.
-if test $cross_compiling = no && test $multilib = yes \
-   && test "x${with_multisubdir}" != x ; then
-   cross_compiling=maybe
-fi
-
-ac_config_commands="$ac_config_commands default-1"
-
-
 # Make sure we can run config.sub.
 $SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
   as_fn_error $? "cannot run $SHELL $ac_aux_dir/config.sub" "$LINENO" 5
@@ -2689,6 +2629,87 @@ shift; shift
 host_os=$*
 IFS=$ac_save_IFS
 case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+
+
+build_hermit=no
+case "${host_os}" in
+    hermit*)
+        build_hermit=yes
+        ;;
+    *)
+        ;;
+esac
+ if test "$build_hermit" = "yes"; then
+  HERMIT_TRUE=
+  HERMIT_FALSE='#'
+else
+  HERMIT_TRUE='#'
+  HERMIT_FALSE=
+fi
+
+
+# Check whether --enable-newlib-long-time_t was given.
+if test "${enable_newlib_long_time_t+set}" = set; then :
+  enableval=$enable_newlib_long_time_t; if test "${newlib_long_time_t+set}" != set; then
+  case "${enableval}" in
+    yes) newlib_long_time_t=yes ;;
+    no)  newlib_long_time_t=no  ;;
+    *)   as_fn_error $? "bad value ${enableval} for newlib-long-time_t option" "$LINENO" 5 ;;
+  esac
+ fi
+else
+  newlib_long_time_t=no
+fi
+
+# Check whether --enable-newlib-use-gdtoa was given.
+if test "${enable_newlib_use_gdtoa+set}" = set; then :
+  enableval=$enable_newlib_use_gdtoa; if test "${newlib_use_gdtoa+set}" != set; then
+  case "${enableval}" in
+    yes) newlib_use_gdtoa=yes ;;
+    no)  newlib_use_gdtoa=no  ;;
+    *)   as_fn_error $? "bad value ${enableval} for newlib-use-gdtoa option" "$LINENO" 5 ;;
+  esac
+ fi
+else
+  newlib_use_gdtoa=yes
+fi
+
+# Default to --enable-multilib
+# Check whether --enable-multilib was given.
+if test "${enable_multilib+set}" = set; then :
+  enableval=$enable_multilib; case "$enableval" in
+  yes) multilib=yes ;;
+  no)  multilib=no ;;
+  *)   as_fn_error $? "bad value $enableval for multilib option" "$LINENO" 5 ;;
+ esac
+else
+  multilib=yes
+fi
+
+
+# We may get other options which we leave undocumented:
+# --with-target-subdir, --with-multisrctop, --with-multisubdir
+# See config-ml.in if you want the gory details.
+
+if test "$srcdir" = "."; then
+  if test "$with_target_subdir" != "."; then
+    multi_basedir="$srcdir/$with_multisrctop../.."
+  else
+    multi_basedir="$srcdir/$with_multisrctop.."
+  fi
+else
+  multi_basedir="$srcdir/.."
+fi
+
+
+# Even if the default multilib is not a cross compilation,
+# it may be that some of the other multilibs are.
+if test $cross_compiling = no && test $multilib = yes \
+   && test "x${with_multisubdir}" != x ; then
+   cross_compiling=maybe
+fi
+
+ac_config_commands="$ac_config_commands default-1"
 
 
 am__api_version='1.15'
@@ -5395,6 +5416,13 @@ else
   HAVE_LIBC_SYS_H8500HMS_DIR_TRUE='#'
   HAVE_LIBC_SYS_H8500HMS_DIR_FALSE=
 fi
+ if test "${sys_dir}" = hermit; then
+  HAVE_LIBC_SYS_HERMIT_DIR_TRUE=
+  HAVE_LIBC_SYS_HERMIT_DIR_FALSE='#'
+else
+  HAVE_LIBC_SYS_HERMIT_DIR_TRUE='#'
+  HAVE_LIBC_SYS_HERMIT_DIR_FALSE=
+fi
  if test "${sys_dir}" = m88kbug; then
   HAVE_LIBC_SYS_M88KBUG_DIR_TRUE=
   HAVE_LIBC_SYS_M88KBUG_DIR_FALSE='#'
@@ -7429,6 +7457,10 @@ if test -z "${NEWLIB_RETARGETABLE_LOCKING_TRUE}" && test -z "${NEWLIB_RETARGETAB
   as_fn_error $? "conditional \"NEWLIB_RETARGETABLE_LOCKING\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
+if test -z "${HERMIT_TRUE}" && test -z "${HERMIT_FALSE}"; then
+  as_fn_error $? "conditional \"HERMIT\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
 if test -z "${MAY_SUPPLY_SYSCALLS_TRUE}" && test -z "${MAY_SUPPLY_SYSCALLS_FALSE}"; then
   as_fn_error $? "conditional \"MAY_SUPPLY_SYSCALLS\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
@@ -7543,6 +7575,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_LIBC_SYS_H8500HMS_DIR_TRUE}" && test -z "${HAVE_LIBC_SYS_H8500HMS_DIR_FALSE}"; then
   as_fn_error $? "conditional \"HAVE_LIBC_SYS_H8500HMS_DIR\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${HAVE_LIBC_SYS_HERMIT_DIR_TRUE}" && test -z "${HAVE_LIBC_SYS_HERMIT_DIR_FALSE}"; then
+  as_fn_error $? "conditional \"HAVE_LIBC_SYS_HERMIT_DIR\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_LIBC_SYS_M88KBUG_DIR_TRUE}" && test -z "${HAVE_LIBC_SYS_M88KBUG_DIR_FALSE}"; then

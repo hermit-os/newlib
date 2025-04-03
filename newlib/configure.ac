@@ -288,6 +288,17 @@ AC_ARG_ENABLE(newlib-retargetable-locking,
  esac],[newlib_retargetable_locking=no])
 AM_CONDITIONAL(NEWLIB_RETARGETABLE_LOCKING, test x$newlib_retargetable_locking = xyes)
 
+AC_CANONICAL_HOST
+build_hermit=no
+case "${host_os}" in
+    hermit*)
+        build_hermit=yes
+        ;;
+    *)
+        ;;
+esac
+AM_CONDITIONAL(HERMIT, test "$build_hermit" = "yes")
+
 dnl Support --enable-newlib-long-time_t
 AC_ARG_ENABLE(newlib-long-time_t,
 [  --enable-newlib-long-time_t   define time_t to long],
