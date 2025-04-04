@@ -1,7 +1,10 @@
 #ifndef _SYS_DIRENT_H
 #define _SYS_DIRENT_H
 
+#include <sys/cdefs.h>
 #include <sys/types.h>
+
+__BEGIN_DECLS
 
 #define DT_UNKNOWN 0
 #define DT_FIFO 1
@@ -38,5 +41,7 @@ struct dirent {
 	unsigned char d_type;
 	char d_name[];
 };
+
+__END_DECLS
 
 #endif /* _SYS_DIRENT_H */
