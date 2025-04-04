@@ -20,3 +20,7 @@ char *realpath(const char *restrict file_name, char *restrict resolved_name) {
 
     return ret;
 }
+
+char *secure_getenv(const char *name) {
+    return getenv(name);
+}
