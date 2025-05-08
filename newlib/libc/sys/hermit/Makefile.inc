@@ -6,7 +6,10 @@ libc_a_SOURCES += \
 	%D%/fcntl.c \
 	%D%/forward.c \
 	%D%/inet.c \
+	%D%/inet_aton.c \
 	%D%/inet_ntoa.c \
+	%D%/inet_ntop.c \
+	%D%/inet_pton.c \
 	%D%/ioctl.c \
 	%D%/makecontext.c \
 	%D%/mman.c \
