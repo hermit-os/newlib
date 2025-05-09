@@ -3,6 +3,7 @@
 #include <pthread.h>
 #include <stdint.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 void sys_exit(int status);
