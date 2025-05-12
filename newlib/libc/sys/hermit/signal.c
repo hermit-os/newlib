@@ -25,3 +25,7 @@ int sigaltstack(const stack_t *restrict ss, stack_t *restrict oss) {
 
     return 0;
 }
+
+void (*signal(int sig, void (*func)(int)))(int) {
+    return SIG_IGN;
+}
