@@ -45,6 +45,9 @@ struct sockaddr_in6 {
 #define IPPROTO_UDP 17
 #define IPPROTO_IPV6 41
 
+#define INET_ADDRSTRLEN  16
+#define INET6_ADDRSTRLEN 46
+
 #define IP_TOS 1
 #define IP_TTL 2
 #define IP_ADD_MEMBERSHIP 3
