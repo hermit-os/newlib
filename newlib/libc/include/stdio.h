@@ -381,8 +381,8 @@ int	dprintf (int, const char *__restrict, ...)
                _ATTRIBUTE ((__format__ (__printf__, 2, 3)));
 #  endif
 FILE *	fmemopen (void *__restrict, size_t, const char *__restrict);
-/* getdelim - see __getdelim for now */
-/* getline - see __getline for now */
+ssize_t getdelim (char **, size_t *, int, FILE *);
+ssize_t getline (char **, size_t *, FILE *);
 FILE *	open_memstream (char **, size_t *);
 int	vdprintf (int, const char *__restrict, __VALIST)
                _ATTRIBUTE ((__format__ (__printf__, 2, 0)));
