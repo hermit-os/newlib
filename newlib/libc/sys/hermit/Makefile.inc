@@ -20,4 +20,5 @@ libc_a_SOURCES += \
 	%D%/stdlib.c \
 	%D%/stub.c \
 	%D%/time.c \
-	%D%/unistd.c
+	%D%/unistd.c \
+	%D%/utsname.c
