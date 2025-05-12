@@ -19,6 +19,14 @@ struct addrinfo {
     struct addrinfo *ai_next;
 };
 
+#define AI_PASSIVE 0x001
+#define AI_CANONNAME 0x002
+#define AI_NUMERICHOST 0x004
+#define AI_NUMERICSERV 0x008
+#define AI_ALL 0x100
+#define AI_ADDRCONFIG 0x400
+#define AI_V4MAPPED 0x800
+
 #define EAI_AGAIN 2
 #define EAI_BADFLAGS 3
 #define EAI_FAIL 4
