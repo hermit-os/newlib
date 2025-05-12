@@ -607,8 +607,11 @@ check_PROGRAMS =
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/errno.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/fcntl.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/forward.c \
-@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet_ntoa.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet_aton.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet_ntoa.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet_ntop.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/inet_pton.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/ioctl.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/makecontext.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/mman.c \
@@ -1765,8 +1768,11 @@ am__objects_55 = libc/ssp/libc_a-chk_fail.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-errno.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-fcntl.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-forward.$(OBJEXT) \
-@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet_ntoa.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet_aton.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet_ntoa.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet_ntop.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-inet_pton.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-ioctl.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-makecontext.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-mman.$(OBJEXT) \
@@ -7474,10 +7480,19 @@ libc/sys/hermit/libc_a-fcntl.$(OBJEXT):  \
 libc/sys/hermit/libc_a-forward.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
+libc/sys/hermit/libc_a-inet.$(OBJEXT):  \
+	libc/sys/hermit/$(am__dirstamp) \
+	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
+libc/sys/hermit/libc_a-inet_aton.$(OBJEXT):  \
+	libc/sys/hermit/$(am__dirstamp) \
+	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-inet_ntoa.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
-libc/sys/hermit/libc_a-inet.$(OBJEXT):  \
+libc/sys/hermit/libc_a-inet_ntop.$(OBJEXT):  \
+	libc/sys/hermit/$(am__dirstamp) \
+	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
+libc/sys/hermit/libc_a-inet_pton.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-ioctl.$(OBJEXT):  \
@@ -14067,7 +14082,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-fcntl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-forward.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-inet.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntoa.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-ioctl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-makecontext.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-mman.Po@am__quote@
@@ -31598,6 +31616,34 @@ libc/sys/hermit/libc_a-forward.obj: libc/sys/hermit/forward.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-forward.obj `if test -f 'libc/sys/hermit/forward.c'; then $(CYGPATH_W) 'libc/sys/hermit/forward.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/forward.c'; fi`
 
+libc/sys/hermit/libc_a-inet.o: libc/sys/hermit/inet.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo -c -o libc/sys/hermit/libc_a-inet.o `test -f 'libc/sys/hermit/inet.c' || echo '$(srcdir)/'`libc/sys/hermit/inet.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet.c' object='libc/sys/hermit/libc_a-inet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet.o `test -f 'libc/sys/hermit/inet.c' || echo '$(srcdir)/'`libc/sys/hermit/inet.c
+
+libc/sys/hermit/libc_a-inet.obj: libc/sys/hermit/inet.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo -c -o libc/sys/hermit/libc_a-inet.obj `if test -f 'libc/sys/hermit/inet.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet.c' object='libc/sys/hermit/libc_a-inet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet.obj `if test -f 'libc/sys/hermit/inet.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet.c'; fi`
+
+libc/sys/hermit/libc_a-inet_aton.o: libc/sys/hermit/inet_aton.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_aton.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Tpo -c -o libc/sys/hermit/libc_a-inet_aton.o `test -f 'libc/sys/hermit/inet_aton.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_aton.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_aton.c' object='libc/sys/hermit/libc_a-inet_aton.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_aton.o `test -f 'libc/sys/hermit/inet_aton.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_aton.c
+
+libc/sys/hermit/libc_a-inet_aton.obj: libc/sys/hermit/inet_aton.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_aton.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Tpo -c -o libc/sys/hermit/libc_a-inet_aton.obj `if test -f 'libc/sys/hermit/inet_aton.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_aton.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_aton.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_aton.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_aton.c' object='libc/sys/hermit/libc_a-inet_aton.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_aton.obj `if test -f 'libc/sys/hermit/inet_aton.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_aton.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_aton.c'; fi`
+
 libc/sys/hermit/libc_a-inet_ntoa.o: libc/sys/hermit/inet_ntoa.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_ntoa.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntoa.Tpo -c -o libc/sys/hermit/libc_a-inet_ntoa.o `test -f 'libc/sys/hermit/inet_ntoa.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_ntoa.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntoa.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntoa.Po
@@ -31612,19 +31658,33 @@ libc/sys/hermit/libc_a-inet_ntoa.obj: libc/sys/hermit/inet_ntoa.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_ntoa.obj `if test -f 'libc/sys/hermit/inet_ntoa.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_ntoa.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_ntoa.c'; fi`
 
-libc/sys/hermit/libc_a-inet.o: libc/sys/hermit/inet.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo -c -o libc/sys/hermit/libc_a-inet.o `test -f 'libc/sys/hermit/inet.c' || echo '$(srcdir)/'`libc/sys/hermit/inet.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet.c' object='libc/sys/hermit/libc_a-inet.o' libtool=no @AMDEPBACKSLASH@
+libc/sys/hermit/libc_a-inet_ntop.o: libc/sys/hermit/inet_ntop.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_ntop.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Tpo -c -o libc/sys/hermit/libc_a-inet_ntop.o `test -f 'libc/sys/hermit/inet_ntop.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_ntop.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_ntop.c' object='libc/sys/hermit/libc_a-inet_ntop.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet.o `test -f 'libc/sys/hermit/inet.c' || echo '$(srcdir)/'`libc/sys/hermit/inet.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_ntop.o `test -f 'libc/sys/hermit/inet_ntop.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_ntop.c
 
-libc/sys/hermit/libc_a-inet.obj: libc/sys/hermit/inet.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo -c -o libc/sys/hermit/libc_a-inet.obj `if test -f 'libc/sys/hermit/inet.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet.c' object='libc/sys/hermit/libc_a-inet.obj' libtool=no @AMDEPBACKSLASH@
+libc/sys/hermit/libc_a-inet_ntop.obj: libc/sys/hermit/inet_ntop.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_ntop.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Tpo -c -o libc/sys/hermit/libc_a-inet_ntop.obj `if test -f 'libc/sys/hermit/inet_ntop.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_ntop.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_ntop.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_ntop.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_ntop.c' object='libc/sys/hermit/libc_a-inet_ntop.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet.obj `if test -f 'libc/sys/hermit/inet.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_ntop.obj `if test -f 'libc/sys/hermit/inet_ntop.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_ntop.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_ntop.c'; fi`
+
+libc/sys/hermit/libc_a-inet_pton.o: libc/sys/hermit/inet_pton.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_pton.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Tpo -c -o libc/sys/hermit/libc_a-inet_pton.o `test -f 'libc/sys/hermit/inet_pton.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_pton.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_pton.c' object='libc/sys/hermit/libc_a-inet_pton.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_pton.o `test -f 'libc/sys/hermit/inet_pton.c' || echo '$(srcdir)/'`libc/sys/hermit/inet_pton.c
+
+libc/sys/hermit/libc_a-inet_pton.obj: libc/sys/hermit/inet_pton.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-inet_pton.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Tpo -c -o libc/sys/hermit/libc_a-inet_pton.obj `if test -f 'libc/sys/hermit/inet_pton.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_pton.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_pton.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-inet_pton.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/inet_pton.c' object='libc/sys/hermit/libc_a-inet_pton.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-inet_pton.obj `if test -f 'libc/sys/hermit/inet_pton.c'; then $(CYGPATH_W) 'libc/sys/hermit/inet_pton.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/inet_pton.c'; fi`
 
 libc/sys/hermit/libc_a-ioctl.o: libc/sys/hermit/ioctl.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-ioctl.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-ioctl.Tpo -c -o libc/sys/hermit/libc_a-ioctl.o `test -f 'libc/sys/hermit/ioctl.c' || echo '$(srcdir)/'`libc/sys/hermit/ioctl.c
