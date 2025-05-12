@@ -6,6 +6,7 @@
 __BEGIN_DECLS
 
 #define TCP_NODELAY 1
+#define TCP_MAXSEG 2
 
 __END_DECLS
 
