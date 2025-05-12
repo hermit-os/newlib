@@ -18,9 +18,6 @@
 #ifndef _SYS__PTHREADTYPES_H_
 #define	_SYS__PTHREADTYPES_H_
 
-/* HermitCore uses pthread-embedded, which defines all types in pthread.h.
- * Unfortunately, we cannot just include pthread.h here due to an #include recursion.
- * So don't define any pthread types in newlib and rely on the user to include <pthread.h>. */
 #ifndef __hermit__
 
 #if defined(_POSIX_THREADS) || __POSIX_VISIBLE >= 199506
@@ -234,6 +231,38 @@ typedef struct {
 #endif
 } pthread_rwlockattr_t;
 #endif /* defined(_POSIX_READER_WRITER_LOCKS) */
+
+#else /* __hermit__ */
+
+#include <pte_types.h>
+
+/*
+  * Generic handle type - intended to extend uniqueness beyond
+  * that available with a simple pointer. It should scale for either
+  * IA-32 or IA-64.
+  */
+
+typedef struct
+  {
+    void * p;                   /* Pointer to actual object */
+    unsigned int x;             /* Extra information - reuse count etc */
+  } pte_handle_t;
+
+typedef pte_handle_t pthread_t;
+typedef struct pthread_attr_t_ * pthread_attr_t;
+typedef struct pthread_once_t_ pthread_once_t;
+typedef struct pthread_key_t_ * pthread_key_t;
+typedef struct pthread_mutex_t_ * pthread_mutex_t;
+typedef struct pthread_mutexattr_t_ * pthread_mutexattr_t;
+typedef struct pthread_cond_t_ * pthread_cond_t;
+typedef struct pthread_condattr_t_ * pthread_condattr_t;
+typedef struct pthread_rwlock_t_ * pthread_rwlock_t;
+typedef struct pthread_rwlockattr_t_ * pthread_rwlockattr_t;
+typedef struct pthread_spinlock_t_ * pthread_spinlock_t;
+typedef struct pthread_barrier_t_ * pthread_barrier_t;
+typedef struct pthread_barrierattr_t_ * pthread_barrierattr_t;
+
+
 
 #endif /* __hermit__ */
 
