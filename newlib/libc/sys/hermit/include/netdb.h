@@ -32,6 +32,7 @@ struct addrinfo {
 #define EAI_OVERFLOW 14
 
 void freeaddrinfo(struct addrinfo *ai);
+const char *gai_strerror(int ecode);
 int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
 
 __END_DECLS
