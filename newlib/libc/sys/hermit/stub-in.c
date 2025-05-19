@@ -48,12 +48,15 @@ pid_t waitpid(pid_t pid, int *stat_loc, int options);
 
 // unistd.h
 
+int chdir(const char *path);
 int _execve(const char *path, char *const argv[], char *const envp[]);
 int execvpe(const char *file, char *const argv[], char *const envp[]);
 pid_t fork(void);
+int ftruncate(int fildes, off_t length);
 int link(const char *path1, const char *path2);
 int pipe(int fildes[2]);
 int pipe2(int fildes[2], int flag);
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize);
+pid_t setsid(void);
 int symlink(const char *path1, const char *path2);
 pid_t vfork(void);

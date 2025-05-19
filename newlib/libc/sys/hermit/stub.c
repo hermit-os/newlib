@@ -99,6 +99,11 @@ pid_t waitpid(pid_t pid, int *stat_loc, int options) {
 
 // unistd.h
 
+int chdir(const char *path) {
+    errno = ENOSYS;
+    return -1;
+}
+
 int _execve(const char *path, char *const argv[], char *const envp[]) {
     errno = ENOSYS;
     return -1;
@@ -110,6 +115,11 @@ int execvpe(const char *file, char *const argv[], char *const envp[]) {
 }
 
 pid_t fork(void) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int ftruncate(int fildes, off_t length) {
     errno = ENOSYS;
     return -1;
 }
@@ -130,6 +140,11 @@ int pipe2(int fildes[2], int flag) {
 }
 
 ssize_t readlink(const char *restrict path, char *restrict buf, size_t bufsize) {
+    errno = ENOSYS;
+    return -1;
+}
+
+pid_t setsid(void) {
     errno = ENOSYS;
     return -1;
 }
