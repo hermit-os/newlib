@@ -2,6 +2,7 @@
 #define _SYS_RESOURCE_H
 
 #include <sys/cdefs.h>
+#include <sys/time.h>
 #include <sys/types.h>
 
 __BEGIN_DECLS
@@ -30,7 +31,16 @@ struct rlimit {
     rlim_t rlim_max;
 };
 
+#define RUSAGE_SELF 0
+#define RUSAGE_CHILDREN (-1)
+
+struct rusage {
+    struct timeval ru_utime;
+    struct timeval ru_stime;
+};
+
 int getrlimit(int resource, struct rlimit *rlp);
+int getrusage(int who, struct rusage *r_usage);
 int setrlimit(int resource, const struct rlimit *rlp);
 
 #define PRIO_PROCESS 0

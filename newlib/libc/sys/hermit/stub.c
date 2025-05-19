@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <sched.h>
 #include <signal.h>
+#include <sys/resource.h>
 #include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -41,6 +42,13 @@ int kill(pid_t pid, int sig) {
 }
 
 int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// sys/resource.h
+
+int getrusage(int who, struct rusage *r_usage) {
     errno = ENOSYS;
     return -1;
 }

@@ -1,5 +1,6 @@
 #include <sched.h>
 #include <signal.h>
+#include <sys/resource.h>
 #include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -19,6 +20,10 @@ int sched_setscheduler(pid_t pid, int policy, const struct sched_param *param);
 
 int kill(pid_t pid, int sig);
 int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
+
+// sys/resource.h
+
+int getrusage(int who, struct rusage *r_usage);
 
 // sys/select.h
 
