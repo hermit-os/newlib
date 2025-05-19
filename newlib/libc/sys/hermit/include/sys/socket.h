@@ -19,6 +19,14 @@ struct sockaddr {
   char sa_data[14];
 };
 
+struct sockaddr_storage {
+  uint8_t ss_len;
+  sa_family_t ss_family;
+  uint8_t __ss_pad1[6];
+  int64_t __ss_align;
+  uint8_t __ss_pad2[112];
+};
+
 struct msghdr {
   void *msg_name;
   socklen_t msg_namelen;

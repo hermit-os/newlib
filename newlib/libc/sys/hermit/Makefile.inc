@@ -14,6 +14,7 @@ libc_a_SOURCES += \
 	%D%/makecontext.c \
 	%D%/mman.c \
 	%D%/netdb.c \
+	%D%/netinet_in.c \
 	%D%/pwd.c \
 	%D%/resource.c \
 	%D%/signal.c \
