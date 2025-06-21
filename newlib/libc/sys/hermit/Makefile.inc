@@ -13,6 +13,7 @@ libc_a_SOURCES += \
 	%D%/ioctl.c \
 	%D%/makecontext.c \
 	%D%/mman.c \
+	%D%/net_if.c \
 	%D%/netdb.c \
 	%D%/netinet_in.c \
 	%D%/pwd.c \
