@@ -46,7 +46,11 @@ typedef	_TIME_T_	time_t;
 
 struct timespec {
 	time_t	tv_sec;		/* seconds */
+#ifdef __hermit__
+	int32_t	tv_nsec;	/* and nanoseconds */
+#else /* __hermit__ */
 	long	tv_nsec;	/* and nanoseconds */
+#endif /* __hermit__ */
 };
 
 #endif /* !_SYS__TIMESPEC_H_ */
