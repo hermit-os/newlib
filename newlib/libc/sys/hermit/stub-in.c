@@ -7,6 +7,7 @@
 #include <sys/time.h>
 #include <sys/times.h>
 #include <sys/wait.h>
+#include <termios.h>
 #include <unistd.h>
 
 // sched.h
@@ -50,6 +51,18 @@ clock_t times(struct tms *buffer);
 
 pid_t wait(int *stat_loc);
 pid_t waitpid(pid_t pid, int *stat_loc, int options);
+
+// termios.h
+
+int tcdrain(int fildes);
+int tcflow(int fildes, int action);
+int tcflush(int fildes, int queue_selector);
+int tcgetattr(int fildes, struct termios *termios_p);
+pid_t tcgetsid(int fildes);
+int tcgetwinsize(int fildes, struct winsize *winsize_p);
+int tcsendbreak(int fildes, int duration);
+int tcsetattr(int fildes, int optional_actions, const struct termios *termios_p);
+int tcsetwinsize(int fildes, const struct winsize *winsize_p);
 
 // unistd.h
 
