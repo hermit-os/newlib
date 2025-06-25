@@ -615,6 +615,7 @@ check_PROGRAMS =
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/ioctl.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/makecontext.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/mman.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/net_if.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/netdb.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/netinet_in.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/pwd.c \
@@ -1778,6 +1779,7 @@ am__objects_55 = libc/ssp/libc_a-chk_fail.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-ioctl.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-makecontext.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-mman.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-net_if.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-netdb.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-netinet_in.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-pwd.$(OBJEXT) \
@@ -7506,6 +7508,9 @@ libc/sys/hermit/libc_a-makecontext.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-mman.$(OBJEXT):  \
+	libc/sys/hermit/$(am__dirstamp) \
+	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
+libc/sys/hermit/libc_a-net_if.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-netdb.$(OBJEXT):  \
@@ -14099,6 +14104,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-ioctl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-makecontext.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-mman.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-netdb.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-netinet_in.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-pwd.Po@am__quote@
@@ -31739,6 +31745,20 @@ libc/sys/hermit/libc_a-mman.obj: libc/sys/hermit/mman.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/mman.c' object='libc/sys/hermit/libc_a-mman.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-mman.obj `if test -f 'libc/sys/hermit/mman.c'; then $(CYGPATH_W) 'libc/sys/hermit/mman.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/mman.c'; fi`
+
+libc/sys/hermit/libc_a-net_if.o: libc/sys/hermit/net_if.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-net_if.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Tpo -c -o libc/sys/hermit/libc_a-net_if.o `test -f 'libc/sys/hermit/net_if.c' || echo '$(srcdir)/'`libc/sys/hermit/net_if.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/net_if.c' object='libc/sys/hermit/libc_a-net_if.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-net_if.o `test -f 'libc/sys/hermit/net_if.c' || echo '$(srcdir)/'`libc/sys/hermit/net_if.c
+
+libc/sys/hermit/libc_a-net_if.obj: libc/sys/hermit/net_if.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-net_if.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Tpo -c -o libc/sys/hermit/libc_a-net_if.obj `if test -f 'libc/sys/hermit/net_if.c'; then $(CYGPATH_W) 'libc/sys/hermit/net_if.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/net_if.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-net_if.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/net_if.c' object='libc/sys/hermit/libc_a-net_if.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-net_if.obj `if test -f 'libc/sys/hermit/net_if.c'; then $(CYGPATH_W) 'libc/sys/hermit/net_if.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/net_if.c'; fi`
 
 libc/sys/hermit/libc_a-netdb.o: libc/sys/hermit/netdb.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-netdb.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-netdb.Tpo -c -o libc/sys/hermit/libc_a-netdb.o `test -f 'libc/sys/hermit/netdb.c' || echo '$(srcdir)/'`libc/sys/hermit/netdb.c
