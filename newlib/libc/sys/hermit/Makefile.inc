@@ -7,6 +7,7 @@ libc_a_SOURCES += \
 	%D%/errno.c \
 	%D%/fcntl.c \
 	%D%/forward.c \
+	%D%/grp.c \
 	%D%/inet.c \
 	%D%/inet_aton.c \
 	%D%/inet_ntoa.c \
@@ -24,6 +25,7 @@ libc_a_SOURCES += \
 	%D%/signal.c \
 	%D%/stdlib.c \
 	%D%/stub.c \
+	%D%/syslog.c \
 	%D%/termios.c \
 	%D%/time.c \
 	%D%/unistd.c \
