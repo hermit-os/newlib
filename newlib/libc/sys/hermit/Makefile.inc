@@ -1,6 +1,7 @@
 libc_a_SOURCES += \
 	%D%/alloc.c \
 	%D%/context.S \
+	%D%/dirname.c \
 	%D%/environ.c \
 	%D%/errno.c \
 	%D%/fcntl.c \
