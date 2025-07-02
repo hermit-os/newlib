@@ -1012,18 +1012,18 @@ check_PROGRAMS =
 @NEWLIB_HW_FP_TRUE@	libm/mathfp/w_jn.def
 
 @NEWLIB_HW_FP_TRUE@am__append_140 = libm/mathfp/mathfp.tex
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__append_141 = $(libm_math_src) $(libm_math_fsrc) $(libm_math_lsrc)
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__append_142 = \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_acos.def libm/math/w_acosh.def libm/math/w_asin.def libm/math/s_asinh.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_atan.def libm/math/w_atan2.def libm/math/w_atanh.def libm/math/w_j0.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_cosh.def libm/math/s_erf.def libm/math/w_exp.def libm/math/w_exp2.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_fabs.def libm/math/s_floor.def libm/math/w_fmod.def libm/math/s_frexp.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_gamma.def libm/math/w_hypot.def libm/math/s_ldexp.def libm/math/w_log.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_log10.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_pow.def libm/math/w_remainder.def libm/math/s_sin.def libm/math/w_sinh.def \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_sqrt.def libm/math/s_tan.def libm/math/s_tanh.def
+@NEWLIB_HW_FP_FALSE@am__append_141 = $(libm_math_src) $(libm_math_fsrc) $(libm_math_lsrc)
+@NEWLIB_HW_FP_FALSE@am__append_142 = \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_acos.def libm/math/w_acosh.def libm/math/w_asin.def libm/math/s_asinh.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_atan.def libm/math/w_atan2.def libm/math/w_atanh.def libm/math/w_j0.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_cosh.def libm/math/s_erf.def libm/math/w_exp.def libm/math/w_exp2.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_fabs.def libm/math/s_floor.def libm/math/w_fmod.def libm/math/s_frexp.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_gamma.def libm/math/w_hypot.def libm/math/s_ldexp.def libm/math/w_log.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_log10.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_pow.def libm/math/w_remainder.def libm/math/s_sin.def libm/math/w_sinh.def \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_sqrt.def libm/math/s_tan.def libm/math/s_tanh.def
 
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__append_143 = libm/math/math.tex
+@NEWLIB_HW_FP_FALSE@am__append_143 = libm/math/math.tex
 @HAVE_LONG_DOUBLE_TRUE@am__append_144 = $(libm_common_lsrc)
 @HAVE_FPMATH_H_TRUE@@HAVE_LONG_DOUBLE_TRUE@am__append_145 = $(libm_ld_lsrc)
 @HAVE_FPMATH_H_TRUE@am__append_146 = 
@@ -2872,146 +2872,147 @@ libm_a_LIBADD =
 @NEWLIB_HW_FP_TRUE@	libm/mathfp/libm_a-sf_tgamma.$(OBJEXT)
 @NEWLIB_HW_FP_TRUE@am__objects_150 = $(am__objects_148) \
 @NEWLIB_HW_FP_TRUE@	$(am__objects_149)
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__objects_151 = libm/math/libm_a-k_standard.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_rem_pio2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_cos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_sin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_tan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_acos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_acosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_asin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_atan2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_atanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_cosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_exp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_fmod.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_tgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_hypot.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_j0.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_j1.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_jn.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-er_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_log.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_log10.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_pow.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_rem_pio2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_remainder.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_scalb.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_sinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_sqrt.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_acos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_acosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_asin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_atan2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_atanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_cosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_exp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_fmod.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_gamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wr_gamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_hypot.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_j0.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_j1.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_jn.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wr_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_log.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_log10.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_pow.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_remainder.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_scalb.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sqrt.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sincos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_drem.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-signgam.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_asinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_atan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_ceil.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_cos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_erf.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_fabs.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_floor.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_frexp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_ldexp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_signif.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_sin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_tan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_tanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_exp2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_tgamma.$(OBJEXT)
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__objects_152 = libm/math/libm_a-kf_rem_pio2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_cos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_sin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_tan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_acos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_acosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_asin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_atan2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_atanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_cosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_exp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_fmod.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_tgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_hypot.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_j0.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_j1.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_jn.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-erf_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_log.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_log10.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_pow.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_rem_pio2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_remainder.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_scalb.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_sinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_sqrt.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_acos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_acosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_asin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_atan2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_atanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_cosh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_exp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_fmod.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_gamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wrf_gamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_hypot.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_j0.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_j1.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_jn.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wrf_lgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log10.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_pow.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_remainder.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_scalb.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sqrt.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sincos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_drem.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_asinh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_atan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_ceil.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_cos.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_erf.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_fabs.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_floor.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_frexp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_ldexp.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_signif.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_sin.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_tan.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_tanh.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_exp2.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_tgamma.$(OBJEXT) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log2.$(OBJEXT)
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__objects_153 = libm/math/libm_a-el_hypot.$(OBJEXT)
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@am__objects_154 =  \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	$(am__objects_151) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	$(am__objects_152) \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	$(am__objects_153)
+@NEWLIB_HW_FP_FALSE@am__objects_151 =  \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_standard.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_rem_pio2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_cos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_sin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-k_tan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_acos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_acosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_asin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_atan2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_atanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_cosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_exp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_fmod.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_tgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_hypot.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_j0.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_j1.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_jn.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-er_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_log.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_log10.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_pow.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_rem_pio2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_remainder.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_scalb.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_sinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-e_sqrt.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_acos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_acosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_asin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_atan2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_atanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_cosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_exp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_fmod.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_gamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wr_gamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_hypot.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_j0.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_j1.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_jn.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wr_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_log.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_log10.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_pow.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_remainder.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_scalb.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sqrt.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_sincos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_drem.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-signgam.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_asinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_atan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_ceil.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_cos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_erf.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_fabs.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_floor.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_frexp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_ldexp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_signif.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_sin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_tan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-s_tanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_exp2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-w_tgamma.$(OBJEXT)
+@NEWLIB_HW_FP_FALSE@am__objects_152 =  \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_rem_pio2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_cos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_sin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-kf_tan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_acos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_acosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_asin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_atan2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_atanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_cosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_exp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_fmod.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_tgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_hypot.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_j0.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_j1.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_jn.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-erf_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_log.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_log10.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_pow.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_rem_pio2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_remainder.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_scalb.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_sinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-ef_sqrt.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_acos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_acosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_asin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_atan2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_atanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_cosh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_exp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_fmod.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_gamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wrf_gamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_hypot.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_j0.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_j1.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_jn.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wrf_lgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log10.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_pow.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_remainder.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_scalb.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sqrt.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_sincos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_drem.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_asinh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_atan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_ceil.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_cos.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_erf.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_fabs.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_floor.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_frexp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_ldexp.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_signif.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_sin.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_tan.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-sf_tanh.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_exp2.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_tgamma.$(OBJEXT) \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-wf_log2.$(OBJEXT)
+@NEWLIB_HW_FP_FALSE@am__objects_153 =  \
+@NEWLIB_HW_FP_FALSE@	libm/math/libm_a-el_hypot.$(OBJEXT)
+@NEWLIB_HW_FP_FALSE@am__objects_154 = $(am__objects_151) \
+@NEWLIB_HW_FP_FALSE@	$(am__objects_152) $(am__objects_153)
 am__objects_155 = libm/common/libm_a-s_finite.$(OBJEXT) \
 	libm/common/libm_a-s_copysign.$(OBJEXT) \
 	libm/common/libm_a-s_modf.$(OBJEXT) \
@@ -4830,57 +4831,57 @@ LIBM_DOCBOOK_OUT_FILES = $(LIBM_CHEWOUT_FILES:.def=.xml)
 @NEWLIB_HW_FP_TRUE@	libm/mathfp/ef_scalb.c libm/mathfp/sf_signif.c \
 @NEWLIB_HW_FP_TRUE@	libm/mathfp/sf_exp2.c libm/mathfp/sf_tgamma.c
 
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@libm_math_src = \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/k_standard.c libm/math/k_rem_pio2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/k_cos.c libm/math/k_sin.c libm/math/k_tan.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_acos.c libm/math/e_acosh.c libm/math/e_asin.c libm/math/e_atan2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_atanh.c libm/math/e_cosh.c libm/math/e_exp.c libm/math/e_fmod.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_tgamma.c libm/math/e_hypot.c libm/math/e_j0.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_j1.c libm/math/e_jn.c libm/math/er_lgamma.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_log.c libm/math/e_log10.c libm/math/e_pow.c libm/math/e_rem_pio2.c libm/math/e_remainder.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/e_scalb.c libm/math/e_sinh.c libm/math/e_sqrt.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_acos.c libm/math/w_acosh.c libm/math/w_asin.c libm/math/w_atan2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_atanh.c libm/math/w_cosh.c libm/math/w_exp.c libm/math/w_fmod.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_gamma.c libm/math/wr_gamma.c libm/math/w_hypot.c libm/math/w_j0.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_j1.c libm/math/w_jn.c libm/math/w_lgamma.c libm/math/wr_lgamma.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_log.c libm/math/w_log10.c libm/math/w_pow.c libm/math/w_remainder.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_scalb.c libm/math/w_sinh.c libm/math/w_sqrt.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_sincos.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_drem.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/signgam.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_asinh.c libm/math/s_atan.c libm/math/s_ceil.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_cos.c libm/math/s_erf.c libm/math/s_fabs.c libm/math/s_floor.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_frexp.c libm/math/s_ldexp.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_signif.c libm/math/s_sin.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/s_tan.c libm/math/s_tanh.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/w_exp2.c libm/math/w_tgamma.c
+@NEWLIB_HW_FP_FALSE@libm_math_src = \
+@NEWLIB_HW_FP_FALSE@	libm/math/k_standard.c libm/math/k_rem_pio2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/k_cos.c libm/math/k_sin.c libm/math/k_tan.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_acos.c libm/math/e_acosh.c libm/math/e_asin.c libm/math/e_atan2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_atanh.c libm/math/e_cosh.c libm/math/e_exp.c libm/math/e_fmod.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_tgamma.c libm/math/e_hypot.c libm/math/e_j0.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_j1.c libm/math/e_jn.c libm/math/er_lgamma.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_log.c libm/math/e_log10.c libm/math/e_pow.c libm/math/e_rem_pio2.c libm/math/e_remainder.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/e_scalb.c libm/math/e_sinh.c libm/math/e_sqrt.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_acos.c libm/math/w_acosh.c libm/math/w_asin.c libm/math/w_atan2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_atanh.c libm/math/w_cosh.c libm/math/w_exp.c libm/math/w_fmod.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_gamma.c libm/math/wr_gamma.c libm/math/w_hypot.c libm/math/w_j0.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_j1.c libm/math/w_jn.c libm/math/w_lgamma.c libm/math/wr_lgamma.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_log.c libm/math/w_log10.c libm/math/w_pow.c libm/math/w_remainder.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_scalb.c libm/math/w_sinh.c libm/math/w_sqrt.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_sincos.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_drem.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/signgam.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_asinh.c libm/math/s_atan.c libm/math/s_ceil.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_cos.c libm/math/s_erf.c libm/math/s_fabs.c libm/math/s_floor.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_frexp.c libm/math/s_ldexp.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_signif.c libm/math/s_sin.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/s_tan.c libm/math/s_tanh.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/w_exp2.c libm/math/w_tgamma.c
 
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@libm_math_fsrc = \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/kf_rem_pio2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/kf_cos.c libm/math/kf_sin.c libm/math/kf_tan.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_acos.c libm/math/ef_acosh.c libm/math/ef_asin.c libm/math/ef_atan2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_atanh.c libm/math/ef_cosh.c libm/math/ef_exp.c libm/math/ef_fmod.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_tgamma.c libm/math/ef_hypot.c libm/math/ef_j0.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_j1.c libm/math/ef_jn.c libm/math/erf_lgamma.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_log.c libm/math/ef_log10.c libm/math/ef_pow.c libm/math/ef_rem_pio2.c libm/math/ef_remainder.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/ef_scalb.c libm/math/ef_sinh.c libm/math/ef_sqrt.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_acos.c libm/math/wf_acosh.c libm/math/wf_asin.c libm/math/wf_atan2.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_atanh.c libm/math/wf_cosh.c libm/math/wf_exp.c libm/math/wf_fmod.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_gamma.c libm/math/wrf_gamma.c libm/math/wf_hypot.c libm/math/wf_j0.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_j1.c libm/math/wf_jn.c libm/math/wf_lgamma.c libm/math/wrf_lgamma.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_log.c libm/math/wf_log10.c libm/math/wf_pow.c libm/math/wf_remainder.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_scalb.c libm/math/wf_sinh.c libm/math/wf_sqrt.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_sincos.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_drem.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/sf_asinh.c libm/math/sf_atan.c libm/math/sf_ceil.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/sf_cos.c libm/math/sf_erf.c libm/math/sf_fabs.c libm/math/sf_floor.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/sf_frexp.c libm/math/sf_ldexp.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/sf_signif.c libm/math/sf_sin.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/sf_tan.c libm/math/sf_tanh.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_exp2.c libm/math/wf_tgamma.c \
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@	libm/math/wf_log2.c
+@NEWLIB_HW_FP_FALSE@libm_math_fsrc = \
+@NEWLIB_HW_FP_FALSE@	libm/math/kf_rem_pio2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/kf_cos.c libm/math/kf_sin.c libm/math/kf_tan.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_acos.c libm/math/ef_acosh.c libm/math/ef_asin.c libm/math/ef_atan2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_atanh.c libm/math/ef_cosh.c libm/math/ef_exp.c libm/math/ef_fmod.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_tgamma.c libm/math/ef_hypot.c libm/math/ef_j0.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_j1.c libm/math/ef_jn.c libm/math/erf_lgamma.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_log.c libm/math/ef_log10.c libm/math/ef_pow.c libm/math/ef_rem_pio2.c libm/math/ef_remainder.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/ef_scalb.c libm/math/ef_sinh.c libm/math/ef_sqrt.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_acos.c libm/math/wf_acosh.c libm/math/wf_asin.c libm/math/wf_atan2.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_atanh.c libm/math/wf_cosh.c libm/math/wf_exp.c libm/math/wf_fmod.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_gamma.c libm/math/wrf_gamma.c libm/math/wf_hypot.c libm/math/wf_j0.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_j1.c libm/math/wf_jn.c libm/math/wf_lgamma.c libm/math/wrf_lgamma.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_log.c libm/math/wf_log10.c libm/math/wf_pow.c libm/math/wf_remainder.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_scalb.c libm/math/wf_sinh.c libm/math/wf_sqrt.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_sincos.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_drem.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/sf_asinh.c libm/math/sf_atan.c libm/math/sf_ceil.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/sf_cos.c libm/math/sf_erf.c libm/math/sf_fabs.c libm/math/sf_floor.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/sf_frexp.c libm/math/sf_ldexp.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/sf_signif.c libm/math/sf_sin.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/sf_tan.c libm/math/sf_tanh.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_exp2.c libm/math/wf_tgamma.c \
+@NEWLIB_HW_FP_FALSE@	libm/math/wf_log2.c
 
-@HERMIT_FALSE@@NEWLIB_HW_FP_FALSE@libm_math_lsrc = libm/math/el_hypot.c
+@NEWLIB_HW_FP_FALSE@libm_math_lsrc = libm/math/el_hypot.c
 libm_common_src = \
 	libm/common/s_finite.c \
 	libm/common/s_copysign.c \
