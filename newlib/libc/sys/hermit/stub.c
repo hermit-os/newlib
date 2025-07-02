@@ -10,6 +10,7 @@
 #include <sys/time.h>
 #include <sys/times.h>
 #include <sys/wait.h>
+#include <termios.h>
 #include <unistd.h>
 
 // sched.h
@@ -101,6 +102,53 @@ pid_t wait(int *stat_loc) {
 }
 
 pid_t waitpid(pid_t pid, int *stat_loc, int options) {
+    errno = ENOSYS;
+    return -1;
+}
+
+// termios.h
+
+int tcdrain(int fildes) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcflow(int fildes, int action) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcflush(int fildes, int queue_selector) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcgetattr(int fildes, struct termios *termios_p) {
+    errno = ENOSYS;
+    return -1;
+}
+
+pid_t tcgetsid(int fildes) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcgetwinsize(int fildes, struct winsize *winsize_p) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcsendbreak(int fildes, int duration) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcsetattr(int fildes, int optional_actions, const struct termios *termios_p) {
+    errno = ENOSYS;
+    return -1;
+}
+
+int tcsetwinsize(int fildes, const struct winsize *winsize_p) {
     errno = ENOSYS;
     return -1;
 }

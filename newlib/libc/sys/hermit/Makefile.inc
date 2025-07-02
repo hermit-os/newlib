@@ -21,6 +21,7 @@ libc_a_SOURCES += \
 	%D%/signal.c \
 	%D%/stdlib.c \
 	%D%/stub.c \
+	%D%/termios.c \
 	%D%/time.c \
 	%D%/unistd.c \
 	%D%/utsname.c
