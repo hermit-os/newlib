@@ -1,7 +1,6 @@
 #include <sched.h>
 #include <signal.h>
 #include <sys/resource.h>
-#include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -25,10 +24,6 @@ int sigprocmask(int how, const sigset_t *restrict set, sigset_t *restrict oset);
 // sys/resource.h
 
 int getrusage(int who, struct rusage *r_usage);
-
-// sys/select.h
-
-int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds, fd_set *restrict errorfds, struct timeval *restrict timeout);
 
 // sys/socket.h
 
