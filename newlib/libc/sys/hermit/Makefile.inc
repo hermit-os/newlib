@@ -18,6 +18,7 @@ libc_a_SOURCES += \
 	%D%/netinet_in.c \
 	%D%/pwd.c \
 	%D%/resource.c \
+	%D%/select.c \
 	%D%/signal.c \
 	%D%/stdlib.c \
 	%D%/stub.c \
