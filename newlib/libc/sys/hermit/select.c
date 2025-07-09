@@ -10,6 +10,11 @@ int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds,
     }
 
     struct pollfd *pollfds = calloc(nfds, sizeof(struct pollfd));
+    if (pollfds == NULL) {
+        errno = ENOMEM;
+        return -1;
+    }
+
     nfds_t poll_nfds = 0;
 
     for (int fd = 0; fd < nfds; ++fd) {
@@ -39,6 +44,10 @@ int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds,
     }
 
     int ret = poll(pollfds, poll_nfds, poll_timeout);
+    if (ret == -1) {
+        free(pollfds);
+        return ret;
+    }
 
     FD_ZERO(readfds);
     FD_ZERO(writefds);
@@ -60,6 +69,5 @@ int select(int nfds, fd_set *restrict readfds, fd_set *restrict writefds,
     }
 
     free(pollfds);
-
     return ret;
 }
