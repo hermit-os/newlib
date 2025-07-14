@@ -1,7 +1,10 @@
 #ifndef _SYS_FCNTL_H
 #define _SYS_FCNTL_H
 
+#include <sys/cdefs.h>
 #include <sys/types.h>
+
+__BEGIN_DECLS
 
 #define F_DUPFD  0
 #define F_GETFD  1
@@ -31,5 +34,7 @@ int fcntl(int fildes, int cmd, ...);
 #define O_ACCMODE (O_RDONLY|O_WRONLY|O_RDWR)
 
 int open(const char *path, int oflag, ...);
+
+__END_DECLS
 
 #endif /* _SYS_FCNTL_H */
