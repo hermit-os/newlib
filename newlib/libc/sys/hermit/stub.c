@@ -29,11 +29,6 @@ int sched_setparam(pid_t pid, const struct sched_param *param) {
     return -1;
 }
 
-int sched_setscheduler(pid_t pid, int policy, const struct sched_param *param) {
-    errno = ENOSYS;
-    return -1;
-}
-
 // signal.h
 
 int kill(pid_t pid, int sig) {
