@@ -6,8 +6,10 @@ void freeaddrinfo(struct addrinfo *ai) {
     return sys_freeaddrinfo(ai);
 }
 
+const char *sys_gai_strerror(int ecode);
+
 const char *gai_strerror(int ecode) {
-    return "gai_strerror is not implemented";
+    return sys_gai_strerror(ecode);
 }
 
 int sys_getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
