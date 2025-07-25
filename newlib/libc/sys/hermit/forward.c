@@ -2,6 +2,7 @@
 
 #include <dirent.h>
 #include <poll.h>
+#include <sys/mman.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -29,6 +30,56 @@ int sys_poll(struct pollfd *fds, nfds_t nfds, int timeout);
 
 int poll(struct pollfd *fds, nfds_t nfds, int timeout) {
     int ret = sys_poll(fds, nfds, timeout);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// sys/mman.h
+
+int sys_mlock(const void *addr, size_t len);
+
+int mlock(const void *addr, size_t len) {
+    int ret = sys_mlock(addr, len);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_mlockall(int flags);
+
+int mlockall(int flags) {
+    int ret = sys_mlockall(flags);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_munlock(const void *addr, size_t len);
+
+int munlock(const void *addr, size_t len) {
+    int ret = sys_munlock(addr, len);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_munlockall(void);
+
+int munlockall(void) {
+    int ret = sys_munlockall();
 
     if (ret < 0) {
         ret = -1;
