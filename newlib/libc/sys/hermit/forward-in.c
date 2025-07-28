@@ -1,5 +1,6 @@
 #include <dirent.h>
 #include <poll.h>
+#include <sys/mman.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -14,6 +15,13 @@ ssize_t getdents64(int fd, void *dirp, size_t count);
 // poll.h
 
 int poll(struct pollfd *fds, nfds_t nfds, int timeout);
+
+// sys/mman.h
+
+int mlock(const void *addr, size_t len);
+int mlockall(int flags);
+int munlock(const void *addr, size_t len);
+int munlockall(void);
 
 // sys/socket.h
 

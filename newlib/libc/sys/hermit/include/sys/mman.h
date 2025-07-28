@@ -20,9 +20,13 @@ __BEGIN_DECLS
 #define MAP_FIXED (1 << 4)
 #define MAP_FAILED ((void *)-1)
 
+int mlock(const void *addr, size_t len);
+int mlockall(int flags);
 void *mmap(void *addr, size_t len, int prot, int flags, int fildes, off_t off);
 int munmap(void *addr, size_t len);
 int mprotect(void *addr, size_t len, int prot);
+int munlock(const void *addr, size_t len);
+int munlockall(void);
 
 __END_DECLS
 
