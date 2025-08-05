@@ -1,4 +1,6 @@
 libc_a_SOURCES += \
+	%D%/../../unix/basename.c \
+	%D%/../../unix/dirname.c \
 	%D%/alloc.c \
 	%D%/context.S \
 	%D%/environ.c \
