@@ -614,7 +614,13 @@ glob3(pathbuf, pathend, pathend_last, pattern, restpattern, pglob, limit)
 	int err;
 	char buf[MAXPATHLEN];
 
-	struct dirent *(*readdirfunc)(DIR *);
+	/*
+	 * The readdirfunc declaration can't be prototyped, because it is
+	 * assigned, below, to two functions which are prototyped in glob.h
+	 * and dirent.h as taking pointers to differently typed opaque
+	 * structures.
+	 */
+	struct dirent *(*readdirfunc)();
 
 	if (pathend > pathend_last)
 		return (1);
