@@ -156,6 +156,11 @@ int _isatty(int fildes) {
 	return ret;
 }
 
+int fsync(int fildes) {
+	// Stubbed
+	return 0;
+}
+
 int sys_getpagesize(void);
 
 int getpagesize(void) {
