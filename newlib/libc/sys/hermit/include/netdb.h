@@ -27,6 +27,13 @@ struct addrinfo {
 #define AI_ADDRCONFIG 0x400
 #define AI_V4MAPPED 0x800
 
+#define NI_NOFQDN 0x01
+#define NI_NUMERICHOST 0x02
+#define NI_NAMEREQD 0x04
+#define NI_NUMERICSERV 0x08
+#define NI_NUMERICSCOPE 0x20
+#define NI_DGRAM 0x10
+
 #define EAI_AGAIN 2
 #define EAI_BADFLAGS 3
 #define EAI_FAIL 4
@@ -44,6 +51,9 @@ const char *gai_strerror(int ecode);
 int getaddrinfo(const char *restrict nodename, const char *restrict servname,
                 const struct addrinfo *restrict hints,
                 struct addrinfo **restrict res);
+int getnameinfo(const struct sockaddr *restrict sa, socklen_t salen,
+                char *restrict node, socklen_t nodelen, char *restrict service,
+                socklen_t servicelen, int flags);
 
 __END_DECLS
 
