@@ -12,8 +12,13 @@ const char *gai_strerror(int ecode) {
     return sys_gai_strerror(ecode);
 }
 
-int sys_getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res);
+int sys_getaddrinfo(const char *restrict nodename,
+                    const char *restrict servname,
+                    const struct addrinfo *restrict hints,
+                    struct addrinfo **restrict res);
 
-int getaddrinfo(const char *restrict nodename, const char *restrict servname, const struct addrinfo *restrict hints, struct addrinfo **restrict res) {
+int getaddrinfo(const char *restrict nodename, const char *restrict servname,
+                const struct addrinfo *restrict hints,
+                struct addrinfo **restrict res) {
     return sys_getaddrinfo(nodename, servname, hints, res);
 }
