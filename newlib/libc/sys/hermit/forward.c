@@ -400,6 +400,18 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp) {
 
 // unistd.h
 
+int sys_chdir(const char *path);
+
+int chdir(const char *path) {
+    int ret = sys_chdir(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_close(int fildes);
 
 int close(int fildes) {
@@ -464,6 +476,18 @@ int sys_rmdir(const char *path);
 
 int rmdir(const char *path) {
     int ret = sys_rmdir(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_ftruncate(int fildes, off_t length);
+
+int ftruncate(int fildes, off_t length) {
+    int ret = sys_ftruncate(fildes, length);
 
     if (ret < 0) {
         ret = -1;
