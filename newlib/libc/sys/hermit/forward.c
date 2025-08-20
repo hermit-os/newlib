@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/uio.h>
+#include <fcntl.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -340,6 +341,20 @@ ssize_t sys_writev(int fildes, const struct iovec *iov, int iovcnt);
 
 ssize_t writev(int fildes, const struct iovec *iov, int iovcnt) {
     ssize_t ret = sys_writev(fildes, iov, iovcnt);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+// fcntl.h
+
+int sys_faccessat(int fd, const char *path, int amode, int flag);
+
+int faccessat(int fd, const char *path, int amode, int flag) {
+    int ret = sys_faccessat(fd, path, amode, flag);
 
     if (ret < 0) {
         ret = -1;

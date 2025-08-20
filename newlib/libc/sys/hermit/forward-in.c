@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/uio.h>
+#include <fcntl.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -55,6 +56,10 @@ int gettimeofday(struct timeval *restrict tp, void *restrict tzp);
 
 ssize_t readv(int fildes, const struct iovec *iov, int iovcnt);
 ssize_t writev(int fildes, const struct iovec *iov, int iovcnt);
+
+// fcntl.h
+
+int faccessat(int fd, const char *path, int amode, int flag);
 
 // time.h
 
