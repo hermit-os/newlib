@@ -523,6 +523,18 @@ int rmdir(const char *path) {
     return ret;
 }
 
+int sys_truncate(const char *path, off_t length);
+
+int truncate(const char *path, off_t length) {
+    int ret = sys_truncate(path, length);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_ftruncate(int fildes, off_t length);
 
 int ftruncate(int fildes, off_t length) {
