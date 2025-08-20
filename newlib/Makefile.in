@@ -625,6 +625,7 @@ check_PROGRAMS =
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/resource.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/select.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/signal.c \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/stat.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/stdlib.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/stub.c \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/syslog.c \
@@ -1795,6 +1796,7 @@ am__objects_55 = libc/ssp/libc_a-chk_fail.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-resource.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-select.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-signal.$(OBJEXT) \
+@HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-stat.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-stdlib.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-stub.$(OBJEXT) \
 @HAVE_LIBC_SYS_HERMIT_DIR_TRUE@	libc/sys/hermit/libc_a-syslog.$(OBJEXT) \
@@ -7556,6 +7558,9 @@ libc/sys/hermit/libc_a-select.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-signal.$(OBJEXT):  \
+	libc/sys/hermit/$(am__dirstamp) \
+	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
+libc/sys/hermit/libc_a-stat.$(OBJEXT):  \
 	libc/sys/hermit/$(am__dirstamp) \
 	libc/sys/hermit/$(DEPDIR)/$(am__dirstamp)
 libc/sys/hermit/libc_a-stdlib.$(OBJEXT):  \
@@ -14150,6 +14155,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-resource.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-select.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-signal.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-stat.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-stdlib.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-stub.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libc/sys/hermit/$(DEPDIR)/libc_a-syslog.Po@am__quote@
@@ -31929,6 +31935,20 @@ libc/sys/hermit/libc_a-signal.obj: libc/sys/hermit/signal.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/signal.c' object='libc/sys/hermit/libc_a-signal.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-signal.obj `if test -f 'libc/sys/hermit/signal.c'; then $(CYGPATH_W) 'libc/sys/hermit/signal.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/signal.c'; fi`
+
+libc/sys/hermit/libc_a-stat.o: libc/sys/hermit/stat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-stat.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-stat.Tpo -c -o libc/sys/hermit/libc_a-stat.o `test -f 'libc/sys/hermit/stat.c' || echo '$(srcdir)/'`libc/sys/hermit/stat.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-stat.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-stat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/stat.c' object='libc/sys/hermit/libc_a-stat.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-stat.o `test -f 'libc/sys/hermit/stat.c' || echo '$(srcdir)/'`libc/sys/hermit/stat.c
+
+libc/sys/hermit/libc_a-stat.obj: libc/sys/hermit/stat.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-stat.obj -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-stat.Tpo -c -o libc/sys/hermit/libc_a-stat.obj `if test -f 'libc/sys/hermit/stat.c'; then $(CYGPATH_W) 'libc/sys/hermit/stat.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/stat.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) libc/sys/hermit/$(DEPDIR)/libc_a-stat.Tpo libc/sys/hermit/$(DEPDIR)/libc_a-stat.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='libc/sys/hermit/stat.c' object='libc/sys/hermit/libc_a-stat.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -c -o libc/sys/hermit/libc_a-stat.obj `if test -f 'libc/sys/hermit/stat.c'; then $(CYGPATH_W) 'libc/sys/hermit/stat.c'; else $(CYGPATH_W) '$(srcdir)/libc/sys/hermit/stat.c'; fi`
 
 libc/sys/hermit/libc_a-stdlib.o: libc/sys/hermit/stdlib.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libc_a_CPPFLAGS) $(CPPFLAGS) $(libc_a_CFLAGS) $(CFLAGS) -MT libc/sys/hermit/libc_a-stdlib.o -MD -MP -MF libc/sys/hermit/$(DEPDIR)/libc_a-stdlib.Tpo -c -o libc/sys/hermit/libc_a-stdlib.o `test -f 'libc/sys/hermit/stdlib.c' || echo '$(srcdir)/'`libc/sys/hermit/stdlib.c
