@@ -38,6 +38,12 @@ int chown(const char *path, uid_t owner, gid_t group) {
 	return 0;
 }
 
+char *sys_getcwd(char *buf, size_t size);
+
+char *getcwd(char *buf, size_t size) {
+	return sys_getcwd(buf, size);
+}
+
 pid_t sys_getpid(void);
 
 pid_t getpid(void) {
