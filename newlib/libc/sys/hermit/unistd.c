@@ -13,27 +13,6 @@ void _exit(int status) {
 	sys_exit(status);
 }
 
-int access(const char *path, int amode) {
-	struct stat s;
-	if (stat(path, &s)) {
-		return -1;
-	}
-
-	if (s.st_mode & S_IFDIR) {
-		return 0;
-	}
-	
-	if (amode & W_OK) {
-		if (s.st_mode & S_IWRITE) {
-			return 0;
-		}
-
-		return -1;
-	}
-
-	return 0;
-}
-
 int chown(const char *path, uid_t owner, gid_t group) {
 	return 0;
 }
