@@ -65,11 +65,13 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
 
 // unistd.h
 
+int chdir(const char *path);
 int close(int fildes);
 int dup(int fildes);
 int dup2(int fildes, int fildes2);
 off_t lseek(int fildes, off_t offset, int whence);
 ssize_t read(int fildes, void *buf, size_t nbyte);
 int rmdir(const char *path);
+int ftruncate(int fildes, off_t length);
 int unlink(const char *path);
 ssize_t write(int fildes, const void *buf, size_t nbyte);
