@@ -261,6 +261,18 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int sys_fchmod(int fildes, mode_t mode);
+
+int fchmod(int fildes, mode_t mode) {
+    int ret = sys_fchmod(fildes, mode);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_fstat(int fildes, struct stat *buf);
 
 int fstat(int fildes, struct stat *buf) {
