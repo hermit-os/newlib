@@ -400,6 +400,18 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp) {
 
 // unistd.h
 
+int sys_access(const char *path, int amode);
+
+int access(const char *path, int amode) {
+    int ret = sys_access(path, amode);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_chdir(const char *path);
 
 int chdir(const char *path) {

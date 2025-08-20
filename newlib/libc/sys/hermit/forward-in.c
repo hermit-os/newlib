@@ -65,6 +65,7 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
 
 // unistd.h
 
+int access(const char *path, int amode);
 int chdir(const char *path);
 int close(int fildes);
 int dup(int fildes);
