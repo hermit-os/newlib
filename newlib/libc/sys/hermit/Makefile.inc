@@ -22,6 +22,7 @@ libc_a_SOURCES += \
 	%D%/resource.c \
 	%D%/select.c \
 	%D%/signal.c \
+	%D%/stat.c \
 	%D%/stdlib.c \
 	%D%/stub.c \
 	%D%/termios.c \
