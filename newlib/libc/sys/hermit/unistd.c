@@ -13,29 +13,14 @@ void _exit(int status) {
 	sys_exit(status);
 }
 
-int access(const char *path, int amode) {
-	struct stat s;
-	if (stat(path, &s)) {
-		return -1;
-	}
-
-	if (s.st_mode & S_IFDIR) {
-		return 0;
-	}
-	
-	if (amode & W_OK) {
-		if (s.st_mode & S_IWRITE) {
-			return 0;
-		}
-
-		return -1;
-	}
-
+int chown(const char *path, uid_t owner, gid_t group) {
 	return 0;
 }
 
-int chown(const char *path, uid_t owner, gid_t group) {
-	return 0;
+char *sys_getcwd(char *buf, size_t size);
+
+char *getcwd(char *buf, size_t size) {
+	return sys_getcwd(buf, size);
 }
 
 pid_t sys_getpid(void);

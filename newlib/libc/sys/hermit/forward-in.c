@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/uio.h>
+#include <fcntl.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -42,6 +43,7 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int fchmod(int fildes, mode_t mode);
 int fstat(int fildes, struct stat *buf);
 int lstat(const char *restrict path, struct stat *restrict buf);
 int mkdir(const char *path, mode_t mode);
@@ -56,6 +58,10 @@ int gettimeofday(struct timeval *restrict tp, void *restrict tzp);
 ssize_t readv(int fildes, const struct iovec *iov, int iovcnt);
 ssize_t writev(int fildes, const struct iovec *iov, int iovcnt);
 
+// fcntl.h
+
+int faccessat(int fd, const char *path, int amode, int flag);
+
 // time.h
 
 int clock_getres(clockid_t clock_id, struct timespec *res);
@@ -65,11 +71,15 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
 
 // unistd.h
 
+int access(const char *path, int amode);
+int chdir(const char *path);
 int close(int fildes);
 int dup(int fildes);
 int dup2(int fildes, int fildes2);
 off_t lseek(int fildes, off_t offset, int whence);
 ssize_t read(int fildes, void *buf, size_t nbyte);
 int rmdir(const char *path);
+int truncate(const char *path, off_t length);
+int ftruncate(int fildes, off_t length);
 int unlink(const char *path);
 ssize_t write(int fildes, const void *buf, size_t nbyte);

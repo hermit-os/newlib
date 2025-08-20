@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/uio.h>
+#include <fcntl.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -260,6 +261,18 @@ ssize_t sendto(int socket, const void *message, size_t length, int flags, const 
 
 // sys/stat.h
 
+int sys_fchmod(int fildes, mode_t mode);
+
+int fchmod(int fildes, mode_t mode) {
+    int ret = sys_fchmod(fildes, mode);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 int sys_fstat(int fildes, struct stat *buf);
 
 int fstat(int fildes, struct stat *buf) {
@@ -348,6 +361,20 @@ ssize_t writev(int fildes, const struct iovec *iov, int iovcnt) {
     return ret;
 }
 
+// fcntl.h
+
+int sys_faccessat(int fd, const char *path, int amode, int flag);
+
+int faccessat(int fd, const char *path, int amode, int flag) {
+    int ret = sys_faccessat(fd, path, amode, flag);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 // time.h
 
 int sys_clock_getres(clockid_t clock_id, struct timespec *res);
@@ -399,6 +426,30 @@ int nanosleep(const struct timespec *rqtp, struct timespec *rmtp) {
 }
 
 // unistd.h
+
+int sys_access(const char *path, int amode);
+
+int access(const char *path, int amode) {
+    int ret = sys_access(path, amode);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_chdir(const char *path);
+
+int chdir(const char *path) {
+    int ret = sys_chdir(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
 
 int sys_close(int fildes);
 
@@ -464,6 +515,30 @@ int sys_rmdir(const char *path);
 
 int rmdir(const char *path) {
     int ret = sys_rmdir(path);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_truncate(const char *path, off_t length);
+
+int truncate(const char *path, off_t length) {
+    int ret = sys_truncate(path, length);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
+int sys_ftruncate(int fildes, off_t length);
+
+int ftruncate(int fildes, off_t length) {
+    int ret = sys_ftruncate(fildes, length);
 
     if (ret < 0) {
         ret = -1;
