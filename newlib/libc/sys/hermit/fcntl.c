@@ -1,9 +1,14 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <sys/stat.h>
 
-int sys_fcntl(int fildes, int cmd, int arg);
+__attribute__((weak)) int sys_fcntl(int fildes, int cmd, int arg) {
+    fprintf(stderr, "weak sys_fcntl() called. Symbol was not replaced!\n");
+    errno = ENOSYS;
+    return -1;
+}
 
 int fcntl(int fildes, int cmd, ...) {
     int arg = 0;
@@ -28,7 +33,11 @@ int fcntl(int fildes, int cmd, ...) {
     return ret;
 }
 
-int sys_open(const char *path, int oflag, mode_t mode);
+__attribute__((weak)) int sys_open(const char *path, int oflag, mode_t mode) {
+    fprintf(stderr, "weak sys_open() called. Symbol was not replaced!\n");
+    errno = ENOSYS;
+    return -1;
+}
 
 int open(const char *path, int oflag, ...) {
     mode_t mode = 0;

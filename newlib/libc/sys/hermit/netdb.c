@@ -1,22 +1,36 @@
 #include <errno.h>
 #include <netdb.h>
+#include <stdio.h>
 
-void sys_freeaddrinfo(struct addrinfo *ai);
+__attribute__((weak)) void sys_freeaddrinfo(struct addrinfo *ai) {
+    fprintf(stderr,
+            "weak sys_freeaddrinfo() called. Symbol was not replaced!\n");
+}
 
 void freeaddrinfo(struct addrinfo *ai) {
     return sys_freeaddrinfo(ai);
 }
 
-const char *sys_gai_strerror(int ecode);
+__attribute__((weak)) const char *sys_gai_strerror(int ecode) {
+    const char *msg =
+        "weak sys_gai_strerror() called. Symbol was not replaced!\n";
+    fprintf(stderr, msg);
+    return msg;
+}
 
 const char *gai_strerror(int ecode) {
     return sys_gai_strerror(ecode);
 }
 
-int sys_getaddrinfo(const char *restrict nodename,
-                    const char *restrict servname,
-                    const struct addrinfo *restrict hints,
-                    struct addrinfo **restrict res);
+__attribute__((weak)) int sys_getaddrinfo(const char *restrict nodename,
+                                          const char *restrict servname,
+                                          const struct addrinfo *restrict hints,
+                                          struct addrinfo **restrict res) {
+    fprintf(stderr,
+            "weak sys_getaddrinfo() called. Symbol was not replaced!\n");
+    errno = ENOSYS;
+    return EAI_SYSTEM;
+}
 
 int getaddrinfo(const char *restrict nodename, const char *restrict servname,
                 const struct addrinfo *restrict hints,

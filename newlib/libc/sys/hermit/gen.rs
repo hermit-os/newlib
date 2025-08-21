@@ -107,6 +107,7 @@ impl fmt::Display for Action {
 
 #[derive(Clone, Debug)]
 pub struct ItemFn {
+    pub attr: Option<String>,
     pub output: String,
     pub ident: String,
     pub inputs: Vec<TypeIdent>,
@@ -132,6 +133,7 @@ impl FromStr for ItemFn {
             .map_err(|_| ParseItemFnError)?;
 
         Ok(Self {
+            attr: None,
             output: ty,
             ident,
             inputs,
@@ -166,10 +168,16 @@ impl fmt::Display for Sig<'_> {
         use std::fmt::Write;
 
         let ItemFn {
+            attr,
             output,
             ident,
             inputs,
         } = self.f;
+
+        if let Some(attr) = attr {
+            f.write_str(attr)?;
+            f.write_char(' ')?;
+        }
 
         let type_ident = TypeIdent {
             ty: output.clone(),
@@ -246,16 +254,23 @@ impl fmt::Display for Forward<'_> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let sys_f = {
             let mut sys_f = self.f.clone();
+            sys_f.attr = Some("__attribute__((weak))".to_owned());
             sys_f.ident.insert_str(0, "sys_");
             sys_f
         };
 
         let output = &self.f.output;
         let sig = self.f.sig();
+        let sys_f_sig = sys_f.sig();
+        let sys_f_name = &sys_f.ident;
         let sys_call = sys_f.call();
         writeln!(
             f,
-            "{sys_f}
+            "{sys_f_sig} {{
+    fprintf(stderr, \"weak {sys_f_name}() called. Symbol was not replaced!\\n\");
+    errno = ENOSYS;
+    return -1;
+}}
 
 {sig} {{
     {output} ret = {sys_call};
