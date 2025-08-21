@@ -1,11 +1,11 @@
 #include <dirent.h>
+#include <fcntl.h>
 #include <poll.h>
 #include <sys/mman.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/uio.h>
-#include <fcntl.h>
 #include <time.h>
 #include <unistd.h>
 
