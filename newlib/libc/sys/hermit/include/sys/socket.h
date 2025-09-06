@@ -68,6 +68,7 @@ struct linger {
 #define AF_INET6 1
 #define AF_VSOCK 2
 #define AF_INET 3
+#define AF_UNIX 4
 
 #define PF_UNSPEC AF_UNSPEC
 #define PF_INET6 AF_INET6
