@@ -487,6 +487,18 @@ int dup2(int fildes, int fildes2) {
     return ret;
 }
 
+int sys_fchdir(int fildes);
+
+int fchdir(int fildes) {
+    int ret = sys_fchdir(fildes);
+
+    if (ret < 0) {
+        ret = -1;
+    }
+
+    return ret;
+}
+
 off_t sys_lseek(int fildes, off_t offset, int whence);
 
 off_t lseek(int fildes, off_t offset, int whence) {
