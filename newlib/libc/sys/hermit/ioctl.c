@@ -1,8 +1,14 @@
+#include <errno.h>
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <sys/ioctl.h>
 
-int sys_ioctl(int fd, int op, void *argp);
+__attribute__((weak)) int sys_ioctl(int fd, int op, void *argp) {
+    fprintf(stderr, "weak sys_ioctl() called. Symbol was not replaced!\n");
+    errno = ENOSYS;
+    return -1;
+}
 
 int ioctl(int fd, int op, ...) {
     void *argp = NULL;

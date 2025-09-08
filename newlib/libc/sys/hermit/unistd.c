@@ -2,6 +2,7 @@
 #include <limits.h>
 #include <pthread.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <time.h>
@@ -22,13 +23,20 @@ int chown(const char *path, uid_t owner, gid_t group) {
 	return 0;
 }
 
-char *sys_getcwd(char *buf, size_t size);
+__attribute__((weak)) char *sys_getcwd(char *buf, size_t size) {
+	fprintf(stderr, "weak sys_getcwd() called. Symbol was not replaced!\n");
+	errno = ENOSYS;
+	return NULL;
+}
 
 char *getcwd(char *buf, size_t size) {
 	return sys_getcwd(buf, size);
 }
 
-pid_t sys_getpid(void);
+__attribute__((weak)) pid_t sys_getpid(void) {
+	fprintf(stderr, "weak sys_getpid() called. Symbol was not replaced!\n");
+	return 0;
+}
 
 pid_t getpid(void) {
 	return sys_getpid();
@@ -138,7 +146,11 @@ int getlogin_r(char *name, size_t namesize) {
 	return 0;
 }
 
-int sys_isatty(int fildes);
+__attribute__((weak)) int sys_isatty(int fildes) {
+	fprintf(stderr, "weak sys_isatty() called. Symbol was not replaced!\n");
+	errno = ENOSYS;
+	return 0;
+}
 
 int _isatty(int fildes) {
 	int ret = sys_isatty(fildes);
@@ -191,7 +203,11 @@ long sysconf(int name) {
 	}
 }
 
-ssize_t sys_read_entropy(void *buffer, size_t length, uint32_t flags);
+__attribute__((weak)) ssize_t sys_read_entropy(void *buffer, size_t length, uint32_t flags) {
+	fprintf(stderr, "weak sys_read_entropy() called. Symbol was not replaced!\n");
+	errno = ENOSYS;
+	return -1;
+}
 
 int getentropy(void *buffer, size_t length) {
 	ssize_t ret = sys_read_entropy(buffer, length, 0);
