@@ -29,6 +29,10 @@ pid_t getpid(void) {
 	return sys_getpid();
 }
 
+pid_t getppid(void) {
+	return 0;
+}
+
 uid_t getuid(void) {
 	return 0;
 }
