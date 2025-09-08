@@ -33,6 +33,8 @@ int fcntl(int fildes, int cmd, ...);
 
 #define O_ACCMODE (O_RDONLY|O_WRONLY|O_RDWR)
 
+#define AT_FDCWD (-100)
+
 int open(const char *path, int oflag, ...);
 
 __END_DECLS
