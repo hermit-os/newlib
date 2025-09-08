@@ -13,6 +13,11 @@ void _exit(int status) {
 	sys_exit(status);
 }
 
+unsigned alarm(unsigned seconds) {
+	fprintf(stderr, "stubbed alarm() called. SIGALRM will not be generated!\n");
+	return 0;
+}
+
 int chown(const char *path, uid_t owner, gid_t group) {
 	return 0;
 }
